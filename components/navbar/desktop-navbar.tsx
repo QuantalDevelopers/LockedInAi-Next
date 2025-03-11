@@ -95,10 +95,10 @@ export const DesktopNavbar = () => {
               Coding Copilot
             </Link>
             <Link
-              href="/Index"
+              href="/CompanyIndex"
               className={cn(
                 "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
-                { "font-bold text-cyan-400": isActive("/Index") },
+                { "font-bold text-cyan-400": isActive("/CompanyIndex") },
               )}
             >
               Company Details

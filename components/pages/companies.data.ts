@@ -1,4 +1,4 @@
-
+"use client"
 export type Company = {
   name: string;
   logo?: string;
