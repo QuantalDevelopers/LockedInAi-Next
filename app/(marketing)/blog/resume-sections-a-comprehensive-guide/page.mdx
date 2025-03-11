@@ -1,0 +1,150 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Ryan Caldwell",
+    src: `${constructImageURL("/landing/blog/ryan_caldwell.png")}`,
+  },
+  date: "2025-01-05",
+  title: "Resume Sections: A Comprehensive Guide",
+  description:
+    "Master the essential sections of a powerful resume. Learn what to include, how to format, and see real examples that help you stand out.",
+  image: `${constructImageURL("/landing/blog/resume-sections-a-comprehensive-guide.png")}`,
+  alt: "Essential guide to resume section writing.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title:
+    "Resume Sections: A Comprehensive Guide to Crafting the Perfect Resume",
+  description: blog.description,
+  path: "/blog/resume-sections-a-comprehensive-guide",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Essential Resume Sections: What You Need to Know
+
+Creating an effective resume starts with including five must-have sections that recruiters expect to see, along with [five optional sections](https://www.lockedinai.com/blog/additional-resume-sections-to-make-an-impact) to further enhance your application. These sections form the backbone of your resume, presenting a clear, organized overview of your qualifications and experience.
+
+In this guide, we’ll break down each section, explain how to craft them effectively, and provide examples to help you stand out.
+
+## Key Resume Sections
+
+### 1. Contact Information
+
+The header is the first thing recruiters notice. It’s typically highlighted in a larger font or different color to grab attention. Ensure this section includes:
+
+- **Your full name, job title, and location:** This helps recruiters quickly identify you and understand your geographic fit for the role.
+
+- **Professional email address and phone number:** Avoid informal email addresses—use one that’s professional.
+
+- **LinkedIn profile or portfolio link:** These provide recruiters with more insight into your professional history and work samples.
+
+_Pro tip_: Avoid including a photo to maintain focus on your qualifications and prevent bias.
+
+### 2. Resume Summary or Objective
+
+Recruiters spend an average of seven seconds scanning a resume, so it’s critical to grab their attention quickly. A strong **summary** or **objective** can make all the difference.
+
+- **Resume Summary:** A concise 3-4 sentence overview of your professional experience, achievements, and key skills. Ideal for experienced candidates.
+
+_Example:_
+
+**Summary**
+
+Accomplished Biomedical Researcher with over 8 years of experience conducting cutting-edge research in molecular biology and cellular engineering. Skilled in designing and executing experiments to investigate disease mechanisms, with a proven track record of publishing in high-impact journals. Expertise in CRISPR gene editing, flow cytometry, and bioinformatics analysis. Recognized for innovative problem-solving and leading collaborative projects that advance scientific knowledge and contribute to the development of novel therapeutics.
+
+- **Resume Objective:** A brief 1-3 sentence statement highlighting your career goals and how they align with the role. Perfect for entry-level candidates or career changers.
+
+_Example:_
+
+**Objective**
+
+Results-driven Sales Manager seeking to leverage 8+ years of experience in driving revenue growth and building high-performing sales teams at Summit Enterprises. Aiming to apply strong leadership, strategic planning, and relationship-building skills to exceed sales targets, enhance customer satisfaction, and contribute to the company’s overall success.
+
+### 3. Work Experience
+
+This is the most important section of your resume, showcasing your qualifications through real-world examples. It should be **targeted** and **results-driven**:
+
+- **Targeted:** Tailor this section to match the job description, using relevant keywords to align your experience with the employer’s needs.
+
+- **Results-driven:** Highlight measurable achievements and the impact of your work in previous roles. Use action verbs and quantify results wherever possible.
+
+_Example Entry:_
+
+**Digital Marketing Specialist**
+
+Creative Media Solutions | Chicago, IL
+
+_02/2018 – 11/2022_
+
+- Increased website traffic by 30% through SEO optimization and content marketing strategies.
+
+- Managed a $20,000 monthly PPC budget, improving ROI by 35%.
+
+- Led social media campaigns across platforms, boosting engagement by 25%.
+
+This approach makes your resume both ATS-friendly and appealing to hiring managers.
+
+### 4. Skills Section
+
+The skills section provides a quick overview of your core competencies. It’s especially helpful for recruiters who skim resumes for relevant qualifications.
+
+- **Hard skills:** Technical abilities like programming languages, data analysis, or graphic design.
+
+- **Soft skills:** Personal attributes like leadership, communication, or time management.
+
+_Example Skills Section:_
+
+- Proficient in Python and SQL
+
+- Strong problem-solving and critical thinking skills
+
+- Experienced in Agile project management
+
+When listing skills, align them with the job description to maximize relevance.
+
+### 5. Education Section
+
+Your education section highlights your academic background and any formal qualifications. For recent graduates or those changing careers, this section is particularly important.
+
+**What to include:**
+
+- **Degree:** Start with the highest degree earned (e.g., Bachelor’s, Master’s).
+
+- **Institution:** Name of the university or college.
+
+- **Location:** City and state (or country if international).
+
+- **Graduation date:** Include the year, or expected date if still studying.
+
+- **Honors and awards:** List distinctions like Dean’s List or scholarships.
+
+- **Relevant coursework:** Highlight coursework that applies to the job, especially if you’re a recent graduate.
+
+_Example Entry:_
+
+**Bachelor of Science in Computer Science**
+
+University of California, Los Angeles | Los Angeles, CA
+
+Graduated: May 2022
+
+- GPA: 3.8/4.0
+
+- Relevant Coursework: Data Structures, Machine Learning, Cloud Computing
+
+## Final Thoughts
+
+These essential sections form the foundation of a strong resume. Tailor each section to the specific job, keeping content clear, concise, and relevant. With a polished and targeted resume, you’ll increase your chances of making a lasting impression and landing your next opportunity.

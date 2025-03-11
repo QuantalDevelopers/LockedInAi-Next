@@ -1,0 +1,103 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2025-01-02",
+  title: "Generate a resume draft with Chatgpt",
+  description:
+    "Learn how to leverage ChatGPT to create a professional, tailored resume that stands out to employers and showcases your unique value proposition.",
+  image: `${constructImageURL("/landing/blog/generate-a-resume-draft-with-chatgpt.png")}`,
+  alt: "ChatGPT resume writing guide illustration.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Generate Your Perfect Resume with ChatGPT: A Step-by-Step Guide",
+  description: blog.description,
+  path: "/blog/generate-a-resume-draft-with-chatgpt",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In today’s competitive job market, job hunting is no easy task. If you’re not sure where to start, try asking ChatGPT – it’s here to guide you along the way!
+
+## How to start with Chatgpt?
+
+### Step 1: Gather Your Information
+
+Before diving into creating your resume, it’s essential to gather all the key details that showcase your professional journey. A well-prepared foundation makes crafting a compelling resume much smoother. Here’s what you’ll need:
+
+- **Contact Information:** Include your name, phone number, email, LinkedIn profile, and portfolio link (if applicable).
+
+- **Career Objective/Summary:** Write a concise statement summarizing your professional goals and what you bring to the table.
+
+- **Education:** List your degrees, schools attended, graduation dates, relevant coursework, and any honors or awards.
+
+- **Work Experience:** Detail your job titles, company names, employment dates, key responsibilities, and notable achievements.
+
+- **Skills:** Highlight technical abilities, software proficiencies, languages, and certifications relevant to the role.
+
+- **Projects/Volunteer Work:** Showcase non-work experiences that demonstrate your skills, leadership, or community involvement.
+
+- **Awards and Achievements:** Include any scholarships, industry recognition, or competition wins that set you apart.
+
+### Step 2: Select a Resume Format
+
+Let ChatGPT know which resume format works best for you:
+
+- **Chronological:** Ideal if you want to focus on your work history, showcasing your career progression and consistent experience.
+
+- **Functional:** Perfect for emphasizing your skills and abilities, especially if you’re switching careers or have limited work experience.
+
+- **Combination:** A great choice if you’d like to highlight both your skills and a solid work history, striking a balance between the two.
+
+### Step 3: Specify the Job/Industry
+
+To create a resume that stands out, it’s important to tailor it to the specific job or industry you’re targeting. Providing clear details about your desired role helps ensure your resume aligns with what hiring managers are looking for.
+
+Share information like:
+
+- The **job title** or type of position you’re applying for
+
+- The **industry** or company type (e.g., tech, healthcare, finance)
+
+- Any specific **keywords or skills** mentioned in the job description
+
+- Requirements or qualifications you want highlighted
+
+By tailoring your resume to the role, you’ll show potential employers that you’re the perfect fit for the position.
+
+## Example Prompt for ChatGPT
+
+“I’d like to draft a resume for a [job title] position in [industry]. Here’s my information:
+
+- **Name:** [Your Name]
+
+- **Contact:** [Your Email, Phone, LinkedIn]
+
+- **Career Objective:** [Your Career Goals]
+
+- **Education:** [Degree, School, Graduation Date]
+
+- **Work Experience:** [Details of each role, including responsibilities and achievements]
+
+- **Skills:** [List of technical and soft skills]
+
+- **Projects:** [Details of relevant projects, including outcomes and impact]
+
+Please create a professional resume in a [chronological/functional/combination] format.”
+
+This prompt ensures ChatGPT has all the key details to craft a polished, job-specific resume tailored to your needs.

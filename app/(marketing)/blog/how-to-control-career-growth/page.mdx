@@ -1,0 +1,183 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2025-02-28",
+  title: "Why You’re Not Getting Promoted – And What to Do About It",
+  description:
+    "Feeling stuck in your job? Learn why you’re not getting promoted and what steps you can take to advocate for your career growth and advancement.",
+  image: `${constructImageURL("/landing/blog/how-to-control-career-growth.png")}`,
+  alt: "How to take control of your career growth",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "What to Do If You’re Stuck Without a Promotion at Work",
+  description: blog.description,
+  path: "/blog/how-to-control-career-growth",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Stuck Without a Promotion? Here’s How to Change That
+
+You’ve been working hard to meet and exceed expectations. And yet, you’re still waiting for a promotion that never seems to come. I get it. It’s frustrating, demoralizing, and the best inflictor of self-doubt.
+
+You might start wondering:
+
+- Does my manager even notice my work?
+- Am I doing something wrong?
+- Is this company even invested in my career growth?
+
+If you’ve been overlooked for a promotion, don’t automatically assume that your only option is to wait and hope for the best next time around. Instead, you can take strategic measures to understand why it hasn’t happened yet. Focus on what you can do to take control of your career progression.
+
+This guide will help you:
+
+✔️ Identify why you’re not getting promoted  
+✔️ Understand what managers look for in promotion candidates  
+✔️ Learn how to advocate for yourself and take action
+
+## 1. Why You Might Not Be Getting Promoted
+
+### 1.1. You Haven’t Clearly Expressed It
+
+You need to be proactive in your professional growth. Many employees assume that working hard is enough to get noticed and then promoted. But the truth is, managers are often focused on their own responsibilities and don’t automatically know your career goals—unless you explicitly communicate them.
+
+💡 **Reality Check:**  
+"My manager had no idea I was interested in a leadership role. Once I told them, they helped me create a plan to get there."
+
+**What to Do:**
+
+- Schedule a one-on-one meeting with your manager to find out your strengths and target weak areas.
+- Clearly state that you’re interested in growing professionally and within the company.
+- Ask, “What specific steps do I need to take to be considered for a promotion?”
+
+### 1.2. You’re Only Meeting Expectations—Not Exceeding Them
+
+Doing your job well is great, but promotions are for those who go above and beyond. If your manager sees you as someone who simply completes tasks but doesn’t take initiative, they probably think you’re not ready for more responsibility.
+
+💡 **Reality Check:**  
+"I was doing everything in my job description, but my boss said I needed to show leadership before I could move up."
+
+**What to Do:**
+
+- Take on projects that go beyond your current role.
+- Find ways to solve problems proactively instead of waiting for instructions.
+- Ask, “What leadership qualities do I need to demonstrate for the next level?”
+
+### 1.3. There’s No Clear Promotion Path in Your Company
+
+Some companies simply don’t have—or haven’t yet built—a structured promotion process. If your organization doesn’t actively invest in career development, you might be stuck in place no matter how hard you work.
+
+💡 **Reality Check:**  
+"I kept waiting for a promotion, but my company had no structured career growth plans. I had to push for one myself."
+
+**What to Do:**
+
+- Ask HR or leadership if there’s a formal promotion process.
+- If not, propose a career development framework for your team.
+- Consider whether you need to look elsewhere for more opportunities.
+
+### 1.4. You Haven’t Built Strong Relationships with Decision-Makers
+
+Promotions aren’t just about how well you work. A critical statement to digest: It’s not what you know, it’s who you know.
+
+💡 **Reality Check:**  
+"I realized my boss wasn’t the only one who influenced promotions. Building relationships with leadership helped me get on their radar."
+
+**What to Do:**
+
+- Connect with senior leaders and cross-functional teams.
+- Attend company meetings, networking events, and industry conferences.
+- Find a mentor or sponsor who can advocate for your growth.
+
+### 1.5. Your Manager Doesn’t Think You’re Ready (Yet)
+
+Sometimes, managers just don’t believe that you’re ready for the next level. This doesn’t always mean you’re not capable. It could mean they haven’t seen enough evidence that you can handle more responsibility.
+
+💡 **Reality Check:**  
+"My boss told me I needed to improve my decision-making before getting promoted. It was tough to hear, but once I worked on it, I finally moved up."
+
+**What to Do:**
+
+- Ask for specific feedback on what’s holding you back.
+- Work with your manager to set measurable promotion goals.
+- Show consistent improvement and keep checking in on your progress.
+
+## 2. How to Take Control and Get Promoted
+
+### 2.1. Schedule a Career Growth Conversation
+
+Instead of hoping your manager notices your hard work, schedule a meeting to discuss your career goals.
+
+💡 **How to Start the Conversation:**  
+"I’m really interested in growing within the company. I’d love to understand what I can do to be considered for a promotion. What skills or achievements should I focus on?"
+
+This signals your ambition and commitment to growth.
+
+### 2.2. Track and Showcase Your Achievements
+
+If your contributions aren’t documented, it’s easy for them to go unnoticed.
+
+✔️ Keep a running list of accomplishments (projects, results, leadership examples).  
+✔️ Quantify your impact (“Improved efficiency by 30%” instead of “Helped improve processes”).  
+✔️ Highlight how your work aligns with company goals.
+
+💡 **Example:**  
+Instead of saying, “I worked on improving customer service,” say:  
+"I implemented a new client response system that reduced response time by 40%, leading to a 20% increase in customer satisfaction ratings."
+
+### 2.3. Build a Personal Brand Within the Company
+
+If leadership doesn’t know about your work, you won’t be considered for growth opportunities.
+
+✔️ Speak up in meetings—share insights and solutions.  
+✔️ Take on high-visibility projects that impact the company.  
+✔️ Network internally—get to know people outside your team.
+
+💡 **Example:**  
+If a senior leader asks for volunteers on a project, step up and contribute.
+
+### 2.4. Develop Leadership Qualities
+
+Even if you’re not a manager yet, demonstrating leadership skills can help you stand out.
+
+✔️ Mentor junior employees or offer to train new hires.  
+✔️ Take initiative on cross-team collaboration projects.  
+✔️ Anticipate problems and propose solutions proactively.
+
+💡 **Example:**  
+If your company struggles with onboarding new hires, create a guide or training program to improve the process.
+
+## 3. What to Do If a Promotion Isn’t Happening
+
+✔️ Ask for a clear timeline – If your manager says “maybe later,” ask “When can we revisit this conversation?”  
+✔️ Look for internal opportunities – If your current role doesn’t offer growth, explore other teams.  
+✔️ Consider external opportunities – If promotions are rare in your company, it might be time to seek growth elsewhere.
+
+💡 **Final Thought:**  
+"If you’re consistently delivering results, advocating for yourself, and still not seeing growth, you owe it to yourself to explore other opportunities where your contributions will be recognized."
+
+## Conclusion
+
+✔️ Communicate your goals and ask for feedback.  
+✔️ Go beyond expectations—show leadership and initiative.  
+✔️ Keep track of your achievements and impact.  
+✔️ If growth isn’t happening, explore new opportunities.
+
+The best way to advance your career is to be proactive, advocate for yourself, and position yourself for success—whether in your current company or elsewhere.
+
+🔗 **[Boost Your Career Growth with LockedIn AI](https://app.lockedinai.com/)**

@@ -1,0 +1,65 @@
+import { FaDiscord } from "react-icons/fa";
+
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "LockedIn AI Team",
+    src: constructImageURL("/landing/toggled-logo.png"),
+  },
+  date: "2024-10-11",
+  title: "Become an Affiliate Partner with LockedIn AI Today",
+  description:
+    "Become an Affiliate Partner with LockedIn AI. Join us in revolutionizing productivity and earn commissions by promoting our innovative solutions!",
+  image: constructImageURL("/landing/lockedin-ai-intro.jpeg"),
+  alt: "Affiliate Partner with LockedIn AI",
+  featured: false,
+};
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/affiliate-partner",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## 🚀 Unlock Your Potential: Partner with LockedIn AI
+
+Elevate your influence and earnings by partnering with LockedIn AI! Experience the power of our cutting-edge AI technology, designed to revolutionize job interviews. Gain exclusive benefits, share your success, and earn commissions effortlessly. 💼💸
+
+### 🤝 Why Partner with LockedIn AI?
+
+- **Be an Insider:** 🌟 Gain early access to groundbreaking features before anyone else. Feel the prestige of being ahead of the curve.
+- **Monetize Your Influence:** 📲 Earn money by simply sharing your success stories on social media. Every purchase made through your unique link translates into earnings for you.
+- **Exclusive Collaboration:** 🤩 Be part of an elite group that works directly with us to create tailored solutions. Your insights could shape the future of job interview technology.
+- **Priority Support:** 🎯 Receive VIP treatment with dedicated, priority assistance and resources to ensure your success.
+
+### 💡 Transform Lives and Boost Your Earnings
+
+Don’t miss out on this life-changing opportunity! 🌍 Imagine the impact you can make by helping others secure their dream jobs while you earn. The more you share, the more you earn. 📈
+
+Join our vibrant community, leverage your influence, and start earning today. Success is just a step away! 🏆
+
+### 💬 Join Our Discord to Apply Now
+
+<a
+  href="https://discord.gg/x7XaKdBbEN"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaDiscord size="30" style={{ color: "#7289DA" }} />
+</a>
+
+---
+
+✨ Unlock success with LockedIn AI – where innovation meets opportunity. ✨

@@ -1,0 +1,4 @@
+.custom-scrollbar {
+  scrollbar-width: thin; /* For Firefox, makes the scrollbar thin */
+  scrollbar-color: rgba(255, 165, 0, 0.5) transparent; /* Custom thumb and track colors for Firefox */
+}

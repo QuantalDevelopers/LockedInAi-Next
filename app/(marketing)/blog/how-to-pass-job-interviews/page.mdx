@@ -1,0 +1,175 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2024-12-11",
+  title: "How to Pass 9 Job Interviews Out of 10 in the AI Job Market",
+  description:
+    "Discover a proven strategy to ace AI job interviews with a 90% success rate. Learn how to create impactful projects, showcase your skills, and land your dream job in the competitive AI industry.",
+  image: `${constructImageURL("/landing/blog/how-to-pass-job-interviews.png")}`,
+  alt: "Create AI projects to excel in job interviews.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/how-to-pass-job-interviews",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+The AI job market is rapidly growing, and competition is fierce. Standing out as a candidate requires a strategic, structured approach. If you’re looking to not just ace job interviews but dominate them with a 90% success rate, you need to shift your focus beyond just answering questions. This article presents an actionable method that can help you secure more job offers, even in competitive fields like AI.
+
+## 1. Understand What Interviews Truly Test
+
+Interviews are not about providing the perfect answer. Instead, interviewers are looking for:
+
+- **Clear Logic:** Can you articulate your ideas in a structured, convincing way?
+
+- **Passion for the Field:** Are you genuinely excited about AI, or is this just another job for you?
+
+- **Problem-Solving and Learning Skills:** Can you adapt, learn quickly, and solve real-world challenges?
+
+- **Team Fit:** Will you be a positive addition to their team?
+
+Most importantly, companies want to see **real evidence** of your capabilities, not just hear about your past.
+
+## 2. The Secret: Build Your Own AI Project
+
+### Why Projects Are Your Secret Weapon
+
+When interviewing for AI-related roles, the best way to stand out is to **create a small product or demo**. This project serves as evidence of your passion, learning ability, and execution skills.
+
+- **1. It Demonstrates Passion**
+
+Instead of saying you’re passionate about AI, you show it through action.
+
+- **2. It Proves Your Learning Capability**
+
+Building an MVP (Minimum Viable Product) or demo often involves learning new skills, tools, and concepts quickly. This is exactly what AI companies look for.
+
+- **3. It Builds Confidence**
+
+You’ve already encountered challenges during the project’s creation. This makes you more confident when answering technical questions or explaining your thought process.
+
+### Step 1: Choose a Niche in AI
+
+To get started, narrow your focus to a specific problem or use case:
+
+- Look for **AI trends and leading companies** to understand where the market is heading.
+
+- Use forums like Reddit, GitHub, and Twitter to discover niche challenges or pain points that AI can solve.
+
+- Your idea doesn’t need to save the world—**fun, quirky projects can work too**. For example:
+
+  - Predict how many times someone will sneeze based on daily habits.
+
+  - Create a photo-based app to estimate a person’s mood using computer vision.
+
+### Step 2: Build a Simple MVP
+
+Your project doesn’t need to be complex. Focus on solving one problem with one feature. Here’s the process:
+
+- **Define the Problem:** Identify a specific user pain point.
+
+- **Build the Product:** Tools like ChatGPT, Stable Diffusion, or other AI frameworks make building fast and affordable.
+
+- **Get User Feedback:** Share your MVP with friends, on forums, or on social media to gather feedback.
+
+For example, if you’re interested in AI and video editing, create a tool that automatically removes background noise from audio in videos.
+
+### Step 3: Document and Share Your Work
+
+Once you have a working demo, document the process:
+
+**1. Explain the Problem:** What issue are you solving?
+
+**2. Outline Your Solution:** Which AI tools and methods did you use?
+
+**3. Share the Results:** Add user feedback or success metrics.
+
+Use this documentation to create:
+
+- **A LinkedIn Post or Blog:** Share your project and findings with your network.
+
+- **A Demo Video:** Show how the product works, explaining the thought process.
+
+The goal is to turn your project into a conversation starter that attracts recruiters and interviewers.
+
+## 3. Ace the Interview with Your Project
+
+During interviews, structure your responses to focus on your project:
+
+- **1. Show Passion for AI:** Explain why you built this project and why AI excites you.
+
+- **2. Demonstrate Quick Learning:** Talk about the challenges you faced and how you solved them. For example:
+
+_“I had no experience with Stable Diffusion, but in two weeks, I built this app that…”_
+
+- **3. Highlight Problem-Solving Skills:** Discuss how your project helps real users or addresses a pain point.
+
+When you have a tangible project to showcase, the interview becomes a discussion about your skills, passion, and potential.
+
+## 4. How to Get Interview Opportunities
+
+If you’ve built an impressive project, the next step is to get noticed:
+
+### A. Create Content Around Your Project
+
+- Post videos or blogs about the entire development journey:
+
+_“How I built an AI tool in 30 days: My challenges and results.”_
+
+- Share updates regularly on platforms like LinkedIn, Medium, or Twitter.
+
+### B. Use Precision Targeting for Applications
+
+- On LinkedIn or job boards, look for hiring managers, recruiters, or AI leads in companies of interest.
+
+- Send them a concise email or message:
+
+  - Who you are and what you’ve built.
+
+  - Why your project aligns with their company’s goals.
+
+  - A link to your demo or documentation.
+
+For example:
+
+_“Hi [Hiring Manager], I recently built an AI tool that automates video noise reduction, and I believe it aligns with your company’s work in creative AI tools. Here’s a demo [link]. I’d love to explore how I can contribute.”_
+
+## 5. Attend Industry Events
+
+Especially in regions like North America and Europe, tech events are goldmines for networking. Attend both online and offline AI events:
+
+- Approach hiring managers and professionals directly.
+
+- Share your project as part of your introduction.
+
+## Conclusion: Why This Works
+
+This strategy transforms interviews from unpredictable Q&A sessions into opportunities to showcase what you’ve already achieved. Your project does the following:
+
+- **Captures Attention:** Sets you apart from other candidates.
+
+- **Builds Trust:** Proves your ability to execute and learn quickly.
+
+- **Opens Opportunities:** Acts as your portfolio and conversation starter.
+
+Even if you don’t land the job, the experience of building projects and gathering feedback sharpens your skills and improves your odds for the next opportunity.
+
+**Take Action Now:** Start building your AI project today, share it with the world, and make your mark in the AI job market.

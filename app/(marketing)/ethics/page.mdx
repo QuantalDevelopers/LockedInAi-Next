@@ -1,0 +1,59 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "LockedIn AI Team",
+    src: constructImageURL("/landing/toggled-logo.png"),
+  },
+  date: "2024-10-10",
+  title: "Ethics",
+  description:
+    "Discover LockedIn AI's commitment to ethical AI use. Learn how we ensure transparency, fairness, and accountability in our services.",
+  image: constructImageURL("/landing/lockedin-ai-intro.jpeg"),
+  alt: "Ethics at LockedIn AI",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Ethical Use of AI: Our Commitment at LockedIn AI",
+  description: blog.description,
+  path: "/ethics",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Our Commitment to Ethics at LockedIn AI
+
+At LockedIn AI, we recognize our role and responsibility in shaping the future of AI-driven interview preparation and enhancement. Our commitment to ethical practices is at the core of everything we do, ensuring that our technology not only advances professional growth but also safeguards the values we hold dear.
+
+### Educate
+
+#### Empowering Through Knowledge
+
+LockedIn AI is dedicated to educating the community about the possibilities and advancements within Interview AI technologies. Our platform is designed to be more than just a tool for interview preparation; it's a means to empower individuals by enhancing their communication skills, including those in the transgender community seeking to align their vocal presentation with their identity, without the need for extensive voice training or medical procedures.
+
+### Safeguarding
+
+#### Safeguarding Against Misuse
+
+We are aware of the potential for misuse of advanced AI technologies. LockedIn AI implements stringent measures, including the use of sophisticated algorithms capable of detecting and preventing the unethical use of our technology. Our goal is to maintain the integrity and trustworthiness of the interactions facilitated by our platform, ensuring they remain genuine, respectful, and free from exploitation.
+
+### Our Pledge
+
+We pledge to:
+
+- **Advance with Care:** Continue developing our technology with a keen focus on ethical considerations, prioritizing the welfare and dignity of our users.
+- **Engage and Listen:** Actively engage with our community, listen to their concerns, and adapt our practices to reflect our collective ethical standards.
+- **Transparency:** Maintain openness about our technology's capabilities and limitations, fostering an environment of trust and reliability.
+
+At LockedIn AI, we're committed to a future where AI enhances human potential without compromising our ethical values. We invite our users, partners, and the wider community to join us in this journey, ensuring that the evolution of AI in interview and communication enhancement serves the greater good, respecting the rights and aspirations of all individuals.

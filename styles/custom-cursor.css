@@ -1,0 +1,22 @@
+/* Base cursor */
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: 0.3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
+  transform: translate(-50%, -50%);
+  z-index: 999999; /* Ensure it's above the cookiescript */
+}
+
+/* Hover state */
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(8);
+}
+
+/* Hover element */
+.hover-this {
+  transition: all 0.3s ease;
+}

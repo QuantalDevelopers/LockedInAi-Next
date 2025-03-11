@@ -1,0 +1,65 @@
+import { FaDiscord } from "react-icons/fa";
+
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "LockedIn AI Team",
+    src: constructImageURL("/landing/toggled-logo.png"),
+  },
+  date: "2024-10-10",
+  title: "Is LockedIn AI Safe?",
+  description:
+    "Learn about the safety and privacy measures of LockedIn AI, how to use it securely during interviews, and what to do if asked to share your screen...",
+  image: constructImageURL("/landing/lockedin-ai-intro.jpeg"),
+  alt: "Is LockedIn AI Safe",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Is LockedIn AI Safe? Learn About Our Security Measures",
+  description: blog.description,
+  path: "/is-it-safe",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+### Is LockedIn AI safe to use during an interview?
+
+Absolutely. LockedIn AI is designed with your privacy and security in mind. Our platform is a web application, which means no anti-cheating tools can detect our service during your interview. You can use our real-time coaching and feedback confidently, knowing that it operates discreetly and securely.
+
+### What if the interviewer asks to share my screen?
+
+If your interviewer asks you to share your screen, you can safely share only the tab that you're working on with LockedIn AI. There is no need to share your entire screen. Interviewers do not have the right to force you to share your entire screen. This way, you maintain control over your privacy while still using our tools to excel in your interview.
+
+### Why is LockedIn AI safe?
+
+- **Web-Based Platform:** Since LockedIn AI is a web application, it runs entirely in your browser. This eliminates the risk of detection by anti-cheating software that might be used during virtual interviews.
+
+- **Privacy Focused:** We prioritize your privacy. You can use our service without any concerns about privacy breaches or data misuse.
+
+- **Real-Time Assistance:** Our platform provides real-time interview coaching and feedback discreetly, ensuring you get the support you need without drawing attention.
+
+## Join Our Community
+
+Feel free to join our community to exchange experiences with other users or talk directly to our developers.
+
+<a
+  href="https://discord.gg/x7XaKdBbEN"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaDiscord size="30" style={{ color: "#7289DA" }} />
+</a>
+Our team is dedicated to ensuring a secure and effective user experience. Your
+trust and success are our top priorities.

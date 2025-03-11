@@ -1,0 +1,155 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2025-02-05",
+  title: "Top Interview Mistakes and How LockedIn AI Helps You Avoid Them",
+  description:
+    "Avoid common interview mistakes like poor preparation and rambling answers. Discover how LockedIn AI's real-time assistance helps you ace your next job interview.",
+  image: `${constructImageURL("/landing/blog/top-interview-mistakes-and-how-you-avoid-them.png")}`,
+  alt: "AI interview assistant for job success.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Top Interview Mistakes and How LockedIn AI Helps You Avoid Them",
+  description: blog.description,
+  path: "/blog/top-interview-mistakes-and-how-you-avoid-them",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Job interviews can be nerve-wracking considering how much is at stake. From crafting the perfect answers to presenting yourself as the best candidate, there are many factors to think about in your interview. However, many talented professionals simply fall short. Luckily, tools like LockedIn AI with its real-time interview assistance can ensure that you remain focused and get that next big opportunity.
+
+This article looks at the most common interview mistakes and how LockedIn AI helps you avoid them.
+
+## 1. Poor Preparation
+
+Preparing for the interview is the number one thing that people get wrong during the interview. Several candidates don’t realize how important it is to investigate the company, research its culture, and understand the duties of the role posted. If you don’t show up with a comprehensive understanding of the company’s overall mission, you can easily be perceived as lacking true interest in the job and as a result be shrugged off.
+
+**How LockedIn AI Helps:**
+
+LockedIn AI’s OA Copilot is a virtual aid for understanding job descriptions and company requirements. It analyzes key details about the job description as well as both your background and the company’s background to build a perfect response. It pretty much does the homework for you; all you have to do is present it confidently once you enter the interview.
+
+## 2. Stuttering and Rambling Answers
+
+It’s great to answer details but rambling waters down your core message. For intricate jobs it’s easy to over explain or go off-topic, but doing so can cause the interview to perceive you as someone with a lack of clarity. Clear, succinct answers are what interviewers truly want from a candidate.
+
+**How LockedIn AI Helps:**
+
+LockedIn AI provides real-time feedback during the interview. Your responses are heard and it gives short suggestions; keeping you on topic while giving structured answers. It is your digital coach for focused communication. With it, there’s no chance of over-explaining and issue or losing track of your point.
+
+## 3. Failing to Ask Questions
+
+Interviews aren’t one-sided. If you don’t ask thoughtful questions about the company and the role, you risk seeming disengaged or uncurious. Companies, and more specifically interviewers, really resonate with candidates that show genuine interest in their story and history.
+
+**How LockedIn AI Helps:**
+
+LockedIn AI shares a list of questions that are intelligent and focused not only on the role being interviewed for, but also the company in general. These types of questions show your genuine interest and evaluate if the company is a good fit for you.
+
+## 4. Weak Body Language
+
+Avoiding eye contact, slouching or fidgeting can send the wrong signal. Your words may be perfect, but they’ll never count as much as your nonverbal cues.
+
+**How LockedIn AI Helps:**
+
+During virtual interviews, LockedIn AI analyzes your video to see how you are sitting, what you are saying, and the eye contact with the interviewer. It offers practical suggestions for fine-tuning your body language so you seem confident and authoritative.
+
+## 5. Overlooking the STAR Method
+
+STAR (Situation, Task, Action, Result) structure is very common in behavioral interview questions. If you don’t use this method, you will end up with disorganized answers.
+
+**How LockedIn AI Helps:**
+
+The Coding Copilot and other features of LockedIn AI will help you structure your responses regardless of their content using the STAR technique. It helps you by presenting clear, compelling examples of your past achievements.
+
+## 6. Talking Negatively
+
+A subtle habit about interviewing that some candidates may fall into is speaking too negatively about topics. Complaining about previous employers or colleagues can appear unprofessional and makes you seem difficult to work with.
+
+**How LockedIn AI Helps:**
+
+LockedIn AI detects negative language in your responses and offers strategies to tweak the way you say it.
+
+## 7. Failing to Sell Your Unique Value
+
+Most candidates have a hard time expressing why they’re the best choice for the job. Ignoring your own strengths can leave a vague and forgettable impression for the interviewer..
+
+**How LockedIn AI Helps:**
+
+Once LockedIn AI analyses the job description and your resume, it knows exactly who you are. It creates personalized talking points to help you stand out from the crowd, focusing on the skills and experiences that make you distinctive.
+
+## 8. Overloading on Technical Jargon
+
+In some roles you may need an abundance of technical knowledge, but too much technical jargon can lead to confusion with people who are not experts in your field; like the HR department members who might be interviewing you first.
+
+**How LockedIn AI Helps:**
+
+The AI Copilot helps find complex language in your answers and reformats them to be clearer and more simple to understand. The tool ensures that you speak to both technical and non-technical stakeholders effectively, which is a great skill to have for any candidate. They say you don’t truly understand a topic unless you can explain it to a third-grader.
+
+## 9. Failing to Practice
+
+Some candidates think they can ‘wing it.’ But it's important to rehearse your answers so people hear you sound clearer and with more confidence.
+
+**How LockedIn AI Helps:**
+
+With LockedIn AI you get mock interview simulations tuned to your industry and role. You get real-time feedback so that you can work on refining your answers and answering challenging questions. With the overwhelming about of support LockedIn AI provides, interviews are no longer a win-lose situation; even if you fail to land the job you can reflect more in-depth on where you can better yourself and how you can improve yourself for the next one.
+
+## 10. Not Addressing Weaknesses Confidently
+
+When they are asked about their weaknesses, many candidates either dodge the question or offer cliche answers such as, ‘I don’t believe in imperfections,’ or ‘I’m a perfectionist,’ instead of answering the question in a way that shows their true personality.
+
+**How LockedIn AI Helps:**
+
+LockedIn AI provides a way to craft honest, yet strategic responses to questions about the weaknesses. As mentioned before, based on the documents you provide it gains an understanding of your personal style meaning your answers also demonstrate self-awareness and motivation for improving.
+
+## 11. Overlooking Cultural Fit
+
+Most candidates concentrate on the technical qualifications without realizing if they are aligned with the company’s culture. You aren’t the only one being interviewed, the interviewer should be prepared to answer questions from you that help you gain insight into how you align with the company as well.
+
+**How LockedIn AI Helps:**
+
+Uploading documents that describe the company’s values and work environment will allow the AI to analyze it and compare it to your personal history. It helps you to understand in which ways your personality and work experience align with their culture.
+
+## 12. Rushing or Hesitating Answers
+
+Speaking too quickly may make you seem unthoughtful, while conversely pausing for too long may show uncertainty. It’s difficult to find a perfect balance.
+
+**How LockedIn AI Helps:**
+
+By using mock interviews, you can practice your cadence and rhythm before entering the actual interview. On top of that, LockedIn AI’s real-time guidance will offer insight on how to pace your responses to ensure you are presenting yourself in the best way possible.
+
+## 13. Ignoring Feedback
+
+Without constructive feedback, it’s difficult to find and correct your errors. Many candidates might fall into a pattern of bad habits without even realizing.
+
+**How LockedIn AI Helps:**
+
+LockedIn AI watches your progress on several interviews and gives you detailed feedback for each one. Each time it improves iteratively so that by the time you’re towards the end of the process you’re the most prepared you can be at that moment.
+
+## 14. Focusing Solely on Salary
+
+Money talk is probably the most uncomfortable part of the interview for most people. Bringing up your salary too early may make you seem money-driven when in reality you’re just interested in the role and whether it’s something that can provide you with a reasonable standard of living.
+
+**How LockedIn AI Helps:**
+
+LockedIn AI takes away the awkwardness of the topic and lays out the question about salary in a direct way. It also advises on when to bring up conversation and how compensation would work.
+
+## Conclusion
+
+Interviews are an art and a science; blending preparation, presentation, and personality. While mistakes are natural, they can often cost you the role of your dreams. LockedIn AI bridges the gap between potential and performance, ensuring you avoid common pitfalls and ace every interview.
+
+With LockedIn AI by your side, the question isn’t whether you’ll succeed but how soon you’ll land your dream job.

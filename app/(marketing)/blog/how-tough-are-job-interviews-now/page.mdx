@@ -1,0 +1,109 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2024-10-22",
+  title: "How Tough Are Job Interviews Now Compared to a Few Years Ago?",
+  description:
+    "Job interviews are tougher than ever, with AI, multi-stage processes, and intense competition. Discover strategies to ace your next interview with LockedInAI.",
+  image: `${constructImageURL("/landing/blog/how-tough-are-job-interviews-now.png")}`,
+  alt: "Navigate modern job interviews with ease",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/how-tough-are-job-interviews-now",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In the past few years, the job interview landscape has changed dramatically. What was once a simple process has become a full-on, multi-stage gauntlet that even most seasoned pros can feel daunted by. More competition, more high-tech, and more expectations have made job interviews harder than ever. In this article, we will discuss why job interviews are difficult nowadays, what are the downsides of it, and how candidates can prepare and differentiate themselves in this very competitive environment.
+
+## The Evolution of the Job Interview Process
+
+Over recent years, how the job interview process has worked has been changing, primarily due to technological advancements, competitive job markets, and employer expectations. The simple face-to-face interview with a hiring manager hasn’t existed for quite some time. It's because many companies have turned to multi-stage interview processes that include phone screening, virtual interviews, technical assessments, and even AI scoring.
+
+## Key Factors Making Interviews Tougher Today
+
+### 1. Increased Use of Technology in Interviews
+
+As [remote work](https://www.wusa9.com/article/money/economy/2024-job-market-why-you-are-struggling-to-get-hired/65-57a28cab-95d4-4cf0-8a76-d0b0ee225723) gains momentum, more and more companies have begun to adopt virtual interviews as their new norm. Today, hiring often involves platforms like Zoom or Microsoft Teams, which is part of the process. That means candidates no longer need to be just technically perfect, but also willing to stand out and promote themselves on camera.
+
+Secondly, AI-driven tools are being used to judge candidates' facial expressions, tone of voice, and even body language. As many as 40 percent of companies have started using AI in their hiring process, (which means) that interviews must also become more difficult, as candidates are now judged on subtler cues.
+
+### 2. The Rise of Behavioral and Situational Interviews
+
+Modem interviews have become an open book of behavioral and situational questions. That’s because employers are looking for how you solve real-world challenges and so ask questions with detailed examples of past experiences. This kind of questioning forces candidates to come up with concrete examples and also helps them to structure their attempts using an increasing trend, the STAR method (Situation, Task, Action, Result).
+
+### 3. Longer, Multi-Stage Hiring Processes
+
+Today interviews can be many rounds, some lasting for several weeks. Candidates will be required to complete such things as initial screening, technical assessment, group interview, and finally executive interview before an offer is made. In 2019, it was 3 weeks and 6 days (21 days) and in 2024, it’s up to an average of 4 weeks and 5 days (27.5 days), as reported by [Glassdoor](https://www.linkup.com/insights/blog/10-job-market-predictions-2024).
+
+But these long processes allow companies to test a candidate not just their skills but their endurance and interest to continue on at the position.
+
+## The Impact of Economic Conditions on Job Interviews
+
+In addition, tougher job interviews are happening as a result of the current economic condition. In recent years, many job markets have been flooded with highly qualified candidates after tech layoffs combined with the economic uncertainties of the past few years. This means employers have gotten more selective, requiring more applicants.
+
+**Increased Competition for Fewer Jobs**
+
+- Job postings in some industries are down, while applicants are up, according to Indeed data.
+
+- The competition is intensifying and so this means that candidates can’t just meet the job requirements, but have to stand out in the process.
+
+**Shift in Employer Expectations**
+
+- Today, even though the volume of competition in the job market has increased, employers are now searching for candidates who can demonstrate the ability to adapt and be resilient while displaying up-to-date skills in a changing work environment. Candidates who can show a proactive approach to learning new technologies or methodologies can separate themselves.
+
+## Strategies for Navigating Tougher Job Interviews
+
+With the right preparation and mindset, candidates still have a shot at landing a job interview, although it's far tougher than it was a couple of years ago. Here are some strategies to help you ace your next interview:
+
+**1. Master Virtual Interview Etiquette**
+
+- Having established that virtual interviews are now par for the course, that’s only doubly important. Make sure you have a quiet, well-lit, space with stable internet and a professional background. This can help you improve and speak clearly with eye contact with the camera.
+
+- [LockedInAI](https://www.lockedinai.com/) offers resources on mastering virtual interviews, including tips on body language and tone modulation to make a strong impression.
+
+**2. Leverage the STAR Method for Behavioral Questions**
+
+- Use the STAR method to prepare for behavioral questions. This structured approach will help you explain hard questions and your ability to solve problems and impact.
+
+- Common questions include: “Tell me about a time that you experienced a serious problem at work,” or “Talk to me about a time when you had to be under considerable pressure.”
+
+**3. Practice Technical Assessments**
+
+- In general, practice is the key to technical roles. Sharpen your skill with platforms like LeetCode, and HackerRank or with the help of LockedInAI provided resources. Coding challenges, case studies, and problem-solving tests are some of the many tools being used by employers when interviewing.
+
+**4. Prepare for AI and Behavioral Analytics**
+
+- As more interview tools are now AI-led, this is the time to prepare for the assessments that will evaluate your facial expressions and tone of voice. Practice speaking with confidence even if you are not in the virtual setting.
+
+## FAQs
+
+**1. Why are job interviews harder now compared to a few years ago?**
+
+Job interviews have become more challenging due to increased competition, multi-stage interview processes, and the use of advanced technologies like AI in candidate assessments.
+
+**2. How can I prepare for a tough job interview?**
+
+In order to prepare, focus on mastering virtual interview etiquette, the STAR method of questions, and more technical skills.
+
+## Conclusion
+
+The job interviews were much harder and more stringent than before a few years ago. Today’s interview process is a stressful process for many, due to the combination of advanced technology, improved competition, and higher employer expectations. Although there are changes, those changes can be managed by the candidates, with the right preparation and resources.

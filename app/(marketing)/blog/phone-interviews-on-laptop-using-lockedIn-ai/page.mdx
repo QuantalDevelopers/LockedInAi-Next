@@ -1,0 +1,114 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2024-07-03",
+  title: "How to Pick Up Phone Interviews on Your Laptop Using LockedIn AI",
+  description:
+    "Learn how to conduct phone interviews on your laptop using LockedIn AI, with step-by-step guides for both Mac and Windows users.",
+  image: `${constructImageURL("/landing/blog/phone-interviews-on-laptop-using-lockedIn-ai.png")}`,
+  alt: "Answer interviews via laptop",
+  featured: true,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/phone-interviews-on-laptop-using-lockedIn-ai",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+On occasion, phone interviews are a bit hard to handle, mainly if you are in the middle of something or need a quite place. One efficient strategy is using LockedIn AI which helps with phone interviews to be conducted on the laptop. Below are detailed procedures on how this can be done on both systems; the mac and the windows.
+
+## For Mac Users
+
+## Strategy 1: Forward Calls to Google Voice and Use Chrome Browser
+
+○ Set Up Google Voice:
+
+    - Sign Up: If you don't already have a Google Voice account, sign up for one at [Google Voice](https://voice.google.com). [(tuorial link)](https://chatgpt.com/share/9774978a-1adc-4a39-a0a3-8cf9c66a68cd)
+
+    - Link Your Number: Link your phone number to your Google Voice account. This will allow you to forward calls to your Google Voice number.
+
+○ Forward Your Phone Calls:
+
+    - Access Settings: Go to the settings on your phone and locate the call forwarding option.
+
+    - Enter Google Voice Number: Enter your Google Voice number as the forwarding number. This will redirect your calls to Google Voice.
+
+○ Enable Chrome Browser to Pick Up Calls:
+
+    - Open Google Voice: Open Google Voice in your Chrome browser and sign in to your account.
+
+    - Allow Notifications: Make sure to allow notifications so you can receive call alerts.
+
+    - Test Call: Make a test call to ensure that your calls are being forwarded and you can pick them up in the browser.
+
+○ Screen Sharing with LockedIn AI:
+
+    - Open LockedIn AI: Launch LockedIn AI on your laptop.
+
+    - Share Google Voice Tab: When prompted to share your screen, select the Google Voice Chrome tab.
+
+    - Start the Interview: Pick up your calls through the Google Voice tab and let LockedIn AI assist you during the interview.
+
+## For Windows Users
+
+You can use the same phone forwarding strategy as described for Mac users. Forward your calls to Google Voice and use the Chrome browser to pick up calls. Share your screen with LockedIn AI as needed.
+
+## Strategy 1: Follow the Mac Strategy
+
+## Strategy 2: Use Microsoft Phone Link (Easier Method)
+
+○ Download Phone Link:
+
+    - Access Microsoft Store: Open the Microsoft Store on your Windows laptop.
+
+    - Search for Phone Link: Search for "Phone Link" and download the app.
+
+○ Connect Your Phone:
+
+    - Open Phone Link: Launch the Phone Link app on your laptop.
+
+    - Pair with Phone: Follow the on-screen instructions to pair your phone with your laptop via Bluetooth.
+
+○ Receive Calls on Laptop:
+
+    - Enable Notifications: Ensure notifications are enabled so you can receive call alerts on your laptop.
+
+    - Test Call: Make a test call to verify the setup.
+
+○ Screen Sharing with LockedIn AI:
+
+    - Open LockedIn AI: Launch LockedIn AI on your laptop.
+
+    - Share Entire Screen: When prompted to share your screen, select "Entire Screen" and make sure to enable "Share system audio."
+
+    - Start the Interview: Pick up your calls through the Phone Link app and let LockedIn AI assist you during the interview.
+
+## Conclusion
+
+Following these guidelines it is simple to arrange Mac or Windows notebook to make comfortable phone interviews. The key to succeeding in the interviews is to have the right tools, and Google Voice together with Microsoft Phone Link, synchronized with the features of LockedIn AI, provides those in spades.
+
+## Frequently Asked Questions
+
+**Can I use other browsers besides Chrome for Google Voice?** While Chrome is recommended for the best experience with Google Voice, other browsers may also work but could have limited functionality.
+
+**Do I need a Bluetooth connection for Microsoft Phone Link?** Yes, a Bluetooth connection is necessary to pair your phone with the Phone Link app on your Windows laptop.
+
+**Is there a cost associated with Google Voice?** Google Voice offers free basic services, but some features may require a subscription or incur additional costs.
+
+**How secure is my data with LockedIn AI?** LockedIn AI takes data security seriously and uses advanced encryption methods to protect your information. Always ensure you're using the latest version for optimal security features.

@@ -1,0 +1,83 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2024-11-01",
+  title: "How Bad The Job Market Is?",
+  description:
+    "Explore the challenges of the 2024 job market, from reduced opportunities and wage stagnation to navigating ATS barriers and increased gig roles. Learn strategies to succeed.",
+  image: `${constructImageURL("/landing/blog/how-bad-the-job-market-is.png")}`,
+  alt: "Strategies for success in 2024 job market",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/how-bad-the-job-market-is",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In 2024, the job market is offering less, paying less, and competing harder. While the overall unemployment rate has idled around 3.8%, those seeking work face an upward battle, particularly in jobs that historically offered higher wages, such as in technology and media.
+
+## 1. Fewer Job Openings and Fierce Competition
+
+One of the biggest problems for job seekers this year is that many industries need to produce more new jobs. In the tech sector, in particular, postings for jobs, particularly software development, have plunged by approximately 52 percent compared to last year. Another reason is that companies are hesitant to hire because they want to maintain cost curtailment, resulting in fewer opportunities and more elongated [hiring cycles](https://www.worklife.news/talent/2024-job-market/).
+
+## 2. Wage Stagnation
+
+This comes despite inflation slowing down, which a lot of workers might reasonably expect after the pandemic wage growth boom. [Wage inflation](https://www.linkup.com/insights/blog/10-job-market-predictions-2024) has stabilized at 4-5%, which is a lot, but not enough to match the rising cost of living in many places. But that wage stagnation is also hurting sectors where high skill and experience are at a premium, but compensation hasn’t grown in proportion, giving job seekers the sense that it’s even harder to find well-compensated positions.
+
+## 3. Overwhelming Use of Application Tracking Systems (ATS)
+
+Applicant Tracking Systems (ATS) used in the hiring process are also barriers. These systems have filters for applications, based on some keywords, making it hard for many qualified applicants to even be noticed. This environment requires that candidates hone and then tailor their resume to every [job](https://www.welcometothejungle.com/en/articles/us-job-market-2024-outlook) they apply for, or run the risk of being seen by no one other than the computer screens built to weed candidates out before they ever see the application.
+
+## 4. Increase in Gig and Contract Work
+
+With the uncertain economy many companies are opting to [gig, contract work](https://www.dahlconsulting.com/2024/01/18/navigating-the-2024-job-market-insights-for-job-seekers/) rather than full-time jobs with benefits. This is a common trend, and it’s an issue for workers who are relying on stable employment, as so many contract roles don’t provide benefits or job security. The gig economy is expected to grow in 2024, creating opportunities for those who can adapt to flexible work
+
+## 5. Skills Mismatch
+
+With the job market evolving so fast, companies are often looking for specialized skills, particularly in tech, data analytics, and new technologies like artificial intelligence. Such a focus on certain skill sets isolates many job seekers who are rookies and are struggling to maintain competitiveness. For example, positions requiring AI skills are on the rise, but the number of people in the workforce who qualify with the appropriate training is small.
+
+## 6. Layoffs and Job Security Concerns
+
+Layoffs have also hit the tech and media industries, boosting job competition among former employees making a comeback into the workforce. In many cases, these workers are upskilling, or entering new fields entirely, further increasing competition in industries that saw far fewer layoffs, such as healthcare and education.
+
+## 7. Reduced Full-Time Roles and Increased Job Market Competition
+
+With full-time job positions at a premium, crowded job markets, and even fewer of those openings because of recent waves of layoffs and changing workforce needs, 2024 is a complicated job market. While the U.S. unemployment rate sits quietly at 3.8 percent, it doesn’t tell the whole story for job seekers. Tech and media in particular have sharply cut hiring as companies chart a course to profitability and keep costs low. This contraction has forced many formerly high-paid professionals to compete for roles more scarce and salaries more porous than a few years ago.
+
+## FAQs
+
+**1. Why are job seekers struggling despite low unemployment?**
+
+Although overall unemployment is low, there are a lot of job openings in many high-paying fields and these are declining. Companies too are hiring in contract roles to cut costs; hence it is getting difficult to get a stable full-time job. Job seekers have also been made hard to notice with ATS.
+
+**2. Which sectors are most affected by reduced hiring?**
+
+Some of the sharpest declines have been seen in the tech, media, and software development sectors. Beneath that, industries like healthcare and hospitality are growing―although often in the form of roles that require specific certifications, or low wages.
+
+**3. How can job seekers improve their chances of finding employment in 2024?**
+
+By upskilling in high-demand areas like data analytics, tailoring resumes to job postings, and leveraging professional networks, job seekers can improve their results. Those wanting to work from home might also consider flexible roles in the growing gig economy.
+
+## Conclusion
+
+The 2024 job market demands flexibility, resilience, and continuous learning due to inevitable change. By focusing on future market trends and utilizing networks, job prospects can improve.
+
+While traditional employment may be harder to find, it’s still possible. Adapting to new trends, like contract work or upskilling in data and AI, offers alternative paths to success.

@@ -1,0 +1,149 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Ryan Caldwell",
+    src: `${constructImageURL("/landing/blog/ryan_caldwell.png")}`,
+  },
+  date: "2025-03-01",
+  title: "Perfecting Your Resume Header to Get Noticed",
+  description:
+    "Learn how to create a professional resume header that gets noticed by both recruiters and ATS systems. Master essential components like contact information, job titles, and springboard links while avoiding common mistakes.",
+  image: `${constructImageURL("/landing/blog/perfecting-your-resume-header.png")}`,
+  alt: "Guide to creating effective resume headers",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "How to Write a Perfect Resume Header: Complete Guide",
+  description: blog.description,
+  path: "/blog/perfecting-your-resume-header",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Did you know that a simple mistake in your resume header could cost you an opportunity? Studies show that over 80% of recruiters look for an applicant’s name first, and if they can’t easily find it (along with other essential details like education), your resume is more likely to be discarded.
+
+In addition to human review, many organizations use [Applicant Tracking Systems(ATS)](https://www.lockedinai.com/blog/what-is-an-applicant-tracking-system) to analyze resumes These systems rely heavily on your header to determine its structure. If your resume header isn’t optimized for both humans and ATS, your chances of landing an interview decrease significantly.
+
+## The key takeaway?
+
+Your resume header must be clear, concise, and optimized for both audiences. A well-structured header not only ensures recruiters can quickly identify your key details but also improves the ATS compatibility of your resume.
+
+This guide will walk you through creating a resume header that grabs attention, meets ATS standards, and helps you stand out. Let’s get started!
+
+## What Should Be in a Resume Header?
+
+Creating an impactful resume header starts with a clear purpose. This section isn’t just the top of your resume—it’s your introduction to recruiters and the ATS. Here’s what you need to include:
+
+- Your name
+
+- Contact details
+
+- Link to valuable resources
+
+- Set the tone of your resume
+
+### 1. Name: The First Step to Recognition
+
+Including your name at the top of your resume might seem obvious, but even a minor oversight here can damage your chances. Recruiters use your name as the link between your resume and your professional identity. Here’s how to get it right:
+
+- **Consistency Matters:** Use the name that aligns with your professional records. If you’ve recently changed your name (e.g., after marriage), consider using your maiden name if it is associated with past achievements or publications.
+
+- **Make It Searchable:** Recruiters often use your name to find your LinkedIn profile, online portfolios, or published work. Avoid using nicknames or aliases that could confuse ATS systems or recruiters.
+
+- **Formatting Tip:** Ensure your name is the largest text in your header for easy recognition. This is crucial as you only have a few seconds to grab attention.
+
+Getting your name right is simple yet impactful, ensuring that recruiters and ATS systems can immediately connect your resume to your professional profile.
+
+### 2. Job Title: Aligning with Your Target Role
+
+Including a job title in your resume header is a subtle yet effective way to position yourself for the role you’re targeting. Here’s how to do it right:
+
+- **Focus on the Target Role:** Instead of listing your current or previous job title, use the title of the position you’re applying for. This instantly aligns your resume with the recruiter’s expectations.
+
+- **Show Relevance:** Use a title that reflects your field or expertise. For example, if you’re applying for a role in digital marketing, your title could read “Digital Marketing Specialist” rather than simply “Marketing Manager.”
+
+- **Avoid Misleading Titles:** While tailoring your title is essential, ensure it still reflects your actual qualifications and experience. Overstating your title can lead to issues during the interview process.
+
+### 3. Phone Number: Easy Accessibility is Key
+
+Including a reliable phone number in your resume header is essential for recruiters to contact you quickly and efficiently. Here’s how to ensure your phone details are professional and accessible:
+
+- **Use a Mobile Number:** Always list a personal mobile number that you can readily answer. Avoid using a work number to maintain discretion and professionalism.
+
+- **Add a Country Code:** If you’re applying internationally, include the country code at the beginning of your number. This small detail saves recruiters time and shows you’ve thought ahead.
+
+- **Professional Voicemail:** Ensure your voicemail greeting is clear and professional. State your name, and avoid casual jokes or messages that may come across as unprofessional.
+
+### 4. Email: Your Digital Calling Card
+
+Your email address can subtly influence how recruiters perceive you, making it a critical part of your resume header. Follow these tips to ensure your email reflects professionalism:
+
+- **Use a Professional Address:** Avoid unprofessional or informal addresses, such as fanaccount1293@hotmail.com. Instead, opt for a format that includes your name, such as:
+
+- _first.last@domain.com_
+
+- _flast@domain.com_
+
+- _f.last@domain.com_
+
+- **Avoid Work Emails:** Never use your current work email on a resume. It signals a lack of boundaries and raises questions about your commitment to your current role.
+
+- **Exclude Student Emails:** If you’re no longer a student, remove university email addresses to appear more aligned with the professional world.
+
+- **Choose Trusted Providers:** Stick to well-known providers like Gmail, Outlook, Yahoo, or iCloud for credibility.
+
+### 5. Location: Keep It Simple
+
+In today’s digital hiring landscape, including your full address is no longer necessary. Instead, streamline your resume header by listing only your **general location**, such as:
+
+- London, England
+
+- New York, NY
+
+This approach provides recruiters with enough information without compromising your privacy.
+
+### Key Considerations:
+
+- **For Remote Opportunities:** Indicating your location, even if it’s in a different country, is still relevant. Remote work has made international applications more common and acceptable.
+
+- **International Applications:** Listing your location helps employers understand potential time zone differences or visa requirements.
+
+### 6. Springboard Links: Boost Your Resume’s Reach
+
+Springboard links are an often-overlooked but highly valuable addition to your resume header. These hyperlinks lead to resources that showcase your work history, personality, and approach to tasks.
+
+#### Why Springboard Links Matter:
+
+- **Provide Deeper Insight:** Links to your personal website, online portfolio, or LinkedIn profile give recruiters a more comprehensive view of your expertise and fit for the role.
+
+- **Essential for Creative Roles:** In fields like design, writing, or video editing, these links allow recruiters to see your work firsthand.
+
+#### Best Practices for Springboard Links:
+
+- **Personalize Your LinkedIn URL:** A custom LinkedIn URL (e.g., linkedin.com/in/yourname) looks professional and is easier to remember.
+
+- **Ensure Consistency:** Double-check that your resume, LinkedIn profile, and portfolio details align, including job titles, dates, and project descriptions.
+
+- **Keep Links Updated:** Regularly refresh your portfolio to include recent projects, ensuring recruiters see your latest and best work.
+
+## Mistakes to Avoid in Your Resume Header
+
+### 1. Adding Irrelevant Personal Details
+
+Avoid including unnecessary personal information that doesn’t add value to your application. Details like your date of birth, religion, nationality, or ethnicity are irrelevant to most job applications and can distract recruiters from the qualifications that matter. Stick to essential and professional details to keep your header clean and impactful.
+
+### 2. Misplacing Your Header
+
+Your header belongs at the top of your resume—this is non-negotiable. It provides essential details like your name and contact information, which recruiters need before reviewing the rest of your application. While creativity is encouraged in formatting, don’t compromise on header placement. If you want to experiment, try aligning the header vertically on the left or right, but always ensure it’s the first thing recruiters see.

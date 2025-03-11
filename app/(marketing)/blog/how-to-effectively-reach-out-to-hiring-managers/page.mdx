@@ -1,0 +1,171 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2025-02-26",
+  title:
+    "How to Get Hired at Top Companies: Cold Outreach Strategies for Job Seekers",
+  description:
+    "Learn how to stand out with cold outreach to hiring managers at top companies. Discover proven strategies to get responses, make connections, and land interviews.",
+  image: `${constructImageURL("/landing/blog/how-to-effectively-reach-out-to-hiring-managers.png")}`,
+  alt: "How to Get Hired at Top Companies: Cold Outreach Strategies for Job Seekers",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title:
+    "The Best Way to Contact Hiring Managers and Land a Job at Top Companies",
+  description: blog.description,
+  path: "/blog/how-to-effectively-reach-out-to-hiring-managers",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Why Cold Outreach Works in Today’s Job Market
+
+Cold outreach is one of the most effective strategies job seekers can use to make an impression. It helps you bypass the overwhelming competition in online applications and connect directly with hiring managers.
+
+This guide will show you how to locate the best hiring managers, craft compelling messages, and follow up effectively to maximize your chances of getting hired.
+
+## Benefits of Cold Outreach
+
+- **Increases visibility** – Your resume reaches the hiring manager before getting lost in an applicant tracking system (ATS).
+- **Demonstrates proactiveness** – Shows enthusiasm and self-confidence.
+- **Expands your professional network** – Builds relationships that can open doors to future opportunities.
+
+## 1. Identifying the Right Hiring Managers
+
+Finding the right contact person is crucial. Generic emails or messages to random employees are less effective than targeting decision-makers directly.
+
+### How to Find Hiring Managers on LinkedIn
+
+- **Search for the Company Name** – Use LinkedIn’s search bar.
+- **Use Keywords**:
+  - "Hiring Manager [Job Title]"
+  - "Recruiter [Company Name]"
+  - "HR Manager" or "Talent Acquisition"
+- **Check Employee Titles**:
+  - Recruiter (hires across departments)
+  - Hiring Manager (direct supervisor for open roles)
+  - Department Head or Director (refers candidates to hiring teams)
+
+💡 **Pro Tip:** If the hiring manager isn’t listed, contacting a recruiter or department head can still be valuable.
+
+## 2. Crafting the Perfect Cold Outreach Message
+
+A well-crafted message must be concise, personalized, and value-driven. Hiring managers receive many messages, so yours must stand out.
+
+### Best Cold Email or LinkedIn Message Structure
+
+✔️ **Subject Line (For Emails)**
+
+- "Excited About [Company Name]—Quick Question"
+- "Exploring [Job Title] Opportunities at [Company Name]"
+
+✔️ **Opening Line (Make It Personal)**
+
+- "Hi [Name], I came across your profile while researching [Company Name]’s [specific department or initiative]. I was really impressed by your work on [specific project or company achievement]."
+
+✔️ **Express Interest & Purpose**
+
+- "I’m currently exploring opportunities in [industry] and was excited to learn about [Company Name]. I’m particularly interested in [specific role/team] because [reason—tie it to your skills or passion]."
+
+✔️ **Highlight Your Value**
+
+- "In [related sector or skill set], I have [X years of experience], and I recently [mention a relevant project, credential, or job experience]. I’d love to explore how I might contribute to your team."
+
+✔️ **Clear Call to Action**
+
+- "Would you be available for a brief conversation next week? I’d love to hear about your experience at [Company Name] and any upcoming opportunities."
+- "If you're not the right person to contact, would you be able to point me in the right direction?"
+
+✔️ **Closing Line (Keep It Friendly)**
+
+- "Looking forward to your thoughts! Hope to stay in touch."
+
+💡 **Pro Tip:** Keep your message under 150 words for better response rates.
+
+## 3. Following Up Without Being Annoying
+
+Many messages go unanswered simply because people are busy. A polite follow-up can significantly increase your chances of getting a response.
+
+### When & How to Follow Up
+
+✅ **Wait 5-7 days** before following up.
+
+✅ **Keep it short and polite.**
+
+✅ **Reference your previous message** without guilt-tripping.
+
+**Sample Follow-Up Message:**
+
+> "Hey [Name], I wanted to follow up regarding opportunities at [Company Name]. I understand you’re busy, but I’d love to connect and learn more. Let me know if there’s a good time to chat."
+
+💡 **Pro Tip:** If you still don’t get a response, send one final follow-up after two weeks, then move on.
+
+## 4. Maximizing Responses with a Strong LinkedIn Profile
+
+Your LinkedIn profile should reflect your skills, experience, and career goals. A hiring manager may check your profile before replying.
+
+### Key LinkedIn Profile Tips
+
+✅ **Use a professional photo** (clear headshot, good lighting).
+
+✅ **Write a compelling headline** (highlight your skills and industry focus).
+
+✅ **Optimize your About section** with a concise summary of your expertise and goals.
+
+✅ **Showcase key projects, achievements, and certifications.**
+
+✅ **Engage with company content** to warm up your outreach.
+
+💡 **Pro Tip:** Follow the hiring manager or recruiter before reaching out. Engaging with their posts beforehand can increase your chances of getting a response.
+
+## 5. When to Use Cold Outreach vs. Online Applications
+
+### Use Cold Outreach When:
+
+✅ You want to bypass ATS filters and directly connect with a hiring manager.
+
+✅ The company isn’t actively hiring, but you want to express interest for future roles.
+
+✅ You’re making a career switch and need referrals or advice.
+
+### Apply Online When:
+
+✅ The company has a structured hiring process requiring applications via HR.
+
+✅ The job posting specifically states to apply online.
+
+💡 **Best Strategy:** Apply online first, then follow up with a personalized outreach message.
+
+## Conclusion
+
+Having the right qualifications alone isn’t enough to land a job at top companies. Taking initiative and building direct connections can set you apart.
+
+### Key Takeaways:
+
+✔️ Find the right hiring managers using LinkedIn search.
+
+✔️ Send a short, personalized message that conveys enthusiasm and value.
+
+✔️ Follow up politely if you don’t receive a response.
+
+✔️ Maintain a strong and engaging LinkedIn profile.
+
+Networking plays a crucial role in job hunting—sometimes, the best opportunities come from conversations rather than applications.
+
+🔗 **[Start Connecting with Hiring Managers Today!](https://app.lockedinai.com/)**

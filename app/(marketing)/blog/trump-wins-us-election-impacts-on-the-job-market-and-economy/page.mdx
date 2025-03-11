@@ -1,0 +1,83 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2024-11-11",
+  title: "Trump Wins US Election: Impacts on the Job Market and Economy",
+  description:
+    "Explore how Trump's 2024 victory and policies may reshape the US job market, from protectionism to tax reforms, impacting wages, inflation, and global trade.",
+  image: `${constructImageURL("/landing/blog/trump-wins-us-election-impacts-on-the-job-market-and-economy.png")}`,
+  alt: "Trump's policies reshape economy and jobs",
+  featured: true,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/trump-wins-us-election-impacts-on-the-job-market-and-economy",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+The thinking behind the re-election of Donald Trump in the 2024 US Presidential election has grabbed enough attention from around the world. And even with his election victory fueled by pledges of economic reform, the focus is back on “America First” policies that favor domestic job growth, protectionism, and deregulation. The US job market, US economy, and global trade can be influenced by Trump's proposed policies, which are what this article investigates in detail.
+
+## 1. Protectionist Policies and Job Market Implications
+
+Bringing jobs back to America was a heavy focus of Trump’s campaign. One of his [key economic](https://www.reuters.com/markets/whats-stake-global-markets-trump-presidency-2024-11-06/) planks is that he wants to institute protectionist measures, including raising tariffs on imports. His administration will press ahead with tariffs on Chinese and European goods to encourage domestic manufacturing. The purpose of these protectionist policies is to lure manufacturing jobs to the US, and thereby reduce unemployment in the industrial areas. That could also mean more production costs which would push consumer prices up.
+
+- **Impact on Manufacturing:** Trump wants to protect American steel, automotive, and electronics industries by reviving tariffs and restricting imports. It could spur domestic production and jobs in these sectors, but would also escalate trade tensions with China, particularly. The demand for localized job growth may be outweighed by the increased costs of imported materials.
+
+## 2. Tax Reforms and Their Economic Consequences
+
+Trump's previous cut in taxes on corporations promises to spur investment and job creation. But he plans to extend these [tax policies](https://www.cbsnews.com/news/trump-election-impact-on-economy-taxes-inflation-your-money/) through to 2024, including cutting corporate taxes further to draw businesses back to the US. The intention is to make company savings go back into hiring and expanding by encouraging reinvestment.
+
+- **Corporate Tax Reduction:** A reduction in the corporate tax rate could make such an act more appealing to firms, stimulating job growth in highly skilled sectors, such as technology and finance. But critics say these cuts could ultimately add to an already large federal deficit and spell long-term economic instability.
+
+## 3. Deregulation: Boosting Job Creation or Environmental Setbacks?
+
+Trump has pushed for less regulation in pursuit of lowering the bar for businesses to operate. He says it includes rolling back environmental and labor regulations that he says are too burdensome. The idea is that deregulation allows companies to invest in growth, and thus boom more jobs.
+
+- **Economic Growth vs Environmental Concerns:** Deregulation may induce the creation of jobs in the oil, gas, and mining industries but with environmental degradation and long-term costs to public health as a result. But such policies risk tripping up in the short term in favor of sustainable development, say critics.
+
+## 4. Impacts on Wages and Inflation
+
+Balancing the creation of jobs and control of [inflation](https://www.theguardian.com/business/2024/nov/06/inflation-looks-to-have-secured-trump-win-but-his-policies-mean-higher-prices) is one of the most difficult eggs to balance in Trump’s economic policy. All of this could push up the cost of imports, and correspondingly raise prices for goods. In other words, this inflationary pressure could erase wage gains for middle and lower-income workers.
+
+- **Wage Growth:** However the increased demand for labor could also lead to wages that are higher because of wages brought back by the success of Trump’s policies to bring manufacturing jobs back. But wage gains, even from higher tariffs, could be undermined by inflation.
+
+## 5. Global Trade Relations and Market Volatility
+
+Trump's return to power is likely to reignite [global trade](https://www.dcreport.org/2024/11/06/how-the-trump-presidency-might-change-the-global-economy/?gad_source=1&gclid=Cj0KCQiA0MG5BhD1ARIsAEcZtwTORkE46qeJEyjs_wV82xid0HCe9noPrruYCqnZeunQt52ckk-Sq0gaAnxoEALw_wcB) tensions with China and the EU. Such a focus from his administration on renegotiating trade agreements and its imposition of new tariffs could unsettle global markets, cause a chill in investment, and make job stability uncertain.
+
+- **China and EU Relations:** If trade wars re-escalate, it could choke global supply chains and make the components American companies need to build their stuff even more expensive. This may lead to increased volatility in markets of uncertainty about their future, resulting in the global trade policies of the future.
+
+## 6. Focus on Infrastructure and Energy Independence
+
+Investment in infrastructure projects is key to Trump's economic vision. A surge in construction and engineering jobs could be sparked by his administration's pledge to spend funds to rebuild American infrastructure.
+
+- **Energy Policies:** The primary emphasis of Trump’s energy policy is to increase fossil fuel production and reduce dependency on foreign oil. Such a development could mean an increase in job opportunities in the energy sector, but it could also contradict a world trend toward renewable energy investments.
+
+## 7. Potential Risks and Criticisms
+
+Critics say Trump’s protectionism and his deregulation could have the opposite effect, with consumer prices rising and the income inequality gap widening. And his tax cuts for the wealthy are also seen as trapping them in extracting middle-class Americans as they fuel corporate interests.
+
+- **Economic Inequality:** Some sectors may see job growth, while others worry that Trump’s policies will lean toward helping the wealthy and big corporations more than most and further widen the gap between rich and poor.
+
+## Conclusion: What Lies Ahead?
+
+The US economy is at a crossroads as Trump goes into his new term. While his policies may create jobs in the short term in certain industries, that could result in economic problems, including inflation, trade disputes, and rising inequality. How closely his administration can navigate these economic complexities will determine the long-term impact on the job market.
+
+The world is watching, as the America First strategy of Trump could help redefine the US job market, and the trade scenario thereof globally. As an investor or business, you will need to wait out the possible shifts to economic policy which could either help fuel growth or thrust the political echoes of uncertainty.
