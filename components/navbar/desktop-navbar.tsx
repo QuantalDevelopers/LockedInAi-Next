@@ -94,6 +94,15 @@ export const DesktopNavbar = () => {
             >
               Coding Copilot
             </Link>
+            {/* <Link
+              href="/Not-Found"
+              className={cn(
+                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                { "font-bold text-cyan-400": isActive("/Not-Found") },
+              )}
+            >
+              Not Found Page
+            </Link> */}
             <Link
               href="/CompanyIndex"
               className={cn(

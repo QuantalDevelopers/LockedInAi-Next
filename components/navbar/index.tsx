@@ -18,7 +18,7 @@ const navItems = [
   },
   {
     name: "Company Details",
-    link : "/Company-Index"
+    link : "/CompanyIndex",
   },
   {
     name: "Resume Builder",
