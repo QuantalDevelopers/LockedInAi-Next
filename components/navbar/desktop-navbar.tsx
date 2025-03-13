@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 import { useAffiliateTracker } from "../affiliate-link";
 import { Button } from "../button";
 import { HoveredLink, Menu, MenuItem } from "./hover-menu";
+import Auth from "../products/Auth";
 
 export const DesktopNavbar = () => {
   const { scrollY } = useScroll();
@@ -111,6 +112,16 @@ export const DesktopNavbar = () => {
               )}
             >
               Company Details
+            </Link>
+            {/* Login */}
+            <Link
+              href="/Auth"
+              className={cn(
+                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                { "font-bold text-cyan-400": isActive("/Auth") }
+              )}
+            >
+              Login
             </Link>
             <Link
               href="/resume-guru"

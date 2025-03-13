@@ -81,15 +81,15 @@ function CompanyIndex() {
                 </p>
                 <div className="space-y-6">
                   <div>
-                    <Label>Company</Label>
+                    <Label className="text-black">Company</Label>
                     <Input type="text" placeholder="Select a company" value={companySearch} onChange={(e) => setCompanySearch(e.target.value)} className="mt-1 text-black" />
                   </div>
                   <div>
-                    <Label>Location</Label>
+                    <Label className="text-black">Location</Label>
                     <Input type="text" placeholder="Select a location" value={locationSearch} onChange={(e) => setLocationSearch(e.target.value)} className="mt-1 text-black" />
                   </div>
                   <div>
-                    <Label>Industries</Label>
+                    <Label className="text-black">Industries</Label>
                     <Input type="text" placeholder="E.g. healthcare, internet, education" value={industrySearch} onChange={(e) => setIndustrySearch(e.target.value)} className="mt-1 text-black" />
                   </div>
                   <button onClick={() => { setCompanySearch(""); setLocationSearch(""); setIndustrySearch(""); }} className="text-green-600 hover:text-green-700 font-medium">Clear filters</button>

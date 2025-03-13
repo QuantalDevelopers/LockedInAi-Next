@@ -1,12 +1,19 @@
-
+"use client";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation"; // <-- Use Next.js router
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Auth() {
@@ -14,7 +21,8 @@ export default function Auth() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+
+  const router = useRouter();
   const { toast } = useToast();
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -25,10 +33,8 @@ export default function Auth() {
         email,
         password,
         options: {
-          data: {
-            username
-          }
-        }
+          data: { username },
+        },
       });
       if (error) throw error;
       toast({
@@ -55,7 +61,7 @@ export default function Auth() {
         password,
       });
       if (error) throw error;
-      navigate("/");
+      router.push("/");
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -79,6 +85,8 @@ export default function Auth() {
             <TabsTrigger value="signin">Sign In</TabsTrigger>
             <TabsTrigger value="signup">Sign Up</TabsTrigger>
           </TabsList>
+
+          {/* Sign In */}
           <TabsContent value="signin">
             <form onSubmit={handleSignIn}>
               <CardContent className="space-y-4">
@@ -91,6 +99,7 @@ export default function Auth() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    className="text-black"  // <-- Text color black
                   />
                 </div>
                 <div className="space-y-2">
@@ -102,16 +111,23 @@ export default function Auth() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    className="text-black"  // <-- Text color black
                   />
                 </div>
               </CardContent>
               <CardFooter>
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                >
                   {loading ? "Signing in..." : "Sign In"}
                 </Button>
               </CardFooter>
             </form>
           </TabsContent>
+
+          {/* Sign Up */}
           <TabsContent value="signup">
             <form onSubmit={handleSignUp}>
               <CardContent className="space-y-4">
@@ -124,6 +140,7 @@ export default function Auth() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    className="text-black"  // <-- Text color black
                   />
                 </div>
                 <div className="space-y-2">
@@ -135,6 +152,7 @@ export default function Auth() {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     required
+                    className="text-black"  // <-- Text color black
                   />
                 </div>
                 <div className="space-y-2">
@@ -146,11 +164,16 @@ export default function Auth() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    className="text-black"  // <-- Text color black
                   />
                 </div>
               </CardContent>
               <CardFooter>
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                >
                   {loading ? "Signing up..." : "Sign Up"}
                 </Button>
               </CardFooter>
