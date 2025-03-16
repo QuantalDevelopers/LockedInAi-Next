@@ -1,5 +1,5 @@
-import AddReview from "@/components/products/AddReview";
+import AddReviewWrapper from "@/components/products/AddReview";
 
 export default function AddReviewPage({ params }: { params: { companyId: string } }) {
-  return <AddReview />;
+  return <AddReviewWrapper companyId={params.companyId} />;
 }

@@ -10,14 +10,23 @@ import { useLocation, useNavigate,  useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/providers/AuthProvider";
 import { useToast } from "@/components/ui/use-toast";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import router, { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 
+const queryClient = new QueryClient();
 
-const AddReview = () => {
+export default function AddReviewWrapper({ companyId }: { companyId: string }) {
+  return (
+      <QueryClientProvider client={queryClient}>
+        return <AddReview companyId={companyId} />;
+      </QueryClientProvider>
+      
+    );
+}
+
+const AddReview = ({ companyId }: { companyId: string }) => {
   const navigate = useRouter();
-  const { companyId } = useParams();
   const location = useLocation;
   const [experience, setExperience] = useState<string>("");
   const [applicationSource, setApplicationSource] = useState<string>("");
@@ -37,7 +46,7 @@ const AddReview = () => {
   const { session } = useAuth();
   const { toast } = useToast();
 
-  const currentCompanyId = companyId || location.state?.companyId;
+  const currentCompanyId = companyId;
 
   const { data: company, isLoading } = useQuery({
     queryKey: ['company', currentCompanyId],
@@ -536,5 +545,3 @@ const AddReview = () => {
     </div>
   );
 };
-
-export default AddReview;
