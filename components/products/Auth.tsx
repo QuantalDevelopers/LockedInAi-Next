@@ -77,7 +77,7 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 text-black" >
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Welcome</CardTitle>

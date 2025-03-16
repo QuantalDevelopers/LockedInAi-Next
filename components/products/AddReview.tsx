@@ -1,33 +1,28 @@
 "use client"
-
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { ThumbsUp, ThumbsDown, Minus, Trash2, ArrowLeft } from "lucide-react";
-import { useLocation, useNavigate,  useSearchParams } from "react-router-dom";
+import { useRouter } from "next/navigation"; // Updated import
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/providers/AuthProvider";
 import { useToast } from "@/components/ui/use-toast";
-import { useQuery, QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import router, { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
 export default function AddReviewWrapper({ companyId }: { companyId: string }) {
   return (
-      <QueryClientProvider client={queryClient}>
-        <AddReview companyId={companyId} />;
-      </QueryClientProvider>
-      
-    );
+    <QueryClientProvider client={queryClient}>
+      <AddReview companyId={companyId} />
+    </QueryClientProvider>
+  );
 }
 
 const AddReview = ({ companyId }: { companyId: string }) => {
-  const navigate = useRouter();
-  const location = useLocation;
+  const router = useRouter(); // Next.js router
   const [experience, setExperience] = useState<string>("");
   const [applicationSource, setApplicationSource] = useState<string>("");
   const [interviewProcess, setInterviewProcess] = useState<string>("");
@@ -46,6 +41,8 @@ const AddReview = ({ companyId }: { companyId: string }) => {
   const { session } = useAuth();
   const { toast } = useToast();
 
+  // In Next.js App Router, we get the parameters directly from the URL
+  // However, we're already receiving companyId as a prop, so we'll use that
   const currentCompanyId = companyId;
 
   const { data: company, isLoading } = useQuery({
@@ -64,9 +61,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
   useEffect(() => {
     if (!currentCompanyId) {
-      navigate.push('/');
+      router.push('/');
     }
-  }, [currentCompanyId, navigate]);
+  }, [currentCompanyId, router]);
 
   if (isLoading) {
     return <div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>;
@@ -87,7 +84,6 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("SUBMITTED FORM")
     
     if (!company || !currentCompanyId || !session?.user?.id) {
       toast({
@@ -229,10 +225,8 @@ const AddReview = ({ companyId }: { companyId: string }) => {
         .select()
         .single();
 
-      if (interviewError) {
-        console.log(interviewError);
-        throw interviewError;
-      }
+      if (interviewError) throw interviewError;
+
       const questionsToInsert = questions
         .filter(q => q.question.trim())
         .map(q => ({
@@ -245,17 +239,14 @@ const AddReview = ({ companyId }: { companyId: string }) => {
         .from('interview_questions')
         .insert(questionsToInsert);
 
-      if (questionsError) {
-        console.log(questionsError);
-        throw questionsError;
-      }
+      if (questionsError) throw questionsError;
 
       toast({
         title: "Success",
         description: "Your interview review has been submitted",
       });
 
-      navigate.push(`/companyDetails/${currentCompanyId}`);
+      router.push(`/companyDetails/${currentCompanyId}`);
     } catch (error) {
       console.error('Error saving interview:', error);
       toast({
@@ -270,7 +261,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
     <div className="min-h-screen bg-gray-50 text-black">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <button
-          onClick={() => navigate.push(`/companyDetails/${currentCompanyId}`)}
+          onClick={() => router.push(`/companyDetails/${currentCompanyId}`)}
           className="mb-6 inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
@@ -551,3 +542,4 @@ const AddReview = ({ companyId }: { companyId: string }) => {
     </div>
   );
 };
+

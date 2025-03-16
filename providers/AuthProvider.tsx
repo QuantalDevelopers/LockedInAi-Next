@@ -1,6 +1,7 @@
+"use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation"; // ✅ Use 'next/navigation' for App Router
 import { Session } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -14,7 +15,7 @@ const AuthContext = createContext<AuthContextType>({ session: null, loading: tru
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  const router = useRouter();  // ✅ Now it should work
 
   useEffect(() => {
     // Get initial session
@@ -29,12 +30,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (!session) {
-        navigate('/auth');
+        router.push('/auth');
       }
     });
 
     return () => subscription.unsubscribe();
-  }, [navigate]);
+  }, [router]);
 
   return (
     <AuthContext.Provider value={{ session, loading }}>

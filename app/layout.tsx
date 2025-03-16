@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { AuthProvider } from "@/providers/AuthProvider";
 
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
@@ -83,13 +84,15 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "h-full w-full bg-charcoal antialiased")}
       >
-        <ViewTransitions>
-          {/* <Banner /> */}
-          <Cursor />
-          <NavBar />
-          {children}
-          <Footer />
-        </ViewTransitions>
+        <AuthProvider>
+          <ViewTransitions>
+            {/* <Banner /> */}
+            <Cursor />
+            <NavBar />
+            {children}
+            <Footer />
+          </ViewTransitions>
+        </AuthProvider>
       </body>
     </html>
   );
