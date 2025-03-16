@@ -19,7 +19,7 @@ const queryClient = new QueryClient();
 export default function AddReviewWrapper({ companyId }: { companyId: string }) {
   return (
       <QueryClientProvider client={queryClient}>
-        return <AddReview companyId={companyId} />;
+        <AddReview companyId={companyId} />;
       </QueryClientProvider>
       
     );
@@ -87,6 +87,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("SUBMITTED FORM")
     
     if (!company || !currentCompanyId || !session?.user?.id) {
       toast({
@@ -228,8 +229,10 @@ const AddReview = ({ companyId }: { companyId: string }) => {
         .select()
         .single();
 
-      if (interviewError) throw interviewError;
-
+      if (interviewError) {
+        console.log(interviewError);
+        throw interviewError;
+      }
       const questionsToInsert = questions
         .filter(q => q.question.trim())
         .map(q => ({
@@ -242,14 +245,17 @@ const AddReview = ({ companyId }: { companyId: string }) => {
         .from('interview_questions')
         .insert(questionsToInsert);
 
-      if (questionsError) throw questionsError;
+      if (questionsError) {
+        console.log(questionsError);
+        throw questionsError;
+      }
 
       toast({
         title: "Success",
         description: "Your interview review has been submitted",
       });
 
-      navigate.push(`/company/${currentCompanyId}`);
+      navigate.push(`/companyDetails/${currentCompanyId}`);
     } catch (error) {
       console.error('Error saving interview:', error);
       toast({
@@ -261,10 +267,10 @@ const AddReview = ({ companyId }: { companyId: string }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 text-black">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <button
-          onClick={() => navigate.push(`/company/${currentCompanyId}`)}
+          onClick={() => navigate.push(`/companyDetails/${currentCompanyId}`)}
           className="mb-6 inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
@@ -371,7 +377,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="interviewAIAllow" className="mt-2">
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="text-black bg-gray-50">
                       <SelectItem value="Yes">Yes</SelectItem>
                       <SelectItem value="No">No</SelectItem>
                       <SelectItem value="Unknown">Unknown</SelectItem>
@@ -385,7 +391,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="jobAIAllow" className="mt-2">
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="text-black bg-gray-50">
                       <SelectItem value="Yes">Yes</SelectItem>
                       <SelectItem value="No">No</SelectItem>
                       <SelectItem value="Unknown">Unknown</SelectItem>
@@ -436,7 +442,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="difficulty" className="mt-2">
                       <SelectValue placeholder="Select difficulty level" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="text-black bg-gray-50">
                       <SelectItem value="easy">Easy</SelectItem>
                       <SelectItem value="average">Average</SelectItem>
                       <SelectItem value="difficult">Difficult</SelectItem>
@@ -450,7 +456,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="offer" className="mt-2">
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="text-black bg-gray-50">
                       <SelectItem value="yes">Accepted</SelectItem>
                       <SelectItem value="no">Rejected</SelectItem>
                       <SelectItem value="pending">No offer</SelectItem>
