@@ -114,7 +114,7 @@ export const DesktopNavbar = () => {
               Company Details
             </Link>
             {/* Login */}
-            <Link
+            {/* <Link
               href="/Auth"
               className={cn(
                 "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
@@ -122,7 +122,7 @@ export const DesktopNavbar = () => {
               )}
             >
               Login
-            </Link>
+            </Link> */}
             <Link
               href="/resume-guru"
               className={cn(

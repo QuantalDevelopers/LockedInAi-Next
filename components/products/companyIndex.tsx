@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { BuildingIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -33,6 +33,21 @@ function CompanyIndex() {
   const [companySearch, setCompanySearch] = useState("");
   const [locationSearch, setLocationSearch] = useState("");
   const [industrySearch, setIndustrySearch] = useState("");
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data } = await supabase.auth.getUser();
+      const User = data?.user;
+      console.log(User)
+      setUser(User);
+      if (User === null) {
+        router.push('/Auth?redirect_url=CompanyIndex');
+      }
+    };
+    fetchUser();
+
+  }, []);
 
   const { data: companies = [], isLoading, error } = useQuery({
     queryKey: ["companies"],

@@ -1,3 +1,4 @@
+"use client"
 
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
@@ -5,17 +6,19 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { ThumbsUp, ThumbsDown, Minus, Trash2, ArrowLeft } from "lucide-react";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
-
+import { useLocation, useNavigate,  useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/providers/AuthProvider";
 import { useToast } from "@/components/ui/use-toast";
-import { companies } from "./companyData";
+import { useQuery } from "@tanstack/react-query";
+import router, { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+
 
 const AddReview = () => {
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const { companyId } = useParams();
-  const location = useLocation();
+  const location = useLocation;
   const [experience, setExperience] = useState<string>("");
   const [applicationSource, setApplicationSource] = useState<string>("");
   const [interviewProcess, setInterviewProcess] = useState<string>("");
@@ -25,17 +28,44 @@ const AddReview = () => {
     { question: "", answer: "" }
   ]);
 
+  const [jobLocation, setJobLocation] = useState<string>("");
+  const [jobCountry, setJobCountry] = useState<string>("");
+  const [interviewAIAllow, setInterviewAIAllow] = useState<string>("");
+  const [jobAIAllow, setJobAIAllow] = useState<string>("");
+  const [aiToolUsed, setAiToolUsed] = useState<string>("");
+
   const { session } = useAuth();
   const { toast } = useToast();
 
   const currentCompanyId = companyId || location.state?.companyId;
-  const company = currentCompanyId ? companies[currentCompanyId as keyof typeof companies] : null;
+
+  const { data: company, isLoading } = useQuery({
+    queryKey: ['company', currentCompanyId],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('companies')
+        .select('*')
+        .eq('id', currentCompanyId)
+        .single();
+
+      if (error) throw error;
+      return data;
+    },
+  });
 
   useEffect(() => {
-    if (!company) {
-      navigate('/');
+    if (!currentCompanyId) {
+      navigate.push('/');
     }
-  }, [company, navigate]);
+  }, [currentCompanyId, navigate]);
+
+  if (isLoading) {
+    return <div className="min-h-screen bg-gray-50 flex items-center justify-center">Loading...</div>;
+  }
+
+  if (!company) {
+    return <div className="min-h-screen bg-gray-50 flex items-center justify-center">Company not found</div>;
+  }
 
   const addQuestion = () => {
     setQuestions([...questions, { question: "", answer: "" }]);
@@ -113,6 +143,51 @@ const AddReview = () => {
       return;
     }
 
+    if (!jobLocation.trim()) {
+      toast({
+        title: "Error",
+        description: "Please enter the job location",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!jobCountry.trim()) {
+      toast({
+        title: "Error",
+        description: "Please enter the job country",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!interviewAIAllow) {
+      toast({
+        title: "Error",
+        description: "Please specify if AI is allowed in the interview",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!jobAIAllow) {
+      toast({
+        title: "Error",
+        description: "Please specify if the company allows AI usage in the job",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!aiToolUsed.trim()) {
+      toast({
+        title: "Error",
+        description: "Please specify which AI tool you used",
+        variant: "destructive",
+      });
+      return;
+    }
+
     if (!questions[0].question.trim()) {
       toast({
         title: "Error",
@@ -129,12 +204,17 @@ const AddReview = () => {
           company_id: currentCompanyId,
           position: jobTitle,
           date: new Date().toISOString(),
-          experience,
+          experience: experience === "positive" ? "Positive" : experience === "neutral" ? "Average" : "Negative",
           application_source: applicationSource,
           interview_process: interviewProcess,
-          difficulty,
-          offer,
-          user_id: session.user.id
+          difficulty: difficulty === "easy" ? "Easy" : difficulty === "average" ? "Average" : "Difficult",
+          offer: offer === "yes" ? "Accepted" : offer === "no" ? "Rejected" : "No offer",
+          user_id: session.user.id,
+          job_location: jobLocation.trim() || null,
+          job_country: jobCountry.trim() || null,
+          interview_ai_allow: interviewAIAllow || null,
+          job_ai_allow: jobAIAllow || null,
+          ai_interview_assisted_tool_used: aiToolUsed.trim() || null
         })
         .select()
         .single();
@@ -160,7 +240,7 @@ const AddReview = () => {
         description: "Your interview review has been submitted",
       });
 
-      navigate(`/company/${currentCompanyId}`);
+      navigate.push(`/company/${currentCompanyId}`);
     } catch (error) {
       console.error('Error saving interview:', error);
       toast({
@@ -175,7 +255,7 @@ const AddReview = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <button
-          onClick={() => navigate(`/company/${currentCompanyId}`)}
+          onClick={() => navigate.push(`/company/${currentCompanyId}`)}
           className="mb-6 inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
@@ -192,7 +272,7 @@ const AddReview = () => {
                   <Label htmlFor="employer">Employer</Label>
                   <div className="flex items-center gap-4 mt-2">
                     <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center">
-                      {company?.logo ? (
+                      {company.logo ? (
                         <img
                           src={company.logo}
                           alt={`${company.name} logo`}
@@ -200,12 +280,12 @@ const AddReview = () => {
                         />
                       ) : (
                         <div className="w-8 h-8 bg-sky-100 rounded flex items-center justify-center text-sky-600 font-bold">
-                          {company?.name.charAt(0)}
+                          {company.name.charAt(0)}
                         </div>
                       )}
                     </div>
                     <div className="flex-1 bg-gray-50 border border-gray-200 rounded-md px-4 py-2 text-gray-700">
-                      {company?.name}
+                      {company.name}
                     </div>
                   </div>
                 </div>
@@ -215,30 +295,33 @@ const AddReview = () => {
                   <div className="flex gap-4 mt-2">
                     <button 
                       type="button"
-                      className={`p-4 rounded-full hover:bg-gray-100 ${
-                        experience === "positive" ? "bg-gray-100" : ""
+                      className={`p-4 rounded-full transition-colors ${
+                        experience === "positive" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
                       }`}
                       onClick={() => setExperience("positive")}
+                      title="Positive"
                     >
-                      <ThumbsUp className="w-6 h-6 text-gray-600" />
+                      <ThumbsUp className="w-6 h-6" />
                     </button>
                     <button 
                       type="button"
-                      className={`p-4 rounded-full hover:bg-gray-100 ${
-                        experience === "neutral" ? "bg-gray-100" : ""
+                      className={`p-4 rounded-full transition-colors ${
+                        experience === "neutral" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
                       }`}
                       onClick={() => setExperience("neutral")}
+                      title="Average"
                     >
-                      <Minus className="w-6 h-6 text-gray-600" />
+                      <Minus className="w-6 h-6" />
                     </button>
                     <button 
                       type="button"
-                      className={`p-4 rounded-full hover:bg-gray-100 ${
-                        experience === "negative" ? "bg-gray-100" : ""
+                      className={`p-4 rounded-full transition-colors ${
+                        experience === "negative" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
                       }`}
                       onClick={() => setExperience("negative")}
+                      title="Negative"
                     >
-                      <ThumbsDown className="w-6 h-6 text-gray-600" />
+                      <ThumbsDown className="w-6 h-6" />
                     </button>
                   </div>
                 </div>
@@ -246,6 +329,71 @@ const AddReview = () => {
                 <div>
                   <Label htmlFor="jobTitle" className="after:content-['*'] after:text-red-500 after:ml-0.5">Job Title</Label>
                   <Input id="jobTitle" className="mt-2" required />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <Label htmlFor="jobLocation" className="after:content-['*'] after:text-red-500 after:ml-0.5">Job Location (City)</Label>
+                    <Input
+                      id="jobLocation"
+                      value={jobLocation}
+                      onChange={(e) => setJobLocation(e.target.value)}
+                      placeholder="e.g., San Francisco"
+                      className="mt-2"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="jobCountry" className="after:content-['*'] after:text-red-500 after:ml-0.5">Job Country</Label>
+                    <Input
+                      id="jobCountry"
+                      value={jobCountry}
+                      onChange={(e) => setJobCountry(e.target.value)}
+                      placeholder="e.g., United States"
+                      className="mt-2"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <Label htmlFor="interviewAIAllow" className="after:content-['*'] after:text-red-500 after:ml-0.5">Does this interview allow AI?</Label>
+                  <Select value={interviewAIAllow} onValueChange={setInterviewAIAllow} required>
+                    <SelectTrigger id="interviewAIAllow" className="mt-2">
+                      <SelectValue placeholder="Select your option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Yes">Yes</SelectItem>
+                      <SelectItem value="No">No</SelectItem>
+                      <SelectItem value="Unknown">Unknown</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="jobAIAllow" className="after:content-['*'] after:text-red-500 after:ml-0.5">Does this company like candidates to use AI in their job?</Label>
+                  <Select value={jobAIAllow} onValueChange={setJobAIAllow} required>
+                    <SelectTrigger id="jobAIAllow" className="mt-2">
+                      <SelectValue placeholder="Select your option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Yes">Yes</SelectItem>
+                      <SelectItem value="No">No</SelectItem>
+                      <SelectItem value="Unknown">Unknown</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="aiToolUsed" className="after:content-['*'] after:text-red-500 after:ml-0.5">Which AI tool did you use?</Label>
+                  <Input
+                    id="aiToolUsed"
+                    value={aiToolUsed}
+                    onChange={(e) => setAiToolUsed(e.target.value)}
+                    placeholder="LockedIn AI"
+                    className="mt-2"
+                    required
+                  />
                 </div>
 
                 <div>
@@ -294,9 +442,9 @@ const AddReview = () => {
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="yes">Yes</SelectItem>
-                      <SelectItem value="no">No</SelectItem>
-                      <SelectItem value="pending">Pending</SelectItem>
+                      <SelectItem value="yes">Accepted</SelectItem>
+                      <SelectItem value="no">Rejected</SelectItem>
+                      <SelectItem value="pending">No offer</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

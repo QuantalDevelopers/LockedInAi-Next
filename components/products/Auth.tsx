@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // <-- Use Next.js router
+import { useRouter, useSearchParams } from "next/navigation"; // <-- Use Next.js router
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,6 +23,9 @@ export default function Auth() {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+  const searchParams = useSearchParams(); // Get URL params
+  const redirectUrl = searchParams.get("redirect_url") || "/"; // Default to home page
+
   const { toast } = useToast();
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -61,7 +64,7 @@ export default function Auth() {
         password,
       });
       if (error) throw error;
-      router.push("/");
+      router.push(redirectUrl);
     } catch (error: any) {
       toast({
         variant: "destructive",
