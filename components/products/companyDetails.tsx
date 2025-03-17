@@ -336,7 +336,8 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 mt-40">
+    // <div className="min-h-screen bg-gray-50 mt-40">
+    <div className="md:py-40 flex h-full items-center justify-center px-2 py-20 ">
       <div className="max-w-4xl mx-auto py-8 px-4">
         <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
           <div className="flex items-start justify-between mb-6">
@@ -397,7 +398,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
           </div>
           <Button 
             variant="default"
-            className="px-6 h-12 bg-sky-500 hover:bg-sky-600 text-base"
+            className="px-6 h-12 bg-sky-500 hover:bg-sky-600 text-white"
             onClick={handleSearch}
           >
             Find interviews

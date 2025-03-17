@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 
+
 type Company = {
   id: string;
   name: string;
@@ -83,28 +84,29 @@ function CompanyIndex() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 mt-52"> 
+    // <div className="min-h-screenbg-gray-50  md:py -30 "> 
+    <div  className="md:py-40 flex h-full items-center justify-center px-2 py-20 ">
       <div className="max-w-[1200px] mx-auto py-8 px-4">
         <div className="flex gap-8">
           <div className="w-80 flex-shrink-0">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6">Explore companies</h1>
+            <h1 className="text-3xl font-bold text-gray-300 mb-6">Explore companies</h1>
             <div className="space-y-6">
               <div>
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">Filter companies</h2>
-                <p className="text-gray-600 mb-4">
+                <h2 className="text-xl font-semibold text-gray-300 mb-2">Filter companies</h2>
+                <p className="text-gray-300 mb-4">
                   {isLoading ? "Loading..." : `1-${filteredCompanies.length} of ${companies.length} results`}
                 </p>
                 <div className="space-y-6">
                   <div>
-                    <Label className="text-black">Company</Label>
+                    <Label>Company</Label>
                     <Input type="text" placeholder="Select a company" value={companySearch} onChange={(e) => setCompanySearch(e.target.value)} className="mt-1 text-black" />
                   </div>
                   <div>
-                    <Label className="text-black">Location</Label>
+                    <Label>Location</Label>
                     <Input type="text" placeholder="Select a location" value={locationSearch} onChange={(e) => setLocationSearch(e.target.value)} className="mt-1 text-black" />
                   </div>
                   <div>
-                    <Label className="text-black">Industries</Label>
+                    <Label >Industries</Label>
                     <Input type="text" placeholder="E.g. healthcare, internet, education" value={industrySearch} onChange={(e) => setIndustrySearch(e.target.value)} className="mt-1 text-black" />
                   </div>
                   <button onClick={() => { setCompanySearch(""); setLocationSearch(""); setIndustrySearch(""); }} className="text-green-600 hover:text-green-700 font-medium">Clear filters</button>

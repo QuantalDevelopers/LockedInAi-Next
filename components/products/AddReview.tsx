@@ -84,7 +84,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!company || !currentCompanyId || !session?.user?.id) {
       toast({
         title: "Error",
@@ -258,7 +258,8 @@ const AddReview = ({ companyId }: { companyId: string }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-black">
+    // <div className="min-h-screen bg-gray-50 text-black mt-40">
+    <div className="md:py-40 flex h-full items-center justify-center py-20 text-black">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <button
           onClick={() => router.push(`/companyDetails/${currentCompanyId}`)}
@@ -299,31 +300,28 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                 <div>
                   <Label className="after:content-['*'] after:text-red-500 after:ml-0.5">Rate Overall Experience</Label>
                   <div className="flex gap-4 mt-2">
-                    <button 
+                    <button
                       type="button"
-                      className={`p-4 rounded-full transition-colors ${
-                        experience === "positive" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
-                      }`}
+                      className={`p-4 rounded-full transition-colors ${experience === "positive" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
+                        }`}
                       onClick={() => setExperience("positive")}
                       title="Positive"
                     >
                       <ThumbsUp className="w-6 h-6" />
                     </button>
-                    <button 
+                    <button
                       type="button"
-                      className={`p-4 rounded-full transition-colors ${
-                        experience === "neutral" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
-                      }`}
+                      className={`p-4 rounded-full transition-colors ${experience === "neutral" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
+                        }`}
                       onClick={() => setExperience("neutral")}
                       title="Average"
                     >
                       <Minus className="w-6 h-6" />
                     </button>
-                    <button 
+                    <button
                       type="button"
-                      className={`p-4 rounded-full transition-colors ${
-                        experience === "negative" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
-                      }`}
+                      className={`p-4 rounded-full transition-colors ${experience === "negative" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
+                        }`}
                       onClick={() => setExperience("negative")}
                       title="Negative"
                     >
@@ -463,7 +461,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                         <div className="flex items-center justify-between mb-2">
                           <Label className="after:content-['*'] after:text-red-500 after:ml-0.5">Question</Label>
                           {index > 0 && (
-                            <button 
+                            <button
                               type="button"
                               onClick={() => deleteQuestion(index)}
                               className="text-gray-500 hover:text-gray-700"
@@ -472,7 +470,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                             </button>
                           )}
                         </div>
-                        <Input 
+                        <Input
                           value={q.question}
                           onChange={(e) => {
                             const newQuestions = [...questions];
