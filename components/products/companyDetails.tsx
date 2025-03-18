@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -8,16 +8,24 @@ import { Input } from "@/components/ui/input";
 import { Share2, MessageCircle, ThumbsUp, ThumbsDown, Minus, MapPin, Search } from "lucide-react";
 import { Navigate } from "react-router-dom";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useViaParam } from "@/components/affiliate-link";
+
+
 
 const queryClient = new QueryClient();
+
+
 
 export default function CompanyDetails({ companyId }: { companyId: string }) {
   return (
     <QueryClientProvider client={queryClient}>
       <CompanyDetailsContent companyId={companyId} />
     </QueryClientProvider>
-    
   );
+
+  
+
 }
 
 
@@ -26,6 +34,26 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const router = useRouter();
+  const via = `companyDetails/${companyId}`;
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data } = await supabase.auth.getUser();
+      const User = data?.user;
+      console.log(User);
+      setUser(User);
+
+      if (!User) {
+        router.push(`https://app.lockedinai.com${via ? `?via=${via}` : ""}`); // ✅ Proper string interpolation
+      }
+    };
+
+    if (typeof window !== "undefined") {  // ✅ Ensure this runs only on the client
+      fetchUser();
+    }
+  }, [companyId, router]);
 
   
   const { data: company, isLoading } = useQuery({
@@ -339,10 +367,11 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
     // <div className="min-h-screen bg-gray-50 mt-40">
     <div className="md:py-40 flex h-full items-center justify-center px-2 py-20 ">
       <div className="max-w-4xl mx-auto py-8 px-4">
-        <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-          <div className="flex items-start justify-between mb-6">
+        <div  className="p-6 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+  style={{ backgroundColor: "rgb(30, 30, 30)"}}>
+          <div className="flex items-start justify-between mb-6 ">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+              <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center ">
                 {company?.logo ? (
                   <img
                     src={company.logo}
@@ -356,7 +385,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                 )}
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900 mb-1">
+                <h1 className="text-2xl font-bold text-gray-100 mb-1">
                   {company?.name}
                 </h1>
               </div>
@@ -374,20 +403,20 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
           <div className="space-y-6">
             <div>
-              <h2 className="text-xl font-semibold text-gray-900 mb-3">Overview</h2>
-              <p className="text-gray-600">{company?.description}</p>
+              <h2 className="text-xl font-semibold text-gray-100 mb-3">Overview</h2>
+              <p className="text-gray-100">{company?.description}</p>
             </div>
           </div>
         </div>
 
-        <div className="flex gap-4 mb-6 text-black">
+        <div className="flex gap-4 mb-6 mt-3 text-black">
           <div className="flex-1">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-100 w-5 h-5" />
               <Input 
                 type="text" 
                 placeholder="Search job titles"
-                className="w-full pl-10 h-12 text-base bg-white border-gray-200"
+                className="w-full pl-10 h-12 text-base bg-[rgb(30,30,30)] border-gray-200 text-white"
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
@@ -407,13 +436,14 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
         <div className="space-y-6">
           {filteredInterviews.map((interview) => (
-            <div key={interview.id} className="bg-white rounded-lg border border-gray-200 p-6">
+            <div key={interview.id} className="p-6 rounded-lg border border-sky-100 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+            style={{ backgroundColor: "rgb(30, 30, 30)" }}>
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h2 className="text-xl font-semibold text-gray-100 mb-2">
                     {interview.position}
                   </h2>
-                  <div className="flex items-center gap-4 text-gray-600 mb-3">
+                  <div className="flex items-center gap-4 text-gray-100 mb-3">
                     {(interview.job_location || interview.job_country) && (
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
@@ -426,20 +456,20 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                     )}
                   </div>
                   <div className="flex items-center gap-4 mb-3">
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-gray-100">
                       <span>{interview.offer === 'Accepted' ? 'Accepted offer' : interview.offer === 'Rejected' ? 'Rejected' : 'No offer'}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-gray-100">
                       {getExperienceIcon(interview.experience)}
                       <span>{interview.experience} experience</span>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-gray-100">
                       {getDifficultyIcon(interview.difficulty)}
                       <span>{interview.difficulty} interview</span>
                     </div>
                   </div>
                 </div>
-                <span className="text-gray-500 text-sm">
+                <span className="text-gray-100 text-sm">
                   {new Date(interview.date).toLocaleDateString('en-US', { 
                     year: 'numeric',
                     month: 'short',
@@ -450,34 +480,34 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
               <div className="space-y-4 mb-6">
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-2">Application</h3>
-                  <p className="text-gray-600">{interview.application_source}</p>
+                  <h3 className="font-medium text-gray-100 mb-2">Application</h3>
+                  <p className="text-gray-100">{interview.application_source}</p>
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-2">Interview</h3>
-                  <p className="text-gray-600">{interview.interview_process}</p>
+                  <h3 className="font-medium text-gray-100 mb-2">Interview</h3>
+                  <p className="text-gray-100">{interview.interview_process}</p>
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-2">AI Usage</h3>
+                  <h3 className="font-medium text-gray-100 mb-2">AI Usage</h3>
                   <div className="space-y-4">
                     <div>
-                      <p className="text-gray-600 font-medium">Does this interview allow AI?</p>
+                      <p className="text-gray-100 font-medium">Does this interview allow AI?</p>
                       <ul className="list-disc pl-6 mt-1">
-                      <li className="text-gray-600">{(interview as any).interview_ai_allow || "Not specified"}</li>
+                      <li className="text-gray-100">{(interview as any).interview_ai_allow || "Not specified"}</li>
                       </ul>
                     </div>
                     <div>
-                      <p className="text-gray-600 font-medium">Does this company like candidates to use AI in their job?</p>
+                      <p className="text-gray-100 font-medium">Does this company like candidates to use AI in their job?</p>
                       <ul className="list-disc pl-6 mt-1">
-                        <li className="text-gray-600">{(interview as any).job_ai_allow || "Not specified"}</li>
+                        <li className="text-gray-100">{(interview as any).job_ai_allow || "Not specified"}</li>
                       </ul>
                     </div>
                     <div>
-                      <p className="text-gray-600 font-medium">Which AI tool did you use?</p>
+                      <p className="text-gray-100 font-medium">Which AI tool did you use?</p>
                       <ul className="list-disc pl-6 mt-1">
-                        <li className="text-gray-600">{(interview as any).ai_interview_assisted_tool_used || "None"}</li>
+                        <li className="text-gray-100">{(interview as any).ai_interview_assisted_tool_used || "None"}</li>
                       </ul>
                     </div>
                   </div>
@@ -485,17 +515,17 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
                 {interview.interview_questions && interview.interview_questions.length > 0 && (
                   <div>
-                    <h3 className="font-medium text-gray-900 mb-2">
+                    <h3 className="font-medium text-gray-100 mb-2">
                       Interview questions [{interview.interview_questions.length}]
                     </h3>
                     <div className="space-y-4">
                       {interview.interview_questions.map((q, index) => (
                         <div key={q.id}>
-                          <p className="text-gray-600">
+                          <p className="text-gray-100">
                             {index + 1}. {q.question}
                           </p>
                           {q.answer && (
-                            <ul className="mt-2 ml-8 list-disc text-gray-600">
+                            <ul className="mt-2 ml-8 list-disc text-gray-100">
                               <li>{q.answer}</li>
                             </ul>
                           )}

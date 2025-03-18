@@ -259,7 +259,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
   return (
     // <div className="min-h-screen bg-gray-50 text-black mt-40">
-    <div className="md:py-40 flex h-full items-center justify-center py-20 text-black">
+    <div className="md:py-40 flex h-full items-center justify-center py-20 ">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <button
           onClick={() => router.push(`/companyDetails/${currentCompanyId}`)}
@@ -271,14 +271,15 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg border border-gray-200 p-6">
+            <form onSubmit={handleSubmit} className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md hover:border-sky-300"
+  style={{ backgroundColor: "rgb(30, 30, 30)" }}>
               <h1 className="text-3xl font-bold mb-6">Tell us about a recent job interview</h1>
 
               <div className="space-y-6">
                 <div>
                   <Label htmlFor="employer">Employer</Label>
                   <div className="flex items-center gap-4 mt-2">
-                    <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gray-600 rounded flex items-center justify-center">
                       {company.logo ? (
                         <img
                           src={company.logo}
@@ -291,7 +292,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                         </div>
                       )}
                     </div>
-                    <div className="flex-1 bg-gray-50 border border-gray-200 rounded-md px-4 py-2 text-gray-700">
+                    <div className="flex-1 bg-gray-50 border border-gray-200 rounded-md px-4 py-2 text-white bg-[rgb(30,30,30)]">
                       {company.name}
                     </div>
                   </div>
@@ -302,7 +303,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                   <div className="flex gap-4 mt-2">
                     <button
                       type="button"
-                      className={`p-4 rounded-full transition-colors ${experience === "positive" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
+                      className={`p-4 rounded-full transition-colors ${experience === "positive" ? "bg-gray-900 text-white" : "hover:bg-gray-900"
                         }`}
                       onClick={() => setExperience("positive")}
                       title="Positive"
@@ -332,18 +333,18 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
                 <div>
                   <Label htmlFor="jobTitle" className="after:content-['*'] after:text-red-500 after:ml-0.5">Job Title</Label>
-                  <Input id="jobTitle" className="mt-2" required />
+                  <Input id="jobTitle" className="mt-2 text-white bg-[rgb(30,30,30)] border-gray-300 focus:border-gray-500 focus:ring-0" required />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
+                  <div >
                     <Label htmlFor="jobLocation" className="after:content-['*'] after:text-red-500 after:ml-0.5">Job Location (City)</Label>
                     <Input
                       id="jobLocation"
                       value={jobLocation}
                       onChange={(e) => setJobLocation(e.target.value)}
                       placeholder="e.g., San Francisco"
-                      className="mt-2"
+                      className=" mt-2 text-white bg-[rgb(30,30,30)]"
                       required
                     />
                   </div>
@@ -354,7 +355,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                       value={jobCountry}
                       onChange={(e) => setJobCountry(e.target.value)}
                       placeholder="e.g., United States"
-                      className="mt-2"
+                      className=" mt-2 text-white bg-[rgb(30,30,30)]"
                       required
                     />
                   </div>
@@ -366,7 +367,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="interviewAIAllow" className="mt-2">
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
-                    <SelectContent className="text-black bg-gray-50">
+                    <SelectContent className="text-white bg-[rgb(30,30,30)]">
                       <SelectItem value="Yes">Yes</SelectItem>
                       <SelectItem value="No">No</SelectItem>
                       <SelectItem value="Unknown">Unknown</SelectItem>
@@ -380,7 +381,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="jobAIAllow" className="mt-2">
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
-                    <SelectContent className="text-black bg-gray-50">
+                    <SelectContent className="text-white bg-[rgb(30,30,30)]">
                       <SelectItem value="Yes">Yes</SelectItem>
                       <SelectItem value="No">No</SelectItem>
                       <SelectItem value="Unknown">Unknown</SelectItem>
@@ -395,7 +396,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     value={aiToolUsed}
                     onChange={(e) => setAiToolUsed(e.target.value)}
                     placeholder="LockedIn AI"
-                    className="mt-2"
+                    className=" mt-2 text-white bg-[rgb(30,30,30)]"
                     required
                   />
                 </div>
@@ -407,7 +408,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     value={applicationSource}
                     onChange={(e) => setApplicationSource(e.target.value)}
                     placeholder="e.g., Applied through referral, Company website, LinkedIn"
-                    className="mt-2"
+                    className=" mt-2 text-white bg-[rgb(30,30,30)]"
                     required
                   />
                 </div>
@@ -431,7 +432,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="difficulty" className="mt-2">
                       <SelectValue placeholder="Select difficulty level" />
                     </SelectTrigger>
-                    <SelectContent className="text-black bg-gray-50">
+                    <SelectContent className="text-white bg-[rgb(30,30,30)]">
                       <SelectItem value="easy">Easy</SelectItem>
                       <SelectItem value="average">Average</SelectItem>
                       <SelectItem value="difficult">Difficult</SelectItem>
@@ -445,7 +446,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="offer" className="mt-2">
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
-                    <SelectContent className="text-black bg-gray-50">
+                    <SelectContent className="text-white bg-[rgb(30,30,30)]">
                       <SelectItem value="yes">Accepted</SelectItem>
                       <SelectItem value="no">Rejected</SelectItem>
                       <SelectItem value="pending">No offer</SelectItem>
@@ -464,7 +465,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                             <button
                               type="button"
                               onClick={() => deleteQuestion(index)}
-                              className="text-gray-500 hover:text-gray-700"
+                              className="text-gray-500 hover:text-gray-100"
                             >
                               <Trash2 className="w-5 h-5" />
                             </button>
@@ -478,7 +479,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                             setQuestions(newQuestions);
                           }}
                           placeholder="What was the one thing that they asked you?"
-                          className="mt-2"
+                          className="mt-2 text-white bg-[rgb(30,30,30)]"
                           required
                         />
                       </div>
@@ -514,9 +515,10 @@ const AddReview = ({ companyId }: { companyId: string }) => {
           </div>
 
           <div className="md:col-span-1">
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md "
+  style={{ backgroundColor: "rgb(30, 30, 30)" }}>
               <h2 className="text-2xl font-bold mb-4">Keep it Real</h2>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-100 mb-6">
                 Thank you for contributing to the community. Your opinion will help others make decisions about jobs and companies.
               </p>
               <div>
@@ -527,7 +529,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                   </a>{" "}
                   and do not post:
                 </h3>
-                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                <ul className="list-disc pl-5 space-y-2 text-gray-100">
                   <li>Aggressive or discriminatory language</li>
                   <li>Profanities</li>
                   <li>Trade secrets/confidential information</li>

@@ -76,7 +76,7 @@ function CompanyIndex() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Error loading companies</h2>
+          <h2 className="text-xl font-semibold text-gray-100 mb-2">Error loading companies</h2>
           <p className="text-gray-600">Please try again later</p>
         </div>
       </div>
@@ -84,7 +84,6 @@ function CompanyIndex() {
   }
 
   return (
-    // <div className="min-h-screenbg-gray-50  md:py -30 "> 
     <div  className="md:py-40 flex h-full items-center justify-center px-2 py-20 ">
       <div className="max-w-[1200px] mx-auto py-8 px-4">
         <div className="flex gap-8">
@@ -123,8 +122,14 @@ function CompanyIndex() {
               ) : (
                 filteredCompanies.map((company: Company) => (
                   <div key={company.id} onClick={() => handleCompanyClick(company.id)} className="cursor-pointer">
-                    <div className="p-6 bg-white rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300">
-                      <div className="flex gap-4">
+                    <div  className="p-6 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+      style={{
+        backgroundColor: "rgb(30, 30, 30)",
+        transition: "background-color 0.3s ease-in-out",
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgb(50, 50, 50)")}
+      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgb(30, 30, 30)")}>
+                      <div className="flex gap-4 text-white">
                         <div className="w-16 h-16 bg-sky-50 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
                           {company.logo ? (
                             <img src={company.logo} alt={`${company.name} logo`} className="w-12 h-12 object-contain" />
@@ -133,8 +138,8 @@ function CompanyIndex() {
                           )}
                         </div>
                         <div className="flex-grow">
-                          <h3 className="text-xl font-semibold text-gray-900 mb-2">{company.name}</h3>
-                          <div className="flex items-center gap-2 text-gray-500 mb-2">
+                          <h3 className="text-xl font-semibold text-gray-100 mb-2">{company.name}</h3>
+                          <div className="flex items-center gap-2 text-gray-100 mb-2">
                             <span>{company.country || "Location not specified"}</span>
                           </div>
                           {company.industries && (
@@ -142,7 +147,7 @@ function CompanyIndex() {
                               <span className="px-2 py-1 bg-sky-50 text-sky-600 text-sm rounded-full">{company.industries}</span>
                             </div>
                           )}
-                          <p className="text-gray-600 mb-4 line-clamp-2">{company.description}</p>
+                          <p className="text-gray-100 mb-4 line-clamp-2">{company.description}</p>
                         </div>
                       </div>
                     </div>

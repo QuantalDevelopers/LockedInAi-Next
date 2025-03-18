@@ -49,7 +49,7 @@ function ViaParamComponent() {
 
 export function useViaParam() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={null}>+
       <ViaParamComponent />
     </Suspense>
   );

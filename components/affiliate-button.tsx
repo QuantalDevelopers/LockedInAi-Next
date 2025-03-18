@@ -93,6 +93,7 @@ const BaseStartPracticingButton = ({ via }: { via: string }) => {
 
 const BaseStartForFreeButtonHero = ({ via }: { via: string }) => {
   const startForFreeUrl = `https://app.lockedinai.com${via ? `?via=${via}` : ""}`;
+  console.log("the via value is here",via);
   return (
     <div className="mt-4 flex justify-center">
       <a className="button-86 mb-4 !text-lg font-bold" href={startForFreeUrl}>
@@ -104,6 +105,7 @@ const BaseStartForFreeButtonHero = ({ via }: { via: string }) => {
 
 const BaseStartForFreeButtonIsItFree = ({ via }: { via: string }) => {
   const startForFreeUrl = `https://app.lockedinai.com${via ? `?via=${via}` : ""}`;
+  console.log("the via value is here",via);
   return (
     <div className="relative z-10 my-10 flex flex-col items-center justify-center gap-2">
       <a className="button-86 mb-4 !text-lg font-bold" href={startForFreeUrl}>
@@ -115,6 +117,7 @@ const BaseStartForFreeButtonIsItFree = ({ via }: { via: string }) => {
 
 const BaseStartForFreeButtonAiCopilot = ({ via }: { via: string }) => {
   const startForFreeUrl = `https://app.lockedinai.com${via ? `?via=${via}` : ""}`;
+  console.log("the via value is here",via);
   return (
     <div className="mt-20 flex items-center justify-center">
       <a className="button-86 mb-4 !text-lg font-bold" href={startForFreeUrl}>
