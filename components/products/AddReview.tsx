@@ -292,7 +292,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                         </div>
                       )}
                     </div>
-                    <div className="flex-1 bg-gray-50 border border-gray-200 rounded-md px-4 py-2 text-white bg-[rgb(30,30,30)]">
+                    <div className="flex-1  text-white border border-gray-200 rounded-md px-4 py-2 text-black bg-[rgb(30,30,30)]">
                       {company.name}
                     </div>
                   </div>
@@ -367,10 +367,10 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     <SelectTrigger id="interviewAIAllow" className="mt-2">
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
-                    <SelectContent className="text-white bg-[rgb(30,30,30)]">
-                      <SelectItem value="Yes">Yes</SelectItem>
-                      <SelectItem value="No">No</SelectItem>
-                      <SelectItem value="Unknown">Unknown</SelectItem>
+                    <SelectContent className="text-white bg-[rgb(30,30,30)] ">
+                      <SelectItem value="Yes" className="hover:bg-[rgb(60,60,60)]">Yes</SelectItem>
+                      <SelectItem value="No" className="hover:bg-[rgb(60,60,60)]">No</SelectItem>
+                      <SelectItem value="Unknown" className="hover:bg-[rgb(60,60,60)]">Unknown</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -382,9 +382,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
                     <SelectContent className="text-white bg-[rgb(30,30,30)]">
-                      <SelectItem value="Yes">Yes</SelectItem>
-                      <SelectItem value="No">No</SelectItem>
-                      <SelectItem value="Unknown">Unknown</SelectItem>
+                      <SelectItem value="Yes" className="hover:bg-[rgb(60,60,60)]">Yes</SelectItem>
+                      <SelectItem value="No" className="hover:bg-[rgb(60,60,60)]">No</SelectItem>
+                      <SelectItem value="Unknown" className="hover:bg-[rgb(60,60,60)]">Unknown</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -433,9 +433,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                       <SelectValue placeholder="Select difficulty level" />
                     </SelectTrigger>
                     <SelectContent className="text-white bg-[rgb(30,30,30)]">
-                      <SelectItem value="easy">Easy</SelectItem>
-                      <SelectItem value="average">Average</SelectItem>
-                      <SelectItem value="difficult">Difficult</SelectItem>
+                      <SelectItem value="easy" className="hover:bg-[rgb(60,60,60)]">Easy</SelectItem>
+                      <SelectItem value="average" className="hover:bg-[rgb(60,60,60)]">Average</SelectItem>
+                      <SelectItem value="difficult" className="hover:bg-[rgb(60,60,60)]">Difficult</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -447,9 +447,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                       <SelectValue placeholder="Select your option" />
                     </SelectTrigger>
                     <SelectContent className="text-white bg-[rgb(30,30,30)]">
-                      <SelectItem value="yes">Accepted</SelectItem>
-                      <SelectItem value="no">Rejected</SelectItem>
-                      <SelectItem value="pending">No offer</SelectItem>
+                      <SelectItem value="yes" className="hover:bg-[rgb(60,60,60)]">Accepted</SelectItem>
+                      <SelectItem value="no" className="hover:bg-[rgb(60,60,60)]">Rejected</SelectItem>
+                      <SelectItem value="pending" className="hover:bg-[rgb(60,60,60)]">No offer</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

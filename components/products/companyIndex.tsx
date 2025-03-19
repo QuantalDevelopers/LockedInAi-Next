@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { BuildingIcon } from "lucide-react";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-
 
 type Company = {
   id: string;
@@ -34,21 +32,8 @@ function CompanyIndex() {
   const [companySearch, setCompanySearch] = useState("");
   const [locationSearch, setLocationSearch] = useState("");
   const [industrySearch, setIndustrySearch] = useState("");
-  const [user, setUser] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const { data } = await supabase.auth.getUser();
-      const User = data?.user;
-      console.log(User)
-      setUser(User);
-      if (User === null) {
-        router.push('/Auth?redirect_url=CompanyIndex');
-      }
-    };
-    fetchUser();
-
-  }, []);
+  const itemsPerPage = 5;
+  const [currentPage, setCurrentPage] = useState(1);
 
   const { data: companies = [], isLoading, error } = useQuery({
     queryKey: ["companies"],
@@ -63,6 +48,7 @@ function CompanyIndex() {
     router.push(`/companyDetails/${companyId}`);
   };
 
+  // ✅ Filter Companies **Before Pagination**
   const filteredCompanies = companies.filter((company) => {
     return (
       company.name.toLowerCase().includes(companySearch.toLowerCase()) &&
@@ -71,6 +57,17 @@ function CompanyIndex() {
       (!industrySearch || company.industries.toLowerCase().includes(industrySearch.toLowerCase()))
     );
   });
+
+  // ✅ Apply Pagination **Only If No Search Query**
+  const paginatedCompanies =
+    companySearch || locationSearch || industrySearch
+      ? filteredCompanies
+      : filteredCompanies.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredCompanies.length / itemsPerPage);
+  const handleNextPage = () => currentPage < totalPages && setCurrentPage((prev) => prev + 1);
+  const handlePrevPage = () => currentPage > 1 && setCurrentPage((prev) => prev - 1);
 
   if (error) {
     return (
@@ -84,75 +81,123 @@ function CompanyIndex() {
   }
 
   return (
-    <div  className="md:py-40 flex h-full items-center justify-center px-2 py-20 ">
+    <div className="md:py-40 flex h-full items-center justify-center px-2 py-20">
       <div className="max-w-[1200px] mx-auto py-8 px-4">
         <div className="flex gap-8">
+          {/* Sidebar Filters */}
           <div className="w-80 flex-shrink-0">
             <h1 className="text-3xl font-bold text-gray-300 mb-6">Explore companies</h1>
             <div className="space-y-6">
               <div>
                 <h2 className="text-xl font-semibold text-gray-300 mb-2">Filter companies</h2>
                 <p className="text-gray-300 mb-4">
-                  {isLoading ? "Loading..." : `1-${filteredCompanies.length} of ${companies.length} results`}
+                  {isLoading
+                    ? "Loading..."
+                    : `Showing ${filteredCompanies.length === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1}- 
+                      ${Math.min(currentPage * itemsPerPage, filteredCompanies.length)} of ${filteredCompanies.length} results`}
                 </p>
                 <div className="space-y-6">
                   <div>
                     <Label>Company</Label>
-                    <Input type="text" placeholder="Select a company" value={companySearch} onChange={(e) => setCompanySearch(e.target.value)} className="mt-1 text-black" />
+                    <Input
+                      type="text"
+                      placeholder="Search company"
+                      value={companySearch}
+                      onChange={(e) => {
+                        setCompanySearch(e.target.value);
+                        setCurrentPage(1); // Reset pagination when searching
+                      }}
+                      className="mt-1 text-black"
+                    />
                   </div>
                   <div>
                     <Label>Location</Label>
-                    <Input type="text" placeholder="Select a location" value={locationSearch} onChange={(e) => setLocationSearch(e.target.value)} className="mt-1 text-black" />
+                    <Input
+                      type="text"
+                      placeholder="Search location"
+                      value={locationSearch}
+                      onChange={(e) => {
+                        setLocationSearch(e.target.value);
+                        setCurrentPage(1); // Reset pagination
+                      }}
+                      className="mt-1 text-black"
+                    />
                   </div>
                   <div>
-                    <Label >Industries</Label>
-                    <Input type="text" placeholder="E.g. healthcare, internet, education" value={industrySearch} onChange={(e) => setIndustrySearch(e.target.value)} className="mt-1 text-black" />
+                    <Label>Industries</Label>
+                    <Input
+                      type="text"
+                      placeholder="E.g. healthcare, internet, education"
+                      value={industrySearch}
+                      onChange={(e) => {
+                        setIndustrySearch(e.target.value);
+                        setCurrentPage(1); // Reset pagination
+                      }}
+                      className="mt-1 text-black"
+                    />
                   </div>
-                  <button onClick={() => { setCompanySearch(""); setLocationSearch(""); setIndustrySearch(""); }} className="text-green-600 hover:text-green-700 font-medium">Clear filters</button>
+                  <button
+                    onClick={() => {
+                      setCompanySearch("");
+                      setLocationSearch("");
+                      setIndustrySearch("");
+                      setCurrentPage(1); // Reset pagination when filters are cleared
+                    }}
+                    className="text-green-600 hover:text-green-700 font-medium"
+                  >
+                    Clear filters
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Company Listings */}
           <div className="flex-grow">
             <div className="space-y-6">
               {isLoading ? (
                 <div className="text-center py-8">Loading companies...</div>
-              ) : filteredCompanies.length === 0 ? (
+              ) : paginatedCompanies.length === 0 ? (
                 <div className="text-center py-8">No companies found matching your filters.</div>
               ) : (
-                filteredCompanies.map((company: Company) => (
+                paginatedCompanies.map((company: Company) => (
                   <div key={company.id} onClick={() => handleCompanyClick(company.id)} className="cursor-pointer">
-                    <div  className="p-6 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
-      style={{
-        backgroundColor: "rgb(30, 30, 30)",
-        transition: "background-color 0.3s ease-in-out",
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgb(50, 50, 50)")}
-      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgb(30, 30, 30)")}>
-                      <div className="flex gap-4 text-white">
-                        <div className="w-16 h-16 bg-sky-50 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
+                    <div
+                      className="p-8 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+                      style={{
+                        backgroundColor: "rgb(30, 30, 30)",
+                        transition: "background-color 0.3s ease-in-out",
+                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgb(50, 50, 50)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgb(30, 30, 30)")}
+                    >
+                      <div className="flex gap-6 text-white">
+                        <div className="w-20 h-20 bg-sky-50 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
                           {company.logo ? (
-                            <img src={company.logo} alt={`${company.name} logo`} className="w-12 h-12 object-contain" />
+                            <img src={company.logo} alt={`${company.name} logo`} className="w-16 h-16 object-contain" />
                           ) : (
-                            <BuildingIcon className="w-8 h-8 text-sky-400" />
+                            <BuildingIcon className="w-10 h-10 text-sky-400" />
                           )}
                         </div>
                         <div className="flex-grow">
-                          <h3 className="text-xl font-semibold text-gray-100 mb-2">{company.name}</h3>
-                          <div className="flex items-center gap-2 text-gray-100 mb-2">
-                            <span>{company.country || "Location not specified"}</span>
-                          </div>
-                          {company.industries && (
-                            <div className="flex flex-wrap gap-2 mb-4">
-                              <span className="px-2 py-1 bg-sky-50 text-sky-600 text-sm rounded-full">{company.industries}</span>
-                            </div>
-                          )}
-                          <p className="text-gray-100 mb-4 line-clamp-2">{company.description}</p>
+                          <h3 className="text-2xl font-semibold text-gray-100 mb-2">{company.name}</h3>
+                          <p className="text-gray-100 mb-4 text-lg line-clamp-3">{company.description}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))
+              )}
+              {/* Pagination Controls */}
+              {!companySearch && !locationSearch && !industrySearch && (
+                <div className="flex justify-between items-center mt-6 px-4">
+                  <button onClick={handlePrevPage} disabled={currentPage === 1} className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-500 disabled:opacity-50">
+                    ← Previous
+                  </button>
+                  <button onClick={handleNextPage} disabled={currentPage === totalPages} className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-500 disabled:opacity-50">
+                    Next →
+                  </button>
+                </div>
               )}
             </div>
           </div>

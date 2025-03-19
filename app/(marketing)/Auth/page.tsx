@@ -1,10 +1,13 @@
 import Auth from "@/components/products/Auth";
+import AuthLayout from "./layout";
+import RootLayout from "../layout";
 
 export default function AuthPage() {
-
-    return(
+  return (
         <div className="relative overflow-hidden">
-            <Auth />
+          <AuthLayout>
+          <Auth />
+          </AuthLayout>
         </div>
-    )
+  );
 }

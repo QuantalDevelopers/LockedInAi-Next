@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log("User session is present...", session);
       setSession(session);
       setLoading(false);
     });
@@ -30,7 +31,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (!session) {
-        router.push('/auth');
+        router.push('/Auth');
       }
     });
 

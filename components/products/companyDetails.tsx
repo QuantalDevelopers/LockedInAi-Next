@@ -36,24 +36,39 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
   const [isSearching, setIsSearching] = useState(false);
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
-  const via = `companyDetails/${companyId}`;
+  // const via = `companyDetails/${companyId}`;
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const { data } = await supabase.auth.getUser();
-      const User = data?.user;
-      console.log(User);
-      setUser(User);
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const { data } = await supabase.auth.getUser();
+  //     const User = data?.user;
+  //     console.log(User);
+  //     setUser(User);
 
-      if (!User) {
-        router.push(`https://app.lockedinai.com${via ? `?via=${via}` : ""}`); // ✅ Proper string interpolation
-      }
-    };
+  //     if (!User) {
+  //       router.push(`https://app.lockedinai.com${via ? `?via=${via}` : ""}`); // ✅ Proper string interpolation
+  //     }
+  //   };
 
-    if (typeof window !== "undefined") {  // ✅ Ensure this runs only on the client
+  //   if (typeof window !== "undefined") {  // ✅ Ensure this runs only on the client
+  //     fetchUser();
+  //   }
+  // }, [companyId, router]);
+
+  
+    useEffect(() => {
+      const fetchUser = async () => {
+        const { data } = await supabase.auth.getUser();
+        const User = data?.user;
+        console.log(User)
+        setUser(User);
+        if (User === null) {
+          router.push(`/Auth?redirect_url=companyDetails/${companyId}`);
+        }
+      };
       fetchUser();
-    }
-  }, [companyId, router]);
+  
+    }, []);
 
   
   const { data: company, isLoading } = useQuery({

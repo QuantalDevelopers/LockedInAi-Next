@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import { AuthProvider } from "@/providers/AuthProvider";
-
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
@@ -9,8 +8,11 @@ import Banner from "@/components/banner";
 import { Cursor } from "@/components/cursor";
 import { Footer } from "@/components/footer";
 import { NavBar } from "@/components/navbar";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
 import { constructImageURL } from "@/lib/image-hosting";
 import { cn } from "@/lib/utils";
+import { headers } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +37,6 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: constructImageURL("/landing/link-sharing/icon.png"),
   },
-  // Set the canonical URL via alternates
   alternates: {
     canonical: "https://www.lockedinai.com/",
   },
@@ -79,18 +80,38 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Get pathname from referer
+  const headersList = headers();
+  const referer = headersList.get("referer") || "";
+
+  let pathname = "/";
+  try {
+    if (referer) {
+      const url = new URL(referer);
+      pathname = url.pathname;
+    }
+  } catch (error) {
+    console.error("Invalid referer URL:", error);
+  }
+
+  console.log("Extracted Pathname:", pathname);
+
+  // Check if the current path is an auth page
+  const isAuthPage =
+    pathname.startsWith("/Auth") || pathname === "/login" || pathname === "/signup";
   return (
     <html lang="en">
       <body
         className={cn(inter.className, "h-full w-full bg-charcoal antialiased")}
       >
+        <Toaster />
+        <Sonner />
         <AuthProvider>
           <ViewTransitions>
-            {/* <Banner /> */}
             <Cursor />
-            <NavBar />
+            {!isAuthPage && <NavBar />} {/* Hide Navbar on auth pages */}
             {children}
-            <Footer />
+            {!isAuthPage && <Footer />} {/* Hide Footer on auth pages */}
           </ViewTransitions>
         </AuthProvider>
       </body>
