@@ -36,6 +36,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
   const [isSearching, setIsSearching] = useState(false);
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
+  // 
   // const via = `companyDetails/${companyId}`;
 
   // useEffect(() => {
