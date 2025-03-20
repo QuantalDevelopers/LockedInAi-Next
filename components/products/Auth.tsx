@@ -634,11 +634,318 @@
 //   );
 // }
 
+
+//3rd attempt
+// "use client";
+// import useSWR from "swr";
+// import { useNavigate } from 'react-router-dom';
+// import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, SignIn, SignUp } from '@clerk/clerk-react';
+// import { BrowserRouter, Route, Routes, To, useSearchParams, useParams } from 'react-router-dom';
+
+// import NotFound from '@/app/not-found';
+// import CompanyDetails from "./companyDetails";
+
+// if (
+//   !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ||
+//   !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY_DEV
+// ) {
+//   throw new Error('Clerk Missing Publishable Key(s)');
+// }
+
+// const clerkPubKey =
+// //   process.env.NEXT_PUBLIC_ENDPOINT_SWITCH === 'dev'
+//     // process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+//      process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY_DEV;
+
+// function App() {
+ 
+// //   const navigate = useNavigate();
+// //   const [searchParams] = useSearchParams();
+// //   const version = searchParams.get('version');
+// //   const redirectUrl = version === 'v2' ? 'https://v2.lockedinai.com/signin' : undefined;
+// //   const companyId = searchParams.get('companyId');
+  
+// //   console.log('Clerk Publishable Key:', clerkPubKey);
+// const navigate = useNavigate();
+//   const [searchParams] = useSearchParams();
+//   const version = searchParams.get('version');
+//   const companyId = searchParams.get('companyId');
+//   const redirect_url = searchParams.get('redirect_url');
+  
+//   // Determine the redirect URL based on provided parameters
+//   let redirectUrl = 'localhost:3000'; //it will take me to the value where it is coming
+  
+//   if (companyId) {
+//     // redirectUrl = `/companyDetails/${companyId}`;
+//     redirectUrl = `localhost:3000`;
+//   } else if (redirect_url) {
+//     redirectUrl = redirect_url;
+//   }
+// //   } else if (version === 'v2') {
+// //     redirectUrl = 'https://v2.lockedinai.com/signin';
+// //   }
+//   //localhost:3000/companyDetails/${companyId}
+//   //localhost:3000
+  
+//   console.log('Clerk Publishable Key:', clerkPubKey);
+//   console.log('Redirect URL:', redirectUrl);
+
+//   return (
+//     <div className="bg-white h-screen">
+//       <ClerkProvider
+//         publishableKey={clerkPubKey}
+//         appearance={{
+//           elements: {
+//             formButtonPrimary: {
+//               fontSize: 14,
+//               textTransform: 'none',
+//               backgroundColor: '#06B6D4',
+//             },
+//           },
+//         }}
+//       >
+//         <Routes>
+//           <Route
+//             path="/app/*"
+//             element={
+//               <>
+//                 <SignedIn >
+//                   {/* Authenticated routes go here */}
+               
+//                 </SignedIn>
+//                 <SignedOut>
+//                   {/* <RedirectToSignIn signInForceRedirectUrl={companyId ? `/companyDetails/${companyId}` : "/sign-in"} /> */}
+//                   <RedirectToSignIn signInForceRedirectUrl="http://localhost:3000" />
+//                 </SignedOut>
+//               </>
+//             }
+//           />
+//           <Route
+//             path="/sign-in/*"
+//             element={
+//               <div className="flex w-full h-full">
+//                 <div className="w-full md:w-1/2 flex items-center justify-center">
+//                   <SignIn
+//                     routing="path"
+//                     path="/sign-in"
+//                     fallbackRedirectUrl = {redirectUrl}
+//                   />
+//                 </div>
+//                 <div className="hidden md:flex w-1/2 items-center justify-center bg-gray-300 p-10">
+//                   {/* Additional content */}
+//                 </div>
+//               </div>
+//             }
+//           />
+//           <Route
+//             path="/sign-up/*"
+//             element={
+//               <div className="flex w-full h-full">
+//                 <div className="w-full md:w-1/2 flex items-center justify-center">
+//                   <SignUp
+//                     routing="path"
+//                     path="/sign-up"
+//                     fallbackRedirectUrl = {redirectUrl}
+//                   />
+//                 </div>
+//                 <div className="hidden md:flex w-1/2 items-center justify-center bg-gray-300 p-10">
+//                   {/* Additional content */}
+//                 </div>
+//               </div>
+//             }
+//           />
+//           <Route path="/companyDetails/:companyId" element={
+//             <SignedIn>
+//               <CompanyDetails companyId={companyId!} />
+//             </SignedIn>
+//           } />
+//           <Route path="*" element={<NotFound />} />
+//         </Routes>
+//       </ClerkProvider>
+//     </div>
+//   );
+// }
+
+// export default function Example() {
+//   return (
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   );
+// }
+
+// "use client";
+// import useSWR from "swr";
+// import { useNavigate } from 'react-router-dom';
+// import {
+//   ClerkProvider,
+//   SignedIn,
+//   SignedOut,
+//   RedirectToSignIn,
+//   SignIn,
+//   SignUp
+// } from '@clerk/clerk-react';
+// import {
+//   BrowserRouter,
+//   Route,
+//   Routes,
+//   useSearchParams,
+// } from 'react-router-dom';
+
+// import NotFound from '@/app/not-found';
+// import CompanyDetails from "./companyDetails";
+
+// if (
+//   !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ||
+//   !process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY_DEV
+// ) {
+//   throw new Error('Clerk Missing Publishable Key(s)');
+// }
+
+// const clerkPubKey =
+//   process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY_DEV;
+
+// function App() {
+//   const navigate = useNavigate();
+//   const [searchParams] = useSearchParams();
+  
+//   const version = searchParams.get('version');
+//   const companyId = searchParams.get('companyId');
+//   const redirect_url = searchParams.get('redirect_url');
+  
+//   // Default redirect
+//   let redirectUrl = 'http://localhost:3000';
+
+//   // If we have a companyId, send user to that company’s details page
+//   if (companyId) {
+//     redirectUrl = `http://localhost:3000`;
+//   }
+//   // Or if a custom redirect URL was provided, use that
+//   else if (redirect_url) {
+//     // Make sure redirect_url starts with http:// or https:// if you pass it in
+//     redirectUrl = redirect_url;
+//   }
+
+//   console.log('Clerk Publishable Key:', clerkPubKey);
+//   console.log('Redirect URL:', redirectUrl);
+
+//   return (
+//     <div className="bg-white h-screen">
+//       <ClerkProvider
+//         publishableKey={clerkPubKey}
+//         appearance={{
+//           elements: {
+//             formButtonPrimary: {
+//               fontSize: 14,
+//               textTransform: 'none',
+//               backgroundColor: '#06B6D4',
+//             },
+//           },
+//         }}
+//       >
+//         <Routes>
+//           {/* Example of a protected route under /app */}
+//           <Route
+//             path="/app/*"
+//             element={
+//               <>
+//                 <SignedIn>
+//                   {/* Your authenticated /app routes/components go here */}
+//                   {/* e.g., <AppDashboard /> */}
+//                 </SignedIn>
+//                 <SignedOut>
+//                   {/* If user is signed out, send them to our Clerk sign-in page */}
+//                   <RedirectToSignIn redirectUrl="/sign-in" />
+//                 </SignedOut>
+//               </>
+//             }
+//           />
+
+//           {/* Clerk Sign-In Page */}
+//           <Route
+//             path="/sign-in/*"
+//             element={
+//               <div className="flex w-full h-full">
+//                 <div className="w-full md:w-1/2 flex items-center justify-center">
+//                   <SignIn
+//                     routing="path"
+//                     path="/sign-in"
+//                     // Explicitly set where to go after sign-in
+//                     forceRedirectUrl={redirectUrl}
+//                     // If you also want afterSignUp to land at the same place:
+//                     signUpForceRedirectUrl={redirectUrl}
+//                   />
+//                 </div>
+//                 <div className="hidden md:flex w-1/2 items-center justify-center bg-gray-300 p-10">
+//                   {/* Additional content */}
+//                 </div>
+//               </div>
+//             }
+//           />
+
+//           {/* Clerk Sign-Up Page */}
+//           <Route
+//             path="/sign-up/*"
+//             element={
+//               <div className="flex w-full h-full">
+//                 <div className="w-full md:w-1/2 flex items-center justify-center">
+//                   <SignUp
+//                     routing="path"
+//                     path="/sign-up"
+//                     afterSignInUrl={redirectUrl}
+//                     afterSignUpUrl={redirectUrl}
+//                   />
+//                 </div>
+//                 <div className="hidden md:flex w-1/2 items-center justify-center bg-gray-300 p-10">
+//                   {/* Additional content */}
+//                 </div>
+//               </div>
+//             }
+//           />
+
+//           {/* Example of a page that requires sign-in to view company details */}
+//           <Route
+//             path="/companyDetails/:companyId"
+//             element={
+//               <SignedIn>
+//                 <CompanyDetails  companyId={companyId!}/>
+//               </SignedIn>
+//             }
+//           />
+
+//           {/* Catch-all for unmatched routes */}
+//           <Route path="*" element={<NotFound />} />
+//         </Routes>
+//       </ClerkProvider>
+//     </div>
+//   );
+// }
+
+// export default function Example() {
+//   return (
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   );
+// }
+
 "use client";
 import useSWR from "swr";
 import { useNavigate } from 'react-router-dom';
-import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, SignIn, SignUp } from '@clerk/clerk-react';
-import { BrowserRouter, Route, Routes, To, useSearchParams, useParams } from 'react-router-dom';
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  RedirectToSignIn,
+  SignIn,
+  SignUp
+} from '@clerk/clerk-react';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useSearchParams,
+} from 'react-router-dom';
 
 import NotFound from '@/app/not-found';
 import CompanyDetails from "./companyDetails";
@@ -651,40 +958,33 @@ if (
 }
 
 const clerkPubKey =
-//   process.env.NEXT_PUBLIC_ENDPOINT_SWITCH === 'dev'
-    // process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-     process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY_DEV;
+  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY_DEV;
 
 function App() {
- 
-//   const navigate = useNavigate();
-//   const [searchParams] = useSearchParams();
-//   const version = searchParams.get('version');
-//   const redirectUrl = version === 'v2' ? 'https://v2.lockedinai.com/signin' : undefined;
-//   const companyId = searchParams.get('companyId');
-  
-//   console.log('Clerk Publishable Key:', clerkPubKey);
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  
   const version = searchParams.get('version');
   const companyId = searchParams.get('companyId');
   const redirect_url = searchParams.get('redirect_url');
   
-  // Determine the redirect URL based on provided parameters
-  let redirectUrl = 'localhost:3000'; //it will take me to the value where it is coming
-  
+  // Default redirect
+  let redirectUrl = 'http://localhost:3000';
+
+  // If we have a companyId, send user to that company's details page
   if (companyId) {
-    // redirectUrl = `/companyDetails/${companyId}`;
-    redirectUrl = `localhost:3000`;
-  } else if (redirect_url) {
-    redirectUrl = redirect_url;
+    redirectUrl = `http://localhost:3000/companyDetails/${companyId}`;
   }
-//   } else if (version === 'v2') {
-//     redirectUrl = 'https://v2.lockedinai.com/signin';
-//   }
-  //localhost:3000/companyDetails/${companyId}
-  //localhost:3000
-  
+  // Or if a custom redirect URL was provided, use that
+  else if (redirect_url) {
+    // Make sure redirect_url starts with http:// or https://
+    if (!redirect_url.startsWith('http://') && !redirect_url.startsWith('https://')) {
+      redirectUrl = `http://${redirect_url}`;
+    } else {
+      redirectUrl = redirect_url;
+    }
+  }
+
   console.log('Clerk Publishable Key:', clerkPubKey);
   console.log('Redirect URL:', redirectUrl);
 
@@ -703,21 +1003,24 @@ const navigate = useNavigate();
         }}
       >
         <Routes>
+          {/* Example of a protected route under /app */}
           <Route
             path="/app/*"
             element={
               <>
-                <SignedIn >
-                  {/* Authenticated routes go here */}
-               
+                <SignedIn>
+                  {/* Your authenticated /app routes/components go here */}
+                  {/* e.g., <AppDashboard /> */}
                 </SignedIn>
                 <SignedOut>
-                  {/* <RedirectToSignIn signInForceRedirectUrl={companyId ? `/companyDetails/${companyId}` : "/sign-in"} /> */}
-                  <RedirectToSignIn signInForceRedirectUrl="http://localhost:3000" />
+                  {/* If user is signed out, send them to our Clerk sign-in page */}
+                  <RedirectToSignIn redirectUrl="/sign-in" />
                 </SignedOut>
               </>
             }
           />
+
+          {/* Clerk Sign-In Page */}
           <Route
             path="/sign-in/*"
             element={
@@ -726,7 +1029,11 @@ const navigate = useNavigate();
                   <SignIn
                     routing="path"
                     path="/sign-in"
-                    fallbackRedirectUrl = {redirectUrl}
+                    // Explicitly set where to go after sign-in
+                    // afterSignInUrl={redirectUrl}
+                    forceRedirectUrl={redirectUrl}
+                    // If you also want afterSignUp to land at the same place:
+                    afterSignUpUrl={redirectUrl}
                   />
                 </div>
                 <div className="hidden md:flex w-1/2 items-center justify-center bg-gray-300 p-10">
@@ -735,6 +1042,8 @@ const navigate = useNavigate();
               </div>
             }
           />
+
+          {/* Clerk Sign-Up Page */}
           <Route
             path="/sign-up/*"
             element={
@@ -743,7 +1052,8 @@ const navigate = useNavigate();
                   <SignUp
                     routing="path"
                     path="/sign-up"
-                    fallbackRedirectUrl = {redirectUrl}
+                    afterSignInUrl={redirectUrl}
+                    afterSignUpUrl={redirectUrl}
                   />
                 </div>
                 <div className="hidden md:flex w-1/2 items-center justify-center bg-gray-300 p-10">
@@ -752,11 +1062,18 @@ const navigate = useNavigate();
               </div>
             }
           />
-          <Route path="/companyDetails/:companyId" element={
-            <SignedIn>
-              <CompanyDetails companyId={companyId!} />
-            </SignedIn>
-          } />
+
+          {/* Example of a page that requires sign-in to view company details */}
+          <Route
+            path="/companyDetails/:companyId"
+            element={
+              <SignedIn>
+                <CompanyDetails companyId={companyId ?? ''} />
+              </SignedIn>
+            }
+          />
+
+          {/* Catch-all for unmatched routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ClerkProvider>

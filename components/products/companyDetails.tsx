@@ -59,6 +59,25 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
   // }, [companyId, router]);
 
   
+    // useEffect(() => {
+    //   const fetchUser = async () => {
+    //     const { data } = await supabase.auth.getUser();
+    //     const User = data?.user;
+    //     console.log(User)
+    //     setUser(User);
+    //     if (User === null) {
+    //       // router.push(`/Auth?redirect_url=companyDetails/${companyId}`);
+    //       // router.push(`https://localhost:3000/sign-in?redirect_url=companyDetails/${companyId}`);
+    //       router.push(`https://app.lockedinai.com/sign-in?redirect_url=localhost:3000`);
+    //       // router.push(`https://app.lockedinai.com/sign-in?redirect_url=localhost:3000/companyDetails/${companyId}`);
+    //       // <RedirectToSignIn />
+    //     }
+    //   };
+    //   fetchUser();
+  
+    // }, []);
+
+    //this is perfect
     useEffect(() => {
       const fetchUser = async () => {
         const { data } = await supabase.auth.getUser();
@@ -66,16 +85,13 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
         console.log(User)
         setUser(User);
         if (User === null) {
-          // router.push(`/Auth?redirect_url=companyDetails/${companyId}`);
-          // router.push(`https://localhost:3000/sign-in?redirect_url=companyDetails/${companyId}`);
-          router.push(`https://app.lockedinai.com/sign-in?redirect_url=localhost:3000`);
-          // router.push(`https://app.lockedinai.com/sign-in?redirect_url=localhost:3000/companyDetails/${companyId}`);
-          // <RedirectToSignIn />
+          // Use proper URL format with protocol
+          router.push(`https://app.lockedinai.com/sign-in?redirect_url=http://localhost:3000/companyDetails/${companyId}`);
         }
+        
       };
       fetchUser();
-  
-    }, []);
+    }, [companyId, router]);
 
   
   const { data: company, isLoading } = useQuery({
