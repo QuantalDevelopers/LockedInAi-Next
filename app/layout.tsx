@@ -13,6 +13,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { constructImageURL } from "@/lib/image-hosting";
 import { cn } from "@/lib/utils";
 import { headers } from "next/headers";
+import { ClerkProvider } from '@clerk/clerk-react';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,6 +75,8 @@ export const metadata: Metadata = {
     },
   },
 };
+
+const clerkFrontendApi = 'pk_live_Y2xlcmsubG9ja2VkaW5haS5haS5jb20k';
 
 export default function RootLayout({
   children,

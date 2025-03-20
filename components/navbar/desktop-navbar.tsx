@@ -196,7 +196,7 @@ export const DesktopNavbar = () => {
         <Button
           variant="simple"
           as={Link}
-          href={`https://app.lockedinai.com/sign-in${affiliate}`}
+           href={`https://app.lockedinai.com/sign-in${affiliate}`}
         >
           Login
         </Button>
