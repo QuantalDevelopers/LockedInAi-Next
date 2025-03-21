@@ -15,7 +15,7 @@ const AuthContext = createContext<AuthContextType>({ session: null, loading: tru
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();  // ✅ Now it should work
+  const router = useRouter();
 
   useEffect(() => {
     // Get initial session
@@ -30,9 +30,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
-      if (!session) {
-        router.push('/Auth');
-      }
     });
 
     return () => subscription.unsubscribe();

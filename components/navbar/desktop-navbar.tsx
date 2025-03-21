@@ -9,6 +9,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
+import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
@@ -16,7 +17,6 @@ import { cn } from "@/lib/utils";
 import { useAffiliateTracker } from "../affiliate-link";
 import { Button } from "../button";
 import { HoveredLink, Menu, MenuItem } from "./hover-menu";
-import Auth from "../products/Auth";
 
 export const DesktopNavbar = () => {
   const { scrollY } = useScroll();
@@ -27,6 +27,7 @@ export const DesktopNavbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const { getAffiliate } = useAffiliateTracker();
   const affiliate = getAffiliate();
+  const { isSignedIn } = useUser();
 
   useMotionValueEvent(scrollY, "change", (value) => {
     setShowBackground(value > 100);
@@ -47,12 +48,13 @@ export const DesktopNavbar = () => {
   return (
     <motion.div
       className={cn(
-        "relative mx-auto flex w-full min-w-[1250px] justify-between rounded-3xl px-4 py-3 transition duration-200",
+        "relative mx-auto flex w-full min-w-[1250px] justify-between rounded-3xl px-6 py-4 transition duration-200",
       )}
       animate={{
-        width: showBackground ? "80%" : "100%",
+        width: showBackground ? "85%" : "100%",
         backgroundColor: showBackground ? "var(--neutral-900)" : "transparent",
         y: isVisible ? 0 : -200,
+        boxShadow: showBackground ? "0 4px 20px rgba(0, 0, 0, 0.3)" : "none",
       }}
       transition={{ duration: 0.4 }}
     >
@@ -65,68 +67,49 @@ export const DesktopNavbar = () => {
             transition={{
               duration: 1,
             }}
-            className="pointer-events-none absolute inset-0 h-full w-full rounded-full bg-neutral-900 [mask-image:linear-gradient(to_bottom,white,transparent,white)]"
+            className="pointer-events-none absolute inset-0 h-full w-full rounded-full bg-neutral-900/95 backdrop-blur-sm [mask-image:linear-gradient(to_bottom,white,transparent,white)]"
           />
         )}
       </AnimatePresence>
       <div className="flex flex-row items-center">
         <Logo />
-        <div className="hidden min-w-[600px] flex-row items-center justify-center text-sm font-medium text-white transition duration-200 lg:flex lg:space-x-1">
+        <div className="hidden min-w-[600px] flex-row items-center justify-center text-sm font-medium text-white transition duration-200 lg:flex lg:space-x-2">
           <Menu setActive={setActive}>
             <Link
               href="/ai-copilot"
-              className="cursor-pointer rounded-lg border border-cyan-400/5 
-    bg-cyan-500/10 px-3 font-bold text-cyan-400 
-    shadow-[0_0_15px_rgba(34,211,238,0.15)] transition-all 
-    duration-300 hover:-translate-y-0.5 
-    hover:border-cyan-400/50
-    hover:opacity-[0.9]
-    hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]
-    active:scale-[0.98]"
+              className="cursor-pointer rounded-lg border border-cyan-400/10 
+              bg-cyan-500/10 px-4 py-1.5 font-bold text-cyan-400 
+              shadow-[0_0_15px_rgba(34,211,238,0.15)] transition-all 
+              duration-300 hover:-translate-y-0.5 
+              hover:border-cyan-400/50
+              hover:bg-cyan-500/15
+              hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]
+              active:scale-[0.98]"
             >
               Interview & Meeting AI Copilot
             </Link>
             <Link
               href="/coding-copilot"
               className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                "cursor-pointer px-3 py-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:text-cyan-400 active:scale-[0.98]",
                 { "font-bold text-cyan-400": isActive("/coding-copilot") },
               )}
             >
               Coding Copilot
             </Link>
-            {/* <Link
-              href="/Not-Found"
-              className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
-                { "font-bold text-cyan-400": isActive("/Not-Found") },
-              )}
-            >
-              Not Found Page
-            </Link> */}
             <Link
               href="/CompanyIndex"
               className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                "cursor-pointer px-3 py-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:text-cyan-400 active:scale-[0.98]",
                 { "font-bold text-cyan-400": isActive("/CompanyIndex") },
               )}
             >
               Company Details
             </Link>
-            {/* Login */}
-            {/* <Link
-              href="/Auth"
-              className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
-                { "font-bold text-cyan-400": isActive("/Auth") }
-              )}
-            >
-              Login
-            </Link> */}
             <Link
               href="/resume-guru"
               className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                "cursor-pointer px-3 py-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:text-cyan-400 active:scale-[0.98]",
                 { "font-bold text-cyan-400": isActive("/resume-guru") },
               )}
             >
@@ -135,7 +118,7 @@ export const DesktopNavbar = () => {
             <Link
               href="/online-assessment"
               className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                "cursor-pointer px-3 py-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:text-cyan-400 active:scale-[0.98]",
                 { "font-bold text-cyan-400": isActive("/online-assessment") },
               )}
             >
@@ -144,7 +127,7 @@ export const DesktopNavbar = () => {
             <Link
               href={`https://app.lockedinai.com/app/sub${affiliate}`}
               className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                "cursor-pointer px-3 py-1.5 transition-all duration-300 hover:-translate-y-0.5 hover:text-cyan-400 active:scale-[0.98]",
                 { "font-bold text-cyan-400": pathname === "/app/sub" },
               )}
             >
@@ -185,28 +168,57 @@ export const DesktopNavbar = () => {
               </div>
             </MenuItem>
             <Link href="/blog" className="w-fit">
-              <Button variant="muted" className="py-0">
+              <Button 
+                variant="muted" 
+                className="py-1.5 px-4 transition-all duration-300 hover:bg-neutral-800"
+              >
                 Strategy & Hack
               </Button>
             </Link>
           </Menu>
         </div>
       </div>
-      <div className="flex items-center space-x-2">
-        <Button
-          variant="simple"
-          as={Link}
-           href={`https://app.lockedinai.com/sign-in${affiliate}`}
-        >
-          Login
-        </Button>
-        <Button
-          variant="primary"
-          as={Link}
-          href={`https://app.lockedinai.com/sign-up${affiliate}`}
-        >
-          Sign Up
-        </Button>
+      <div className="flex items-center space-x-5">
+        {isSignedIn ? (
+          <>
+            <Link 
+              href="/profile" 
+              className={cn(
+                "text-sm font-medium text-white transition-colors hover:text-cyan-400",
+                pathname === "/profile" ? "text-cyan-400 font-bold" : ""
+              )}
+            >
+              Profile
+            </Link>
+            <UserButton 
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: "rounded-full border-2 border-cyan-400/30 hover:border-cyan-400 transition-all duration-300",
+                }
+              }}
+            />
+          </>
+        ) : (
+          <>
+            <Link href="/sign-in">
+              <Button 
+                variant="simple" 
+                className="cursor-pointer rounded-lg px-5 py-2 transition-all duration-300 hover:bg-neutral-800"
+              >
+                Login
+              </Button>
+            </Link>
+            <Link href="/sign-up">
+              <Button 
+                variant="primary" 
+                className="cursor-pointer rounded-lg px-5 py-2 font-medium shadow-[0_0_10px_rgba(34,211,238,0.3)] transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+              >
+                Sign Up
+              </Button>
+            </Link>
+          </>
+        )}
       </div>
     </motion.div>
   );
