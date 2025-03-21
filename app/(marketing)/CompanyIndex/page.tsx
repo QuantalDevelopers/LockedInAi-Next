@@ -1,5 +1,5 @@
 
-import CompanyIndex from "@/components/products/companyIndex";
+import CompanyIndex from "@/pages/companyIndex";
 
 export default function CompaniesIndexPage() {
 

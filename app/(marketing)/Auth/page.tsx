@@ -1,4 +1,4 @@
-import Auth from "@/components/products/Auth";
+import Auth from "@/pages/Authentication";
 import AuthLayout from "./layout";
 import RootLayout from "../layout";
 

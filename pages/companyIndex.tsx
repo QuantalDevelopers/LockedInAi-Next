@@ -7,6 +7,7 @@ import { BuildingIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Head from "next/head";
 
 type Company = {
   id: string;
@@ -17,13 +18,68 @@ type Company = {
   industries: string;
 };
 
-export default function CompanyIndexWrapper() {
+// export default function CompanyIndexWrapper() {
+//   const [queryClient] = useState(() => new QueryClient());
+
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <CompanyIndex />
+//     </QueryClientProvider>
+//   );
+// }
+
+export default function CompanyDetailWrapper({ companyId }: { companyId: string }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <CompanyIndex />
-    </QueryClientProvider>
+    <>
+      <Head>
+        {/* Basic Meta Tags */}
+        <title>Lockedin Ai - Company Detail</title>
+        <meta
+          name="description"
+          content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
+        />
+        <meta name="robots" content="index, follow" />
+        {/* Ensure the domain is correct */}
+        <link rel="canonical" href={`https://www.lockedinai.com/companyDetails/${companyId}`} />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Lockedin Ai - Company Detail" />
+        <meta
+          property="og:description"
+          content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
+        />
+        <meta property="og:url" content={`https://www.lockedinai.com/companyDetails/${companyId}`} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Lockedin Ai - Company Detail" />
+        <meta
+          name="twitter:description"
+          content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
+        />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Lockedin Ai",
+              "url": `https://www.lockedinai.com/companyDetails/${companyId}`,
+              "description":
+                "Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more.",
+            }),
+          }}
+        />
+      </Head>
+      <QueryClientProvider client={queryClient}>
+        <CompanyIndex />
+      </QueryClientProvider>
+    </>
   );
 }
 

@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { ThumbsUp, ThumbsDown, Minus, Trash2, ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation"; // Updated import
+import Head from "next/head";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/providers/AuthProvider";
 import { useToast } from "@/components/ui/use-toast";
@@ -13,11 +14,63 @@ import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-quer
 
 const queryClient = new QueryClient();
 
+// export default function AddReviewWrapper({ companyId }: { companyId: string }) {
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <AddReview companyId={companyId} />
+//     </QueryClientProvider>
+//   );
+// }
+
 export default function AddReviewWrapper({ companyId }: { companyId: string }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <AddReview companyId={companyId} />
-    </QueryClientProvider>
+    <>
+      <Head>
+        {/* Basic Meta Tags */}
+        <title>Lockedin Ai - Add Interview Review</title>
+        <meta
+          name="description"
+          content="Share your interview experience with Lockedin Ai. Contribute to our community by submitting your honest review of your job interview process."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://www.lockedinai.com/AddReview/${companyId}`} />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="Lockedin Ai - Add Interview Review" />
+        <meta
+          property="og:description"
+          content="Share your interview experience with Lockedin Ai. Contribute to our community by submitting your honest review of your job interview process."
+        />
+        <meta property="og:url" content={`https://www.lockedinai.com/AddReview/${companyId}`} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Lockedin Ai - Add Interview Review" />
+        <meta
+          name="twitter:description"
+          content="Share your interview experience with Lockedin Ai. Contribute to our community by submitting your honest review of your job interview process."
+        />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Lockedin Ai - Add Interview Review",
+              "description":
+                "Share your interview experience with Lockedin Ai. Contribute to our community by submitting your honest review of your job interview process.",
+              "url": `https://www.lockedinai.com/AddReview/${companyId}`,
+            }),
+          }}
+        />
+      </Head>
+      <QueryClientProvider client={queryClient}>
+        <AddReview companyId={companyId} />
+      </QueryClientProvider>
+    </>
   );
 }
 
