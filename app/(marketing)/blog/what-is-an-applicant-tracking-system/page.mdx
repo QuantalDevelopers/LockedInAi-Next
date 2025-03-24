@@ -1,0 +1,229 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2025-01-09",
+  title: "What Is an Applicant Tracking System (ATS)?",
+  description:
+    "Discover how Applicant Tracking Systems (ATS) streamline recruitment by filtering resumes, managing applications, and enhancing collaboration. Learn how to optimize your resume for ATS compatibility and increase your chances of landing the job!",
+  image: `${constructImageURL("/landing/blog/what-is-an-applicant-tracking-system.png")}`,
+  alt: "Guide to applicant tracking system success.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "What Is an Applicant Tracking System (ATS) and How It Shapes Hiring",
+  description: blog.description,
+  path: "/blog/what-is-an-applicant-tracking-system",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+An Applicant Tracking System (ATS) is software that companies use to streamline the recruitment process. It organizes and stores resumes, helping recruiters quickly identify qualified candidates.
+
+ATS systems are highly popular because they can reportedly reduce the average hiring cycle by 60%. Over 90% of Fortune 500 companies use these tools to automate recruitment tasks. Any organization handling a high volume of job applications—such as those in tech, healthcare, finance, or non-profit sectors—can benefit from an ATS. These systems speed up the hiring process, simplify scheduling, and facilitate team collaboration, particularly in hybrid work environments.
+
+However, smaller companies and startups may not rely on ATS for evaluating applicants. So, when you encounter resume advice like “optimize your resume for the ATS,” consider the context. Think about the company’s size, industry, and hiring practices. Overloading your resume with keywords just to pass ATS filters can backfire, making it harder for a recruiter to read and evaluate your application when it’s reviewed by a person later in the process.
+
+## What Does an ATS Really Do?
+
+An Applicant Tracking System (ATS) is software designed to streamline the recruitment process, helping companies manage job applications more efficiently so recruiters can focus on selecting the best candidates. While features vary depending on the specific software, here’s a breakdown of what an ATS typically does:
+
+### 1. Stores and Organizes Resumes
+
+- Centralizes all job applications, making it easy for recruiters to search and review candidates.
+
+- Simplifies the creation, approval, and reuse of job descriptions for multiple roles, saving time for HR teams.
+
+### 2. Filters Applications
+
+- Uses keywords, knockout questions, or predefined criteria to filter out unqualified applicants.
+
+- Can automatically reject candidates based on responses, such as not meeting work eligibility requirements (e.g., 16% of applications).
+
+- Parses and ranks resumes to prioritize top candidates, assisting recruiters in the review process.
+
+### 3. Automates Scheduling
+
+- Coordinates interview times and manages recruiter calendars.
+
+- Sends out job offers and handles onboarding tasks, allowing new hires to complete paperwork and access company resources smoothly.
+
+### 4. Enhances Team Collaboration
+
+- Facilitates sharing of notes and feedback among recruiters and hiring managers, improving decision-making and team coordination.
+
+### 5. Provides Candidate Information
+
+- Ensures quick access to applicant contact details and resume data for efficient follow-ups.
+
+### 6. Parses Resumes
+
+- Converts resume content into a text-based format using Optical Character Recognition (OCR).
+
+- However, non-standard resume formats may cause parsing errors, which is why standard templates are recommended.
+
+### 7. Manages Compliance
+
+- Maintains detailed records to ensure the hiring process adheres to legal and regulatory requirements.
+
+### 8. Supports Sourcing
+
+- Enables recruiters to perform advanced searches using Boolean techniques, similar to Google keyword searches.
+
+- Tailoring your resume with relevant job description keywords can improve visibility and increase your chances of moving forward in the hiring process.
+
+An ATS is not just a tool for organization—it actively reduces the administrative burden of hiring, allowing recruiters to focus on selecting the right talent efficiently.
+
+## Types of Applicant Tracking Systems (ATS) and Their Functions
+
+### 1. Basic ATS
+
+Designed for small businesses or organizations with straightforward recruitment needs, basic ATS solutions focus on core functionalities. These systems help manage candidates efficiently without overwhelming features.
+
+**Key Features:**
+
+- **Resume parsing:** Automatically extracts key information (e.g., contact details, work history, and skills).
+
+- **Job posting management:** Simplifies creating, publishing, and managing job openings.
+
+- **Candidate database:** Stores applicant information for easy access and reference.
+
+- **Basic reporting:** Provides simple insights into the hiring process, such as application counts and status updates.
+
+**Examples:** Breezy HR, Workable
+
+**Industries:** Common in technology startups, education, and marketing sectors, where hiring volumes are manageable, and simplicity is key.
+
+### 2. Mid-Level ATS
+
+These systems cater to medium to large enterprises with more robust recruitment needs. Mid-level ATS platforms enhance collaboration between hiring teams and provide data-driven insights for strategic decisions.
+
+**Key Features:**
+
+- **Advanced reporting and analytics:** Enables tracking metrics like time-to-hire and source effectiveness.
+
+- **Integration with HR tools:** Connects with payroll, performance management, or employee engagement software.
+
+- **Candidate communication tools:** Includes automated messaging, email templates, and scheduling tools for interviews.
+
+- **Collaborative hiring:** Offers shared notes, evaluations, and interview feedback for team-based decisions.
+
+**Examples:** Greenhouse, Lever
+
+**Industries:** Favored in tech, consulting, and industries requiring data-driven recruitment processes. These systems ensure scalability and efficiency for growing companies.
+
+### 3. Enterprise ATS
+
+Tailored for large organizations, enterprise ATS platforms address complex recruitment workflows across multiple roles and locations. These systems are highly customizable and support end-to-end talent management.
+
+**Key Features:**
+
+- **Custom workflows:** Adaptable processes for varying hiring needs across departments.
+
+- **Compliance management:** Ensures adherence to legal requirements, such as diversity hiring and data protection.
+
+- **Onboarding tools:** Facilitates smooth transitions for new hires, including document signing and orientation scheduling.
+
+- **Talent management:** Tracks employee performance, development, and retention post-hiring.
+
+- **Advanced analytics:** Provides deep insights into recruitment trends, candidate pipelines, and long-term hiring strategies.
+
+**Examples:** Taleo, SAP SuccessFactors
+
+**Industries:** Widely used in automotive, healthcare, government, and public sectors, where managing large-scale operations and compliance is crucial.
+
+## How to Format an ATS-Compliant Resume
+
+Creating an ATS-compliant resume ensures that applicant tracking systems can scan and interpret your document effectively. These systems read resumes sequentially, from the upper left corner to the lower right corner, mimicking the way humans read. To maximize your chances, follow these formatting guidelines:
+
+### 1. Organize Your Resume in a Logical Order
+
+An ATS expects your resume to be structured in a predictable sequence:
+
+- **Header:** Include your name and contact details (email, phone number, LinkedIn, or portfolio link) at the top of the page. Avoid fancy formatting or placing these details in a sidebar.
+
+- **Professional Summary or Objective:** Briefly highlight your key skills, achievements, and career goals.
+
+- **Skills Section:** List relevant skills using industry-specific keywords. Place this section at the top or bottom of the resume.
+
+- **Work Experience:** Center your employment history with clear details:
+
+- Employer name
+
+- Job title
+
+- Dates of employment (month and year)
+
+- Key responsibilities and quantifiable achievements
+
+- **Education and Certifications:** Include degrees, schools, and any certifications relevant to the role.
+
+### 2. Use Simple and Consistent Formatting
+
+- **Font:** Stick to easy-to-read fonts like Arial, Calibri, or Times New Roman.
+
+- **Font Size:** Use 10-12 points for body text and slightly larger for section headers.
+
+- **Bullet Points:** Use standard bullet points to list accomplishments, avoiding special characters or decorative symbols.
+
+- **Margins and Spacing:** Maintain 1-inch margins and consistent line spacing (single or 1.15).
+
+### 3. Optimize for Keywords
+
+- **Tailor to the Job Description:** Identify and include specific keywords from the job posting.
+
+- **Use Exact Phrases:** Use the same terminology as the job listing (e.g., “project management” instead of “managing projects”).
+
+- **Integrate Keywords Naturally:** Include them in your professional summary, skills, and work experience sections.
+
+### 4. Save and Submit in the Right Format
+
+- **File Format:** Save your resume as a **PDF** or **Word document** (check the job listing for specific requirements).
+
+- **File Name:** Use a professional naming convention, such as FirstName_LastName_Resume.pdf.
+
+## Debunking ATS Myths
+
+Many misconceptions about Applicant Tracking Systems (ATS) are perpetuated by self-proclaimed resume experts who don’t fully understand how these systems operate. If your application is rejected, it’s likely because the position was already filled or another candidate was chosen—not because of ATS issues. Don’t fall for the scare tactics used by content creators on platforms like TikTok and YouTube, often promoting their resume-writing services.
+
+### Myth #1: ATS Rejects Resumes Without Specific Keywords
+
+One common myth is that ATS will automatically discard resumes that lack certain keywords. In reality, most ATS systems don’t have this capability. While it’s important to tailor your resume to showcase relevant skills, rejections are usually due to positions being filled or recruiters selecting other candidates.
+
+### Myth #2: ATS Bots Automatically Reject or Score Resumes
+
+There’s a misconception that ATS bots decide your fate by rejecting or rating resumes. In truth, ATS simply parses resumes—organizing content into sections for easier reading. Some systems handle this well, while others may be less reliable or attach your original file without parsing. Whether the parsed or original version is reviewed depends on the recruiter’s preferences and company policies.
+
+### Myth #3: Resumes Must Pass Automated Filters to Be Considered
+
+The idea that resumes must navigate automated filters to be seen by recruiters is misleading. Parsing simply means the ATS converts your resume into a readable format. While formatting issues can cause errors, they don’t lead to automatic rejection. Recruiters can access both the parsed version and the original file, so it’s their responsibility to review both.
+
+### Myth #4: Certain Resume Formats Confuse ATS Parsers
+
+It’s often claimed that using specific fonts, colors, or creative designs can confuse ATS systems. This belief likely stems from resume-writing services without proper design tools. While some creative elements may not parse perfectly, they remain visible to recruiters. However, since ATS systems vary, sticking to clean, standard templates can help minimize formatting issues.
+
+### Myth #5: ATS Fully Automates the Hiring Process
+
+Some believe ATS automates the entire hiring process, but this isn’t true. ATS tools assist with organizing and filtering applications, but the final decision always rests with human recruiters. Human judgment remains a critical component in hiring decisions.
+
+## Tips for Creating an ATS-Compliant Resume
+
+An ATS-compliant resume is designed to be easily read and understood by an applicant tracking system. This requires a clear, straightforward format that the system can scan effectively. ATS software reads resumes much like a person would—starting from the top left and moving to the bottom right—so the document should follow a logical structure.
+
+To ensure compatibility, place your **name and contact information** at the top. Follow this with your **skills section**, which can be positioned either near the top or at the bottom of the resume. Your **employment history** should appear in the middle, listing your employer, job title, dates of employment, and a brief description of your responsibilities and achievements.
+
+Avoid using unconventional resume layouts, as these can confuse the system and prevent it from correctly parsing your information. Keeping the structure simple and organized ensures your resume will be both ATS-friendly and easy for recruiters to review.

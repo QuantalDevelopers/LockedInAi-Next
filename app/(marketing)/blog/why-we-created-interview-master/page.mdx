@@ -1,0 +1,58 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2024-06-24",
+  title: "Why We Created AI Interview Copilot: Real-Time AI Assistance",
+  description:
+    "Discover the story behind AI Interview Copilot, an AI-driven tool designed to provide real-time assistance during job interviews.",
+  image: `${constructImageURL("/landing/blog/why-we-created-interview-master.png")}`,
+  alt: "Real-Time AI Assistance for Interview",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/why-we-created-interview-master",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In today's competitive job market, acing an interview is more challenging than ever. Traditional preparation methods, such as mock interviews and rehearsing standard questions, can only go so far. Recognizing the need for a more innovative solution, we created AI Interview Copilot—an AI-driven tool designed to provide real-time assistance during job interviews. Our goal is to empower candidates to perform their best, reduce anxiety, and ultimately secure their desired positions. Here’s why we embarked on this journey.
+
+## The Problem with Traditional Interview Preparation
+
+Traditional interview preparation often involves studying common questions, practicing with friends or mentors, and going through multiple rounds of mock interviews. While these methods can be helpful, they lack the dynamic and adaptive nature required to tackle the unpredictable flow of real interviews. Candidates frequently face unexpected questions or topics, leading to anxiety and underperformance. Additionally, not everyone has access to expert guidance or mentors, putting many at a disadvantage.
+
+## The Power of Real-Time AI Assistance
+
+We envisioned a tool that could bridge this gap by offering real-time, personalized support during interviews. AI Interview Copilot leverages advanced AI technology to listen to interview questions and generate tailored responses instantly. This dynamic interaction allows candidates to adapt their answers on the fly, ensuring they remain relevant and impressive throughout the interview.
+
+## Boosting Confidence and Reducing Anxiety
+
+One of the primary reasons we created AI Interview Copilot was to help reduce interview anxiety. Many candidates experience nervousness that can hinder their performance, even if they are well-prepared. By providing real-time feedback and suggestions, AI Interview Copilot acts as a supportive guide, boosting the candidate's confidence. Knowing that they have a reliable tool to assist them in real-time, candidates can focus more on the conversation and less on their nerves.
+
+## Enhancing Communication Skills
+
+Effective communication is a critical factor in acing job interviews. AI Interview Copilot not only helps in generating answers but also offers feedback on the candidate's delivery, tone, and pacing. This dual-layer approach ensures that candidates not only say the right things but also present their responses in the most impactful manner. Over time, this consistent feedback helps candidates refine their communication skills, making them more articulate and persuasive.
+
+## Personalization and Adaptability
+
+We understand that every job interview is unique, requiring responses tailored to specific roles and industries. AI Interview Copilot allows users to input their resume and other relevant materials, enabling the AI to customize its suggestions accordingly. This personalized approach ensures that candidates receive advice that is relevant to their particular situation, making their preparation more effective.
+
+## Success Stories and Real-World Impact
+
+Since its inception, AI Interview Copilot has made a significant impact on numerous job seekers. From fresh graduates to seasoned professionals re-entering the job market, our users have shared their success stories. For instance, Nia, a digital marketing specialist, transformed her interview experience and landed her dream job at Google with the help of our AI tool. Similarly, Jake, a recent college graduate, went from facing constant rejections to securing a marketing position at Meta.

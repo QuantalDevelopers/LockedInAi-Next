@@ -1,0 +1,195 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2025-01-04",
+  title: "How to Answer Consulting Interview Questions: Market Sizing",
+  description:
+    "Master market-sizing consulting interview questions with this step-by-step guide. Learn to clarify, structure, calculate, and communicate effectively.",
+  image: `${constructImageURL("/landing/blog/how-to-answer-consulting-interview-questions.png")}`,
+  alt: "Market sizing consulting interview guide.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "How to Ace Consulting Market Sizing Questions: A Step-by-Step Guide",
+  description: blog.description,
+  path: "/blog/how-to-answer-consulting-interview-questions",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Consulting interviews have a great many questions that refer to the market sizing, which checks your logical thinking, works with assumptions, and presents a coherent answer. Here’s a detailed guide with expanded explanations for each step:
+
+## 1. Understand the Question Clearly
+
+There are two important readings one should do before getting into calculations. When asking market sizing questions the questions themselves are always rather vague and global, and therefore clarification is necessary.
+
+- **Why?** This step demonstrates that you understand the problem and can ask the right questions—a skill vital in consulting.
+
+- **How?**
+
+Paraphrase the question to ensure that their understanding of it, the following came up:
+
+    - **Ask clarifying questions:** What is the market segment or area of coverage of this situation? Should we consider all possible revenue activities (products, services)?
+
+    - **Establish boundaries.** For instance, which of the new and used cars should be incorporated in the computation of car sales?
+
+**Example:**
+
+**Question:** "Estimate the number of pizzas sold in New York City annually."
+
+**Clarification:** Should I include all types of pizza (e.g., frozen, restaurant, delivery)? Should I focus only on NYC residents or include tourists?
+
+## 2. Break Down the Problem
+
+It is quite important to break the approach down into components. A structured method helps to eliminate a number of options and also helps to calm down the interviewer when he/she is convinced that you are capable of solving complex problems in a reasonable way.
+
+- **Why?** It lessens mistakes and makes certain that there will be no prominent feature left unnoticed.
+
+- **How?**
+
+Use a top-down or bottom-up approach:
+
+    - **Top-Down:** First, it is desirable to choose a quantitative result, such as the total population amount, and move from it step by step.
+
+    - **Bottom-Up:** Split data into many pros (e.g., number of gross sales per shop) and roll it up.
+
+The segmentation must be clear and logical and include clientele factors, usage rate, and average expenses.
+
+**Example:**
+
+To estimate annual coffee shop revenue:
+
+1. Population of NYC.
+
+2. Number of coffee drinkers.
+
+3. Mean of the number of coffee shop visits per week.
+
+4. Average spend per visit.
+
+## 3. Make Logical Assumptions
+
+Many times, market sizing questions pose little detail, and this makes guessing the best option. Explain rationally why such assumptions were deemed correct to demonstrate how you are processing the problem.
+
+- **Why?** All interviewers seem to prefer clarity and realistic impressions or concepts. This is because if your assumption is almost right a reasonable and logical explanation goes a long way in creating an impression.
+
+- **How?**
+
+  - Stake assumptions on common knowledge (e.g. demographics of a population, trends within their behaviors).
+
+  - Use assertions that are assertable to draw your assumptions by inviting further discussion from others.
+
+**Example:**
+
+- NYC population: ~8 million.
+
+- If 60% of them drink coffee = 8×60%=4.8 million coffee drinkers.
+
+- Average spend per visit: $5 (based on typical coffee prices).
+
+## 4. Perform Calculations Step-by-Step
+
+Besides a particular number, the interviewer wants to see how your mind works and arrives at that number.
+
+- **Why?** This particular step shows quantitative ability, problem solving, and analytical thinking, as well as good communication.
+
+- **How?**
+
+  - When answering quantitative questions, take the interviewer through the steps and go through your thought process.
+
+  - Rounding numbers to the nearest tens are often preferred because they can be summed up easily in our heads.
+
+**Example Calculation:**
+
+1. **Number of coffee drinkers:** 4.8million
+
+2. **Visits per person annually:** 3 visits/week × 52 = 156
+
+3. **Total visits annually:** 4.8 ×156 = 748.8 million visits
+
+4. **Total revenue:** 748.8 × 5 = 3.744 billion dollars
+
+## 5. Check for Realism
+
+Finally, look at your result with an eye toward common sense when doing your calculations. This shows analyzing abilities and being conscious of self.
+
+- **Why?** Being able to catch errors or hone estimates, is evidence of flexibility and concern.
+
+- **How?**
+
+  - Measure outcomes relative to other people or even companies in the same field.
+
+  - They should also modify the assumptions if the value obtained on the last step feels too high or too low.
+
+**Example:**
+
+If $ 3.7 billion appears too exaggerated, try to vary some presumptions. One needs to wonder whether 50% of the NYC residents consume coffee, or whether the average spending is $4.50 and not $5 as assumed.
+
+## 6. Address Potential Nuances
+
+An ideal response should have information on things that might affect your estimate. This goes to indicate that you are thinking past the figure.
+
+- **Why?** By considering nuances, we demonstrate the essential nature of higher-order analytical thinking and a persistent acknowledgment of the real world’s unique complexities.
+
+- **How?**
+
+  - Include such terms as geographical factors or regions, the economy, or time of the year.
+
+  - Explain what other sources of error exist, for example, nonresponse bias or nonresponse error.
+
+**Example:**
+
+- The comparison might be distorted in New York City because consumers are tourists who permeate the city.
+
+- The revenue from coffee shops includes both sales from food items and other specialty drinks which might help put up the average spend.
+
+## 7. Practice Effective Communication
+
+It is as important what you write in your answer as it is how you write it. Finding a job in consulting as well as consulting interviews involves even more communication than problem-solving.
+
+- **Why?** Clear, confident communication is critical for client-facing roles in consulting.
+
+- **How?**
+
+  - If possible use diagrams or sketches to help explain the structure of your writing as well.
+
+  - Retain a copy of the—get approval from the interviewer, or invite him/her to hold feedback with you.
+
+## Example Question and Complete Answer
+
+**Question:** _Can you tell how much is the annual revenue of the pet food industry in the United States?_
+
+- **1. Clarify:** Focus only on dogs and cats. Include treats and specialty food?
+
+- **2. Structure:**
+
+  - U.S. population: ~330 million.
+
+  - Pet ownership: 50% of households own a pet. Average household size: 3 people.
+
+  - Total pet-owning households: 330÷ 3 × 50% = 55 million
+
+  - Annual spend per pet: Assume $300/year.
+
+- **3. Refine:** Explain subtle concepts such as the presence of premium brands, shifts in the trends related to pet ownership, or differences anchored in geography.
+
+- **4. Communicate:** Take your time and go over your thought process out loud, and/or ask someone if they have any input to make.
+
+## Conclusion
+
+Combining structured thinking, logical assumptions, and clear communication, you’ll excel in answering market-sizing questions in consulting interviews.

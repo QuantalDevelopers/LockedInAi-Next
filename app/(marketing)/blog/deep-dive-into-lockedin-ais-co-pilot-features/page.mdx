@@ -1,0 +1,131 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2024-07-27",
+  title:
+    "Deep Dive into LockedIn AI's Co-Pilot Features: Enhancing Your Workflow",
+  description:
+    "Unlock the full potential of LockedIn AI’s Co-Pilot features—learn how to use memory clearing, pause, and autoscrolling for optimized workflows in any scenario.",
+  image: `${constructImageURL("/landing/blog/deep-dive-into-lockedin-ais-co-pilot-features.jpg")}`,
+  alt: "LockedIn AI's Co-Pilot Features",
+  featured: false,
+};
+export const metadata = {
+  title: blog.title,
+  description: blog.description,
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+};
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In this fast-paced world of today, we need tools that help us reduce workflow time and consequently increase productivity. And one such tool is LockedIn AI, a really powerful AI assistant that will help you in any field. The Co-Pilot features include memory clearing, pausing, and autoscrolling so you can customize the AI to suit different types of work environments like meetings and presentations or multitasking and planning.
+
+In this article, we'll explore how to leverage these Co-Pilot features for maximum effectiveness, ensuring you maintain control over your tasks and workflow.
+
+## Understanding LockedIn AI’s Co-Pilot Features
+
+Although the functionality that LockedIn AI offers is broad, its Co-Pilot functionality is intended to grant the user more control over the AI’s behavior. These features help users to do whatever they might want to do with LockedIn AI, i.e. from pausing the AI mid-task to clear its memory and start from scratch to turning autoscrolling off.
+
+Let's explore these features in more detail, covering when to use them, how to implement them, and practical real-world examples.
+
+### 1. How to Clear Memory in LockedIn AI
+
+This memory-clearing feature especially comes in handy if you want the AI to remember nothing from the past and only from this point onwards. This is important when you switch from task to task or when you have been doing something and could have been talking about a lot of things.
+
+#### When Should You Clear Memory?
+
+    - Starting a new task: If you’ve been working on several projects and want a blank slate for your next project, clearing the memory will prevent the AI from being loaded with the context from a previous conversation.
+    - Avoiding confusion: Clearing memory is a good practice after a very long or polished conversation because it helps the AI not interpret inputs based on ongoing knowledge.
+
+#### Steps to Clear Memory
+
+<Image
+  src={constructImageURL("/landing/blog/deep-dive-1.png")}
+  alt="hero"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+1. **Access the Memory setting:** Find a memory setting on top.
+2. **Click “Memory”:** This will instantly reset the AI’s memory for the session.
+3. **Confirm the action:** After the cleaning, the AI will never know what happened again, or remember anything we said or did.
+
+**Practical Example:**
+
+Let's say you're using LockedIn AI to create a marketing plan and team training. Once you're done dealing with marketing conversations, you want to purely train without mixing up. If you're clearing the AI’s memory on purpose for the new task, this is to ensure you're starting with a clean slate and any potential confusion. 2. How to Use the Pause Feature
+
+### 2. How to Use the Pause Feature
+
+The pause feature enables you to momentarily disable the AI's interaction, so you can think, make a decision, or get on with something else. It’s particularly useful when you’re doing something complex, or you want to take a minute and collect your train of thought before moving further.
+
+#### When Should You Use Pause?
+
+    - **During a presentation:** The pause feature saves the AI from continuing when there is a need to present the information or speak at a meeting.
+
+    - **Reviewing details:** If you are working through a report or document, pausing the AI stops it from processing new data while you’re working on a particular part.
+
+#### Steps to Pause the AI
+
+<Image
+  src={constructImageURL("/landing/blog/deep-dive-2.png")}
+  alt="hero"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+1. **Locate the pause button:** Usually within your session controls.
+2. **Click “Pause”:** It will stop communicating and will remain paused until you continue.
+3. **Resume when ready:** Click 'Resume' when you're ready to start again from where you left off.
+
+**Practical Example:**
+
+You are in the middle of a brainstorming session with your team, and you need to stop for a quick review of notes. By pausing LockedIn AI, you stop the conversation and give yourself time to address the needs of the meeting before coming back to the discussion. 3. How to Stop Autoscrolling
+
+### 3. How to Stop Autoscrolling
+
+While autoscrolling is nice when you have to go through long threads of conversation, there are times when you don't want to see everything on the screen, and there are situations when you do want to focus on a specific section of a conversation or document. By disabling autoscrolling, you’ve given yourself control over what to focus on, avoiding having the screen scroll to the latest input.
+
+#### When Should You Stop Autoscrolling?
+
+    - **During document reviews:** Turning off autoscrolling will save your eyes if you’re reading a large report or discussion thread: you can leisurely check key points without interruption.
+
+    - **In client meetings:** Autoscroll stops when you are discussing past interactions or about some particular piece of data.
+
+#### Steps to Stop Autoscrolling
+
+<Image
+  src={constructImageURL("/landing/blog/deep-dive-3.png")}
+  alt="hero"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+1. **Click on Setting:** Find the Setting icon in the top right corner.
+2. **Disable autoscroll:** Disable autoscroll by clicking on "Manual Scroll Mode".
+3. **Manually navigate as needed:** Now you can now to revisit the information at your speed.
+
+**Practical Example:**
+
+You're reviewing the timeline of a project that has tons of updates during a meeting. Stopping autoscrolling allows you to look at something on the timeline, without the AI jumping ahead to the last comment, and helping you paint a clearer picture for your colleagues.
+
+### Conclusion: Unlocking the Power of LockedIn AI’s Co-Pilot
+
+LockedIn AI’s Co-Pilot features offer a range of tools that can be adapted to various work environments, whether you're in a client meeting, managing a team, or working independently. By mastering memory clearing, pause, and autoscrolling, you’ll unlock a smoother, more controlled workflow that enhances productivity across multiple scenarios.

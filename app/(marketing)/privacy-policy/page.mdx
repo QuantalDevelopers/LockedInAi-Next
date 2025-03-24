@@ -1,0 +1,96 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "LockedIn AI Team",
+    src: constructImageURL("/landing/toggled-logo.png"),
+  },
+  date: "2024-10-05",
+  title: "Privacy Policy",
+  description:
+    "Read LockedIn AI's Privacy Policy to learn how we safeguard your data and ensure your privacy while using our AI-powered solutions.",
+  image: constructImageURL("/landing/lockedin-ai-intro.jpeg"),
+  alt: "Privacy Policy at LockedIn AI",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Privacy Policy: How LockedIn AI Protects Your Data",
+  description: blog.description,
+  path: "/privacy-policy",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Privacy Policy
+
+**Effective Date:** 5/28/2024, 12:00:00 AM  
+**Last Updated:** 10/5/2024, 12:00:00 AM
+
+At LockedIn AI, your privacy is of utmost importance to us. We are committed to respecting your privacy and adhering to any applicable law and regulation regarding any personal information we may collect, including information collected through our website, [https://www.lockedinai.com](https://www.lockedinai.com), and other services we provide.
+
+### Information We Collect
+
+We collect two types of information: voluntarily provided information and automatically collected information.
+
+- **Voluntarily Provided Information:** This includes information you give us directly, such as when you sign up for an account, subscribe to our newsletter, or participate in our services and promotions.
+- **Automatically Collected Information:** This includes information that your devices automatically send when you access our services. It encompasses data like your IP address, device type, and how you interact with our site.
+
+### Detailed Data Collection
+
+- **Log Data:** Our servers log information like your IP address, browser type, the pages you visit, and visit duration.
+- **Device Data:** We collect information about the device you use, such as the device type and operating system.
+- **Personal Information:** We may collect personal details like your name and email address when you engage with our services.
+- **User-Generated Content:** Any content provided by users will only be published with their explicit consent. Once published, users can delete their content at any time directly through their account settings. Additionally, if an account remains inactive for over a year, we will automatically delete all associated data, including user-generated content.
+
+### Cookies and Tracking Technologies
+
+We use cookies and similar technologies to improve user experience and analyze website performance. By using our services, you consent to our use of cookies.
+
+### Security of Your Personal Information
+
+We strive to protect your personal information with commercially acceptable means against unauthorized access, loss, or theft. However, no digital platform can guarantee absolute security.
+
+### Retention of Your Personal Information
+
+We retain your personal information as long as necessary to provide our services to you and comply with legal obligations. When no longer needed, we will delete or anonymize your information.
+
+### Children’s Privacy
+
+Our services are not intended for children under 13, and we do not knowingly collect their data.
+
+### Disclosure of Personal Information to Third Parties
+
+We may share your information with:
+
+- Subsidiaries, affiliates, and third-party service providers to facilitate our services.
+- Regulatory authorities, law enforcement, or in legal proceedings if required.
+
+We do not sell your personal information. Third parties we work with include:
+
+- **Google Analytics**
+- **Stripe**
+- **GitHub**
+
+### Your Rights
+
+You have rights over your personal information, including access, correction, and deletion. Users can delete their entire account, including all personal data, by navigating to their profile settings. For chat history, a dedicated button allows users to delete this data separately. Contact us to exercise these rights.
+
+### Changes to This Policy
+
+We may update this policy to reflect changes in our practices. Significant changes will be communicated through our website or directly to you.
+
+### Contact Us
+
+For questions about this privacy policy, please contact us at support@lockedinai.com.
+
+By using our services, you acknowledge you have read and understood this Privacy Policy.

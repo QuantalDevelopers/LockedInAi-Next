@@ -1,0 +1,135 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "LockedIn AI Team",
+    src: constructImageURL("/landing/toggled-logo.png"),
+  },
+  date: "2024-08-07",
+  title: "Terms of Service",
+  description:
+    "These Terms and Conditions govern your access to and use of our website, software, services, and other offerings.",
+  image: constructImageURL("/landing/lockedin-ai-intro.jpeg"),
+  alt: "Terms of Service at LockedIn AI",
+  featured: false,
+};
+export const metadata = createMetadata({
+  title: "Terms of Service for LockedIn AI: Know Your Rights",
+  description: blog.description,
+  path: "/terms-of-service",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Terms of Service
+
+**Effective Date:** 5/28/2024, 12:00:00 AM  
+**Last Updated:** 8/7/2024, 12:00:00 AM
+
+Welcome to LockedIn AI. These Terms and Conditions ("Terms") govern your access to and use of our website, software, services, and other offerings (collectively, the "Services"). By accessing or using our Services, you agree to comply with and be bound by these Terms. If you do not agree with any part of these Terms, please do not use our Services.
+
+### Acceptance of Terms
+
+By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree with these Terms, you must not access or use our Services.
+
+### Registration
+
+To access certain features of our Services, you may need to create an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for safeguarding your account information and for any activities or actions under your account.
+
+### Use of Services
+
+You agree to use our Services only for lawful purposes and in compliance with all applicable laws, regulations, and guidelines. You agree not to use our Services:
+
+- In any manner that could damage, disable, overburden, or impair our Services.
+- To transmit any viruses, malware, or other harmful code.
+- To interfere with or disrupt any servers or networks connected to our Services.
+- To attempt to gain unauthorized access to any portion of our Services or any other accounts, computer systems, or networks connected to our Services.
+
+### Intellectual Property
+
+All content, features, and functionality provided through our Services are the exclusive property of LockedIn AI and are protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or use any part of our Services without prior written consent from LockedIn AI.
+
+### Subscriptions
+
+All subscriptions to our Services, including renewals, are non-refundable. Once a subscription fee has been paid, no refunds will be provided, regardless of the reason for cancellation or termination. By purchasing a subscription, you acknowledge and agree to this non-refundability policy.
+
+### Privacy
+
+Your use of our Services is also governed by our Privacy Policy. By using our Services, you acknowledge and agree that you have read and understood our Privacy Policy.
+
+### Limitation of Liability
+
+To the maximum extent permitted by law, LockedIn AI shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:
+
+- Your access to or use of or inability to access or use our Services.
+- Any conduct or content of any third party on the Services.
+- Any content obtained from the Services.
+- Unauthorized access, use, or alteration of your transmissions or content.
+
+### Beta Testing
+
+If you participate in our beta testing programs, you acknowledge that the beta products are in a testing phase and may contain errors. These products are provided "AS IS" and "AS AVAILABLE." We reserve the right to modify or terminate the software or your access to the beta products at any time, without notice and without liability to you. You agree to provide feedback on the beta products and assign all rights to such feedback to us without compensation.
+
+### Use Restrictions
+
+You agree not to abuse our platform, including but not limited to creating multiple accounts to exploit free credits or promotions. We reserve the right to terminate accounts and remove any content that violates our terms or policies.
+
+### Branding and Credits
+
+You agree to provide proper credit to LockedIn AI when using our products, in accordance with our branding guidelines.
+
+### Warranty Disclaimer & Performance Liability
+
+Our services are provided "AS IS" without any guarantees of performance, accuracy, or compatibility. We disclaim all warranties, express or implied, and you assume all risks associated with using our services.
+
+### Early Development Service
+
+Please note that our Services are still in their early development phase. Consequently, you may experience occasional stability issues and intermittent service interruptions. We are diligently working to enhance the reliability and performance of our Services, but uninterrupted service cannot be guaranteed at this stage. By using our Services, you acknowledge and accept that you are doing so at your own risk. LockedIn AI is not liable for any problems or disruptions that may occur due to these early-stage instabilities.
+
+### Indemnification
+
+You agree to indemnify, defend, and hold harmless LockedIn AI and its affiliates from any claims arising from your use of our services, your breach of these terms, or any content you create using our services.
+
+### Injunctive Relief
+
+You agree that any breach of these terms may cause irreparable harm to us for which monetary damages would not be an adequate remedy. We are entitled to seek injunctive or other equitable relief to prevent such breaches.
+
+### Proprietary Rights
+
+We retain all rights to our services and beta products. You may not sell, transfer, or use these products for any unauthorized purposes.
+
+### Confidentiality
+
+You agree to keep confidential all non-public information related to our beta products and services. This confidentiality obligation survives termination of these terms.
+
+### Governing Law
+
+These terms are governed by the laws of the United States. You agree to submit to the jurisdiction of the courts in the United States for any disputes arising from these terms.
+
+### Changes to the Terms
+
+We may modify these terms at any time. The most current version will be posted on our website. By continuing to use our services after any changes, you agree to be bound by the revised terms.
+
+### Termination
+
+We reserve the right to terminate your access to our services at any time, with or without cause or notice. Upon termination, your right to use our services will cease immediately.
+
+### Miscellaneous
+
+These terms do not create any partnership, agency, or joint venture between the parties. Your use of our services is subject to all our applicable online terms and policies. In case of any conflict, these terms will govern your use of the beta products.
+
+### Contact Information
+
+If you have any questions about these Terms, please contact us at: hi@lockedinai.com.
+
+By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms.

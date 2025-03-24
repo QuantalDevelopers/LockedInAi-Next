@@ -1,0 +1,104 @@
+/* Dark Theme Table Styles */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.2),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+th {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #404040;
+}
+
+/* Cell Styles */
+td {
+  padding: 1rem;
+  color: #e0e0e0;
+  border-bottom: 1px solid #333333;
+  transition: background-color 0.2s ease;
+}
+
+/* Row Hover Effect */
+tr:hover td {
+  background-color: #2a2a2a;
+}
+
+/* Last Row Styling */
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* First Column Emphasis */
+td:first-child,
+th:first-child {
+  padding-left: 1.5rem;
+  font-weight: 500;
+}
+
+/* Last Column Styling */
+td:last-child,
+th:last-child {
+  padding-right: 1.5rem;
+}
+
+/* Bold Text Styling */
+td strong,
+th strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Alternating Row Colors */
+tr:nth-child(even) {
+  background-color: #222222;
+}
+
+tr:nth-child(odd) {
+  background-color: #1a1a1a;
+}
+
+/* Feature Column Styling */
+td:first-child {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+  }
+}
+
+/* Status Indicators */
+.available {
+  color: #4ade80;
+}
+
+.limited {
+  color: #fbbf24;
+}
+
+.not-available {
+  color: #fb7185;
+}

@@ -1,0 +1,112 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2024-10-20",
+  title: "How Bad is the Computer Science Job Market in 2024? A Deep Dive",
+  description:
+    "Explore the challenges in the 2024 computer science job market, from layoffs to skills gaps. Discover strategies to stay competitive with insights from LockedInAI.",
+  image: `${constructImageURL("/landing/blog/how-bad-is-the-computer-science-job-market-in-2024.png")}`,
+  alt: "Navigating challenges in the evolving CS job market",
+  featured: false,
+};
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/how-bad-is-the-computer-science-job-market-in-2024",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+The computer science (CS) job market is changing rapidly; once known for secure jobs and high salaries, it has declined significantly. Traditionally, the industry has been in high demand and also provides attractive perks. The industry is currently undergoing challenges that are worrying professionals and graduates alike. In this article we will discuss where the CS job market stands right now, why it is so unstable, and strategies for job seekers to weather these turbulent times.
+
+## The Rise and Fall of CS Job Demand
+
+In the early 2020s, there was no shortage of job prospects in computer science, people were hiring all over the place at tech giants like Google, Amazon, and Microsoft. The push factors were the super rapid digital transformation, cloud computing, and AI. But in the past few years, the market has thinning. Job postings for software development roles have dropped by over 50 percent in 2023, led by [economic uncertainty](https://www.worklife.news/talent/2024-job-market/) and cost-cutting within the tech sector.
+
+## Key factors contributing to the decline:
+
+- **Economic Slowdown:** Since the global [economic slowdown](https://www.wusa9.com/article/money/economy/2024-job-market-why-you-are-struggling-to-get-hired/65-57a28cab-95d4-4cf0-8a76-d0b0ee225723), companies have been tightening budgets and so spending less on hiring sprees.
+
+- **Layoffs:** Already, major tech companies like Meta, Amazon, and Google have laid off tens of thousands of employees, effectively reducing the available market for experienced professionals down to a shrinking number of jobs.
+
+- **Shift to Contract Work:** In particular, in tech roles, we are seeing a booming shift towards contract and gig work as companies look to be more flexible in managing their workforce.
+
+## The Skills Mismatch Problem
+
+While great job opportunities exist in the CS field, a large gap exists between what employers want and what job seekers have. A [survey](https://www.welcometothejungle.com/en/articles/us-job-market-2024-outlook) on LinkedIn found that employers are on the lookout for specialized skills in cloud computing, AI, and data science which many educators emphasize but traditional computer science graduates often lack.
+
+## The Top Skills in Demand:
+
+- **Cloud Computing (AWS, Azure)**
+
+- **AI and Machine Learning**
+
+- **Data Analytics and Visualization**
+
+- **Cybersecurity**
+
+## Overwhelmed by Applicant Tracking Systems (ATS)
+
+Today, Applicant Tracking Systems (ATS) pose a major challenge for CS job seekers. These resume filtering systems block resumes lacking specific keywords, preventing them from reaching recruiters. If your resume isn't optimized for these keywords, it may never be seen. This creates the "application black hole" phenomenon, where rigid ATS filters exclude qualified candidates.
+
+**Tips for Beating the ATS:**
+
+- Customize your resume for each job application.
+
+- Use exact phrases from the job description.
+
+- Highlight relevant skills and certifications.
+
+- Avoid using graphics or unusual fonts that ATS may not recognize.
+
+## The Impact of Remote Work Trends
+
+The job market space has been interrupted by remote work. During the pandemic, there were remote jobs plenty, while many companies are now tightening up hiring for fully remote positions. According to a report from WorkLife, remote-only job postings are dropping, with companies instead opting for a hybrid model.
+
+Now, there is another layer of competition for those who would rather work remotely, as there are fewer options available.
+
+On the other hand, the increased flexibility that comes with hybrid work also means that those who are flexible about where work happens have opportunities.
+
+## The Future of CS Job Market: What to Expect
+
+While coping with present issues, numerous experts are wary yet confident of the CS employment market in the future. Hiring freezes and layoffs have washed their way across the mainstream, but there are still areas in tech where people are being hired. For instance, we have healthcare tech, fintech, and cybersecurity industries actively looking for talent to drive innovation.
+
+**Predictions for 2024 and Beyond:**
+
+- **Resurgence in AI and Data Science Roles:** The increasing adoption of [AI technologies](https://www.linkup.com/insights/blog/10-job-market-predictions-2024) is expected to boost demand for data scientists and AI engineers.
+
+- **Cybersecurity Boom:** With the rise in cyber threats, cybersecurity roles are expected to be among the fastest-growing tech jobs.
+
+- **Upskilling Imperative:** Continuous learning and upskilling in emerging technologies will be crucial for job seekers to stay competitive.
+
+## FAQs
+
+**1. Is the CS job market that bad in 2024?**
+
+Yes, the CS job market has gotten tougher with the number of layoffs in the tech sector and fewer hiring. There are however some opportunities for AI or cybersecurity within the niche areas.
+
+**2. What skills are most in demand in the current CS job market?**
+
+Cloud computing, AI, data analytics and cybersecurity skills are something that are highly sought after. These are the areas in which you can upskill to improve your chances of landing another job.
+
+**3. How can LockedInAI help me in my job search?**
+
+Being in a tough job market, [LockedInAI](https://www.lockedinai.com/) provides AI-driven interview assistance, helps in resume optimization, and prepares you for the upcoming interview.
+
+## Conclusion
+
+In 2024, computer science is a difficult field to enter the job market but it is not impossible. Instead of worrying about whether they have enough experience, job seekers should focus on skills in demand, ATS optimizes resumes and takes advantage of platforms such as LockedInAI to improve their chances of landing a job. If you are a beginner or you are an experienced professional, staying agile and prepared in your job search will help you make your way through these market hurdles.

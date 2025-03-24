@@ -1,0 +1,84 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2024-07-14",
+  title: "Crafting the Perfect Resume with LockedIn AI",
+  description:
+    "Explore the latest updates and enhancements in our 2024 changelog. Discover new features and improvements that enhance user experience.",
+  image: `${constructImageURL("/landing/blog/crafting-the-perfect-resume.png")}`,
+  alt: "Perfect resume with LockedIn AI",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/crafting-the-perfect-resume",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In today’s competitive job market, standing out among a sea of applicants is crucial. **LockedIn AI** offers a powerful resume review service that leverages Artificial Intelligence (AI) to help you create a standout resume. In this article, we’ll explore how **LockedIn AI** can give you an edge in your job search.
+
+## Why Crafting the Perfect Resume is Crucial
+
+In a saturated job market, resume writing plays a critical role. Employers often sift through hundreds of resumes for a single job opening. Many companies use **Applicant Tracking Systems (ATS)** to filter applications, meaning only the most optimized resumes make it to the hiring manager. Understanding the importance of **keyword optimization** and tailored content is vital for job seekers, and **LockedIn AI** can help craft the best resume to meet these standards.
+
+## The Power of AI in Resume Building
+
+Crafting the perfect resume with **LockedIn AI** utilizes advanced **Natural Language Processing (NLP)** to match your skills and experiences with job descriptions. This ensures that your resume aligns with the employer’s expectations, positioning you as a top candidate for the role.
+
+### Analyzing Job Descriptions
+
+**LockedIn AI** analyzes job descriptions to extract key information about the role’s requirements. It identifies relevant **keywords** that should be included in your resume. This process, called **keyword optimization**, ensures that your resume passes through ATS filters, increasing your chances of being noticed.
+
+### Optimizing for ATS
+
+One of the major challenges in resume writing is ensuring it is ATS-friendly. **LockedIn AI** takes the guesswork out of this by refining your resume to be easily readable by ATS systems. From formatting to keyword integration, it helps optimize your resume to align with job requirements and improve your chances of getting through initial screenings.
+
+## How LockedIn AI Transforms Resume Building
+
+With **LockedIn AI**, you can expect a tailored, efficient approach to resume creation. Here's how:
+
+- **Analyzing Job Descriptions**: It extracts keywords and phrases from job postings to keep your resume relevant to the employer's needs.
+- **Keyword Optimization**: Incorporating key terms into your resume raises the likelihood of passing ATS filters.
+- **Bullet Points & Structure**: **LockedIn AI** formats your resume into clean, concise bullet points for easy readability by employers.
+- **AI-Powered Insights**: It suggests improvements in tone, language, and structure to enhance your resume.
+- **Relevant Keywords**: The tool ensures that your resume includes the right keywords to reflect both the job description and current market standards.
+
+## Features of LockedIn AI for Crafting the Perfect Resume
+
+- **Natural Language Processing**: Helps decipher human language, extract important information from job descriptions, and incorporate it into your resume.
+- **ATS Compatibility**: Ensures your resume is in the right format to pass ATS filters and reach hiring managers.
+- **Resume Writing Tools**: Allows for both AI-generated content and manual input, so you can tailor your resume further as needed.
+
+## Steps for Crafting the Perfect Resume with LockedIn AI
+
+Here’s a step-by-step guide on how to build the ideal resume using **LockedIn AI**:
+
+1. **Input Your Information**: Start by adding your employment history, education, and skills.
+2. **Analyze Job Descriptions**: Use **LockedIn AI** to search for relevant job postings and extract essential keywords and requirements.
+3. **Generate Content**: The tool generates tailored resume content, including optimized bullet points and keyword placement.
+4. **Review and Edit**: Review the AI-generated resume to ensure it aligns with the job requirements and make necessary adjustments.
+5. **Optimize for ATS**: Finally, **LockedIn AI** refines your resume for ATS compatibility, increasing the chances it will reach the hiring manager.
+
+## The Competitive Edge
+
+In today’s job market, competition is fierce. A polished, AI-optimized resume can give you the advantage you need. **LockedIn AI** increases your chances of getting hired by utilizing cutting-edge technology to create resumes that stand out.
+
+## Conclusion
+
+Creating the perfect resume with **LockedIn AI** is an all-encompassing solution to enhance your job search. With AI-driven tools and **natural language processing**, it helps tailor your resume to specific job descriptions, ensuring it passes ATS filters. In an increasingly competitive world, **LockedIn AI** is your key to unlocking new job opportunities.

@@ -1,0 +1,171 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2025-01-13",
+  title: "Hide Your Apps When Sharing Your Screen in Zoom",
+  description:
+    "Learn how to protect your privacy and avoid distractions during Zoom screen sharing. Explore tips for hiding apps, managing notifications, and enhancing professionalism.",
+  image: `${constructImageURL("/landing/blog/hide-your-apps-sharing-in-zoom.png")}`,
+  alt: "Guide to hiding apps during Zoom screen sharing.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "How to Hide Apps When Sharing Your Screen in Zoom",
+  description: blog.description,
+  path: "/blog/hide-your-apps-sharing-in-zoom",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In today’s post-pandemic virtual world, working outside of the office is the new norm. Zoom is leading the charge for virtual meetings. Sharing screens on Zoom is a useful feature whether it’s for work, school, or personal communication. However, it also inadvertently exposes private or irrelevant information, like open apps, messages, or individual files. Maintaining professionalism while screen sharing is all about protecting your privacy, and avoiding embarrassment. Here’s how you can smoothly hide your apps to virtually show them onscreen while sharing.
+
+## Understanding Zoom’s Screen-Sharing Features
+
+You can customize your screen-sharing experience with Zoom. You can choose to share:
+
+- **1. Your Entire Desktop:** It shows everything that’s on your screen.
+
+- **2. Specific Application Windows:** Limits the sharing to one app at a time.
+
+- **3. Whiteboard or Documents:** Ideal for presentations that need to be laser-focused.
+
+Sharing your whole desktop is handy, but it’s dangerous if you are logged in with multiple apps. Sensitive information can emerge by accident — whether you get a sudden notification or take a glance at your cluttered desktop. Luckily, there are ways to prevent these slip-ups if you set the right settings and good practices.
+
+## Methods to Hide Apps While Sharing Your Screen
+
+### 1. Share a Specific Application Window
+
+Just like you can’t watch a movie and use your phone at the same time, Zoom doesn’t let you share your entire screen, you can only share one app at a time. Here’s how:
+
+- In the meeting, click Share Screen in the bottom toolbar.
+
+- Choose which application window you want to share.
+
+- Click Share to begin.
+
+This means only the selected app is shown and everything else is hidden.
+
+**Pro Tip:** Close unnecessary apps beforehand to minimize distractions or notifications.
+
+### 2. Enable "Share Only One Window" in Settings
+
+With advanced settings, Zoom has another option for further restricting screen sharing.
+
+- On your Zoom desktop client, click on the Settings icon.
+
+- Click on the Share Screen tab.
+
+- Allow to share only the selected window.
+
+The default setting prevents you from accidentally sharing all of your desktops.
+
+### 3. Use Virtual Desktop Managers
+
+Virtual desktops enable you to create multiple workstations on your computer. For example:
+
+- **Windows Users:** Try using the built-in virtual desktop feature. Just press Windows + Tab, then click on the New Desktop option.
+
+- **Mac Users:** Launch Open Mission Control and create a new desktop.
+
+Put your Zoom meeting and whatever app you want to share on a separate, dedicated virtual desktop. It keeps files or apps personal on another workspace without you seeing it.
+
+### 4. Minimize Notifications with Do Not Disturb Mode
+
+Email, messaging apps, or social media pop-up notifications can interrupt your presentation and harm your privacy. Activate Do Not Disturb mode to block these interruptions:
+
+- **Windows:** Go to Settings > System > Notifications & Actions, then turn on **Focus Assist**.
+
+- **Mac:** Click on the Control Center and enable **Do Not Disturb**.
+
+### 5. Blur or Replace Your Background
+
+Your screen itself can tell more than you may intend if it’s cumbered with open apps or open icons. Hide part of your screen, using screen blurring apps such as PowerToys (Windows) or Cinch (Mac).
+
+Zoom also allows background customization for video, which can complement your professional image during meetings.
+
+## Proactive Tips to Keep Your Screen Organized
+
+### 1. Declutter Your Desktop
+
+Clean up your desktop before sharing your screen by piling any unneeded files in a different folder. You can organize your icons the way you want using tools such as Fences (Windows).
+
+### 2. Close Irrelevant Apps
+
+Uninstall those apps that are not related to your meeting. Not only will your device’s performance improve but it will also enhance your device’s privacy.
+
+### 3. Use Presentation Mode
+
+Many operating systems offer a presentation mode that limits interruptions. For example:
+
+- For Windows, use Focus Assist in Presentation Mode.
+
+- To share slides on Mac, turn on Keynote Presenter Display.
+
+## Advanced Zoom Features for Enhanced Privacy
+
+### 1. Disable Annotation
+
+If you’re participating in a whiteboard or document, disable participant annotation to stop being marked up on your screen.
+
+- In your meeting controls, click on the More button.
+
+- Click on the Disable Annotation for Others.
+
+### 2. Share Computer Audio Without Sharing Screen
+
+Occasionally, you may want to share sound yet not your screen. Zoom has an option for this:
+
+- Tap or click Share Screen, and then scroll down to the Advanced tab.
+
+- Select Computer Audio and click Share.
+
+This feature is ideal for playing videos or music without exposing your apps.
+
+## Why Does Hiding Your Apps Matter?
+
+### 1. Maintains Professionalism
+
+Let's say, you are presenting to a client and a personal chat message appears. Such interruptions can undermine your credibility.
+
+### 2. Protects Sensitive Information
+
+You might be leaving confidential files or even emails open. Sharing screens without precautions allows your sensitive data to be exposed.
+
+### 3. Improves Focus
+
+A clutter-free screen helps keep your audience engaged because they can pay attention to what you’re sharing instead of what might be distracting them.
+
+## Troubleshooting Common Screen Sharing Issues
+
+**Problem: Participants Can’t See the Shared Content**
+
+- **Solution:** Ensure the right application is selected in the screen-sharing menu.
+
+**Problem: Notifications Interrupt Screen Sharing**
+
+- **Solution:** Double-check that the Do Not Disturb mode is active.
+
+**Problem: Shared Screen is Lagging**
+
+- **Solution:** Close background apps to free up bandwidth and improve Zoom performance.
+
+## Wrapping Up
+
+Sharing your screen in Zoom doesn’t have to be a minefield for potential humiliation. Built-in features, notifications management, and desktop organization allow you to share content and keep it secure without trouble. You can keep your privacy and professionalism with a little preparation in every virtual meeting.
+
+So, when in doubt, practice first! Get to know Zoom’s settings and test out your screen share setup so anything that could surprise you is avoided. These simple steps will teach you how to use discreet screen sharing in your meetings and keep them running smoothly.

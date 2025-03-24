@@ -1,0 +1,192 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2025-03-02",
+  title:
+    "The Art of Salary Negotiation: Proven Strategies to Get the Pay You Deserve",
+  description:
+    "Learn expert salary negotiation strategies to maximize your offer, confidently discuss compensation, and secure the pay you deserve in any job offer.",
+  image: `${constructImageURL("/landing/blog/art-of-salary-negotiation.png")}`,
+  alt: "Salary negotiation strategies for job offers",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "How to Negotiate a Salary Offer and Maximize Your Compensation",
+  description: blog.description,
+  path: "/blog/art-of-salary-negotiation",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Why Salary Negotiation is a Must (Not an Option)
+
+Imagine that you receive a job offer and the salary is lower than you expected. You hesitate, wondering: Can I ask for more or will they get mad? Are they able to revoke my offer completely? Should I negotiate? The answer is: You should **absolutely negotiate**.
+
+Many candidates feel nervous about negotiating salary. They worry that they might seem ungrateful or risk losing the job offer. But the truth is, most employers already expect you to negotiate. If you don’t, you risk leaving thousands of dollars on the table. This pertains to salary, as well as benefits, bonuses, and long-term earnings.
+
+The key to a successful salary negotiation isn’t merely asking for more money. It’s knowing how to confidently present your value and back up your request.
+
+This guide will walk you through:
+
+✔️ **How to prepare for salary discussions**
+
+✔️ **The best strategies for negotiating salary**
+
+✔️ **What to do if they say no (and how to counteroffer effectively)**
+
+## 1. Preparing for Salary Negotiation
+
+You need to know your worth before you start negotiating. Walking into a negotiation unprepared is like showing up to an interview without researching the company. You’d be setting yourself up for failure. So just like how you rigorously prepared for that interview, do the same before a salary negotiation.
+
+### 1.1. Research Salary Benchmarks for Your Role
+
+Your salary expectations should never be based on guesswork. Use data-driven research to back up your request instead.
+
+🔍 **Where to Find Reliable Salary Data:**
+
+- **Glassdoor Salary Insights** ([Glassdoor.com](https://www.glassdoor.com))
+
+- **Payscale Compensation Reports** ([Payscale.com](https://www.payscale.com/))
+
+- **Industry-Specific Reports** (Tech, finance, healthcare, etc.)
+
+Look for salary ranges by role, experience level, and location. If it’s possible, check the salaries for similar roles at the company you're negotiating with.
+
+### 1.2. Know Your Non-Salary Benefits & Perks
+
+If they’re unwavering in their salary offer, remember that salary isn’t the only thing negotiable. Sometimes, benefits can add even more value to your offer.
+
+💰 **Negotiable Benefits Include:**
+
+- **Signing bonuses** (especially in competitive industries)
+
+- **Performance-based bonuses**
+
+- **Equity (stocks or RSUs)**
+
+- **Professional development stipends**
+
+- **Flexible work schedules or remote work**
+
+- **Additional PTO or vacation days**
+
+Try negotiating perks that improve your work-life balance and long-term financial gain.
+
+### 1.3. Set Your “Ideal,” “Acceptable,” and “Walk-Away” Numbers
+
+Before the conversation, be clear about:
+
+✔️ **Your Ideal Salary** – The highest reasonable offer based on your experience and market data.
+
+✔️ **Your Acceptable Salary** – The lowest salary you’d take without resentment.
+
+✔️ **Your Walk-Away Point** – The salary at which you’d decline the offer and look elsewhere.
+
+**Example:** If market data shows $85K–$100K for your role:
+
+**Ideal:** $100K
+
+**Acceptable:** $90K
+
+**Walk-Away:** $85K or below
+
+💡 _Pro Tip_: Never disclose your lowest number upfront—you want to negotiate from your strongest position.
+
+## 2. The Salary Negotiation Conversation: How to Ask for More Money
+
+Once you’re prepared, you need to understand how to approach the conversation. Tactics vary depending on the method of communication (i.e. via phone, email, or in-person), but the principles stay the same.
+
+### 2.1. When to Bring Up Salary
+
+✔️ **Best Time to Negotiate:** After receiving a formal offer.
+
+✔️ **Worst Time:** Before proving your value in interviews.
+
+Employers are more willing to negotiate once they’ve decided you’re the right fit. Now that you have an offer, you have leverage.
+
+### 2.2. The Perfect Salary Negotiation Script
+
+Here’s a **tried-and-true script** for negotiating your salary confidently:
+
+💬 **You:**
+
+_"Thank you for the offer! I'm really excited about the role and the opportunity to contribute to [Company Name]. I wanted to discuss the compensation package. Based on my research and experience, I was expecting something closer to [desired salary]. Would you be open to discussing an adjustment?"_
+
+✔️ **Why This Works:**
+
+- Expresses enthusiasm (so they don’t think you’re rejecting the offer).
+
+- Frames the request around **market data** (instead of just personal preference).
+
+- Keeps the conversation **open-ended** rather than demanding.
+
+### 2.3. What to Do If They Say No
+
+Sometimes, hiring managers will push back with:
+
+🚫 _“We don’t have room to negotiate salary.”_
+
+👉 **How to Respond:**
+
+_"I understand. Are there other areas of the compensation package that we could discuss, such as a signing bonus or additional vacation days?"_
+
+If they truly can’t move on salary, **negotiating benefits is your next best move**.
+
+### 2.4. How to Handle a Counteroffer
+
+If they counteroffer with a **lower number than you requested**, here’s how to respond:
+
+💬 **You:**
+
+_"I appreciate the offer. Given my skills, experience, and industry benchmarks, I believe [$X amount] is a fair number. Is there flexibility to meet closer to that range?"_
+
+**Key Negotiation Tip:** Always **counter once** since companies expect some back-and-forth.
+
+## 3. Final Steps: Locking in Your Offer & Getting It in Writing
+
+Once you reach an agreement, ask for written confirmation of your new salary and benefits.
+
+✔️ **Example Email to Confirm Your Negotiated Salary:**
+
+📧 **Subject:** Confirmation of Updated Offer – [Your Name]
+
+_"Hi [Hiring Manager],_
+
+_"I appreciate the time to discuss my compensation. I'm excited to accept the offer at [$X salary] with [list any negotiated benefits]. Please confirm the details in writing so we can move forward with the next steps."_
+
+_"Looking forward to joining the team!"_
+
+💡 _Pro Tip_: Never resign from your current job until you have the **final written offer** in hand.
+
+## Salary Negotiation is a Skill—Use It
+
+Negotiating salary will feel uncomfortable at first. But it will get easier the more you practice.
+
+## Key Takeaways:
+
+✔️ **Do your research**—know market salaries and set your ideal number.
+
+✔️ **Frame the conversation positively**—show enthusiasm while making your request.
+
+✔️ **Be ready to counteroffer**—if salary is firm, negotiate benefits.
+
+✔️ **Get everything in writing** before finalizing your decision.
+
+At the end of the day, negotiation is about advocating for yourself—because no one else will do it for you.
+
+🔗 [Want more job negotiation tips? Try LockedIn AI](https://app.lockedinai.com)

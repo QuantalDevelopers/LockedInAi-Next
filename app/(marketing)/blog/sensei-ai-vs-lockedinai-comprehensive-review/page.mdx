@@ -1,0 +1,129 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2025-01-02",
+  title:
+    "Sensei AI vs LockedIn AI: Comprehensive Comparison of Interview Copilot Tools",
+  description:
+    "Compare Sensei AI Copilot and LockedIn AI in-depth. Discover their AI models, performance, features, pricing, and usability to find the best real-time interview copilot for your needs. Neutral and detailed! ",
+  image: `${constructImageURL("/landing/blog/sensei-ai-copilot-vs-lockedinai.png")}`,
+  alt: "Image of Sensei AI Copilot vs LockedIn AI Comparison. Deep dive into AI models, performance, features, pricing, and usability.",
+  featured: false,
+};
+
+export const metadata = {
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/sensei-ai-vs-lockedinai-comprehensive-review",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+};
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+The demand for AI tools to help with interviews and workplace communication has never been higher. AI-powered copilots have become reliable companions to help people perfect their presentations and responses. Among the top players in this arena are **Sensei AI** and **LockedIn AI**. Both tools offer incredible interview and meeting assistance, but their features, styles, and usability are quite different.
+
+In this article, we'll compare these two platforms in detail so you can decide which suits your requirements best. Whether you're preparing for a technical interview, a behavioral assessment, a professional meeting, or any other scenario, this guide covers it all.
+
+## Overview: What Are Sensei AI and LockedIn AI?
+
+### Sensei AI
+
+Sensei AI is designed to help users during live interviews. It is an AI-powered assistant that offers personalized responses for behavioral and technical questions. The platform includes features like a coding copilot and an AI story builder, specifically catering to both traditional and technical interviews. Sensei AI integrates with platforms like Zoom and Google Meet, making it a convenient option for live sessions.
+
+### LockedIn AI
+
+LockedIn AI, on the other hand, is a dual-layered AI copilot system designed for interviews and professional meetings. It is suitable not just for job seekers but also for professionals looking to enhance their meeting skills. It includes features like a technical interview coding copilot, pre-interview screening tools, technical quizzes, and real-time feedback. Additionally, LockedIn AI includes memory-clearing options to prevent AI from hallucinating.
+
+## Core Features Comparison
+
+| Feature                      | Sensei AI                                                   | LockedIn AI                                                            |
+| ---------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Primary Focus**            | Interviews (behavioral and technical)                       | Behaviroal and technical Interviews and workplace meetings             |
+| **Personalization**          | General guidance and feedback, less tailored to individuals | Highly personalized responses using user-uploaded resumes and profiles |
+| **Real-Time Feedback**       | Not available                                               | Available with AI coach, offering corrections during sessions          |
+| **Customization**            | Minimal                                                     | High, from AI copilot to resume refinement                             |
+| **Coding Assistance**        | Basic coding copilot                                        | Split-screen coding assistance with fine-tuned models                  |
+| **AI Coach**                 | Not available                                               | Available, focuses on continuous interview performance improvement     |
+| **AI Model**                 | GPT-4o mini (basic) Unable to pass Strawberry test          | Fine-tuned Azure GPT-4o and 4o mini for specific use cases             |
+| **Interview Transcript**     | Not available                                               | Available                                                              |
+| **Embedded Video Streaming** | Not available                                               | Available                                                              |
+| **Resume Builder**           | Not available                                               | Available                                                              |
+| **Chat History**             | Not available                                               | Available, users can review previous interactions                      |
+| **Language Support**         | 30+ languages                                               | 42+ languages, including bilingual functionality                       |
+| **Free Plan**                | Free access with 15-minute sessions and core features       | Everyday 10 free minutes                                               |
+| **Premium Pricing**          | Starting at $89/month                                       | Starting at $54/month                                                  |
+| **Target Audience**          | Job seekers who needs interview assistant                   | Job Seekers and professionals in technical fields                      |
+
+## Real-Time Assistance
+
+Both platforms feature real-time assistance, but the delivery differs significantly:
+
+- **Sensei AI:** Focused on live interviews, analyzing questions and responding. However, its slower response time can disrupt fast-paced interviews.
+- **LockedIn AI:** Provides real-time assistance during interviews and professional meetings. It analyzes performance and offers instant tips for effective communication, making it more versatile.
+
+## Personalization
+
+- **Sensei AI:** Minimal personalization with predefined features like the AI story builder and basic coding assistance.
+- **LockedIn AI:** Highly customizable, allowing users to tailor the AI copilot and responses to their specific needs.
+
+## Technical Assistance
+
+- **Sensei AI:** Basic coding copilot for real-time technical interview support.
+- **LockedIn AI:** Offers advanced coding assistance with split-screen functionality and fine-tuned models for high-quality, context-relevant answers.
+
+## Speed and Model Efficiency
+
+LockedIn AI is faster and more efficient than Sensei AI due to its advanced architecture and fine-tuned models, making it ideal for real-time assistance. In terms of the model performance, the easiest way to tell the difference is by observing the AI's ability to pass the **Strawberry test**. LockedIn AI's professional model can pass the test 7 out of 10 times, while Sensei AI's basic model struggles to pass it.
+
+## Resume and Document Analysis
+
+LockedIn AI provides tools for analyzing resumes, cover letters, and support materials, which Sensei AI lacks.
+
+## Interview Transcripts and Embedded Video Streaming
+
+LockedIn AI includes features like interview transcripts and embedded video streaming, while Sensei AI does not.
+
+## Language Support
+
+- **Sensei AI:** Supports 30+ languages.
+- **LockedIn AI:** Supports 42+ languages with bilingual functionality, making it suitable for multinational scenarios.
+
+## Pricing and Accessibility
+
+- **Sensei AI:** Offers free 15-minute sessions; premium plans start at $89/month.
+- **LockedIn AI:** Provides 10 free credits; premium plans start at $54/month, billed annually.
+
+## FAQs
+
+### Can Sensei AI and LockedIn AI be used for non-technical interviews?
+
+Yes, both platforms are great for non-technical interviews. Sensei AI’s story builder and LockedIn AI’s dual-layered feedback work across various industries.
+
+### How do these platforms handle technical preparation?
+
+Both provide coding copilots for real-time technical interview support. LockedIn AI also includes pre-interview quizzes.
+
+### Can these platforms support multilingual users?
+
+Yes, Sensei AI supports 30+ languages, while LockedIn AI supports 42+ languages and includes bilingual functionality.
+
+### Are there free versions available?
+
+Yes, Sensei AI offers a free 15-minute session, while LockedIn AI provides 10 free credits.
+
+## Conclusion
+
+Choosing between these platforms depends on your specific needs, goals, and budget. By understanding their features and capabilities, you can make an informed decision that aligns with your career aspirations.

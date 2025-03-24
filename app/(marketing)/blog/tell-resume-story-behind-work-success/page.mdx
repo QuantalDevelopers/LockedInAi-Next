@@ -1,0 +1,133 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2025-02-22",
+  title: "How to Craft & Tell a Resume Story Behind Your Work Success",
+  description:
+    "Transform your resume from a list of jobs into a compelling career story. Learn how to craft impactful bullet points, address career gaps effectively, and create a narrative that resonates with hiring managers while maintaining professionalism.",
+  image: `${constructImageURL("/landing/blog/tell-resume-story-behind-work-success.png")}`,
+  alt: "Guide to storytelling in your resume",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Storytelling in Resumes: How to Craft a Compelling Career Narrative",
+  description: blog.description,
+  path: "/blog/tell-resume-story-behind-work-success",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Quick Answer:
+
+A storytelling resume stands out by presenting your achievements in a structured and engaging way. Start with a strong headline and a concise career summary to grab attention. Use bullet points to ensure readability and focus on the most relevant experiences. Avoid overly long descriptions—keep your story clear and impactful. Highlight your decision-making and problem-solving style, support claims with real accomplishments, and always deliver on your promises. This approach gives hiring managers deeper insight into your professional strengths.
+
+## Storyline Resumes: The Science and Approach
+
+### Why storytelling works
+
+Research from Princeton University shows storytelling creates a neural connection between the storyteller and the audience. A well-crafted resume uses this principle to align with the recruiter’s perspective, making your narrative memorable.
+
+### Point of view in resumes
+
+Avoid writing in the third person—it’s redundant since you’re already the subject of the story. Instead, focus on minimizing the use of “I” and emphasizing action. This keeps the tone professional and engaging while maintaining clarity.
+
+### Example improvement
+
+**Before:** I managed a team of twenty people.
+
+**After:** Managed a team of twenty people.
+
+## Summary of Skills and Career Story: The Key to a Winning Resume
+
+Your career story adds depth to your resume, but it’s your skills and achievements that matter most. Think of storytelling as the finishing touch that highlights your professional highlights.
+
+### Key Points to Remember:
+
+- **Focus on Relevance:** Tailor your resume to showcase skills and experiences directly aligned with the job. Avoid listing everything—stick to what makes you the perfect candidate.
+
+- **Historical Scope:** Go back up to 20 years if the experience is relevant. In dynamic fields like tech, prioritize recent achievements. For careers requiring extensive background checks (e.g., government, academia), include lifelong milestones.
+
+### Keep Your Story Concise
+
+Your resume is not a novel; it’s a strategic summary of your career. Employers spend only a few seconds on an initial review, so brevity is key. Instead of lengthy paragraphs, use bullet points to make your resume skimmable.
+
+- **Why Bullet Points Work:** Bullet points help you structure your accomplishments into digestible pieces, ensuring recruiters can quickly identify your value.
+
+- **When to Elaborate:** If a story requires more context, save the additional details for your cover letter or interview. The resume’s purpose is to spark interest, not to provide every detail.
+
+### Crafting Effective Story Bullet Points
+
+Transform your career highlights into compelling, skimmable bullet points:
+
+- **Start with Action Verbs:** Use strong, dynamic verbs like “led,” “streamlined,” or “innovated” to show initiative.
+
+- **Quantify Results:** Whenever possible, include measurable outcomes. For example, instead of saying “Improved team productivity,” say, “Increased team productivity by 25% through new workflow strategies.”
+
+- **Be Relevant:** Tailor your points to match the job description, focusing on the achievements that align with the role you’re targeting.
+
+### Own Career Gaps
+
+Career pauses happen. A story-based resume allows you to present gaps in a positive light by framing them as periods of growth or development.
+
+- **How to Address Gaps:** Include dates for the gap and a brief explanation. For instance:
+
+**2018–2020:** Focused on family responsibilities while enhancing project management skills through online courses.
+
+**2021–2022:** Took a sabbatical to volunteer with an NGO, developing leadership and cross-cultural communication skills.
+
+- **Be Transparent:** Employers appreciate honesty. Addressing gaps upfront shows confidence and accountability.
+
+### Proofread & Edit
+
+A storytelling resume stands out, but errors can detract from its impact. Ensure every detail is polished and professional.
+
+**Proofreading Tips:**
+
+- Check for typos, grammar mistakes, and consistency in formatting.
+
+- Use tools like Grammarly or enlist a trusted friend to review your work.
+
+- Read your resume aloud to catch awkward phrasing or unclear points.
+
+**Refine for Clarity:** Make sure your stories are concise and easy to follow. A well-edited resume reflects your attention to detail—a quality employers value.
+
+## How Storytelling Enhances Your Career
+
+A story-based resume does more than list jobs; it builds a narrative that resonates with hiring managers.
+
+- **Reveal Your Personality:** By framing your accomplishments as stories, you give recruiters insight into how you think, solve problems, and approach challenges.
+
+- **Prepare for Interviews:** Crafting your resume stories also helps you prepare for interviews. When asked about specific experiences, you’ll have well-structured examples ready to share.
+
+- **Stand Out:** A standard resume may look good on paper, but it often fails to convey the candidate’s unique qualities. A story-based resume differentiates you from other applicants.
+
+### Validate Your Story
+
+Back up your narrative with facts and consistency across platforms.
+
+- **LinkedIn Alignment:** Ensure your LinkedIn profile matches your resume. Hiring managers will likely cross-reference the two.
+
+- **Social Media Audit:** Clean up your online presence to reflect professionalism. Many employers review candidates’ social media profiles during the hiring process.
+
+- **Authenticity Matters:** Avoid exaggerations or inaccuracies. Honesty builds trust, while inconsistencies can undermine your credibility.
+
+## The Bottom Line
+
+A story-based resume helps you go beyond the basics to showcase your unique value as a candidate. By focusing on your skills, achievements, and personal growth, you create a compelling narrative that captures the attention of recruiters.
+
+While it won’t guarantee you the job, this approach significantly increases your chances of securing interviews. With more opportunities to engage with employers, you’ll have the platform to expand on your story and demonstrate why you’re the perfect fit for the role.

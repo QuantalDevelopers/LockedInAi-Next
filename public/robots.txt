@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.lockedinai.com
+
+# Sitemaps
+Sitemap: https://www.lockedinai.com/sitemap.xml

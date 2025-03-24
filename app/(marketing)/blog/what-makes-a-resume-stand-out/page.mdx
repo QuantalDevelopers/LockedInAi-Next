@@ -1,0 +1,185 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2025-01-03",
+  title: "How to make a standout resume",
+  description:
+    "Learn how to craft a standout resume with expert tips on formatting, tailoring, and highlighting achievements. Follow our guide to grab recruiters’ attention and land your dream job!",
+  image: `${constructImageURL("/landing/blog/what-makes-a-resume-stand-out.png")}`,
+  alt: "Expert tips for outstanding resume creation.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "How to Make a Standout Resume That Secures Top Interviews",
+  description: blog.description,
+  path: "/blog/what-makes-a-resume-stand-out",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Want your resume to stand out and grab recruiters’ attention? Here’s how thousands of candidates leveraged expert advice to secure interviews and land jobs at top companies. This guide will help you design a resume that shines.
+
+This guide will elevate your resume to the next level, and here’s how:
+
+### 1. Start with the Essentials
+
+For each section, we’ll establish a baseline—the minimum you need to make your resume competitive. Think of this as your foundation.
+
+### 2. Go Beyond the Basics
+
+We’ll take it further with advanced tips and creative strategies to make every section of your resume stand out. You’ll learn how to turn standard information into compelling, attention-grabbing content.
+
+### 3.Master Formatting and Layout
+
+Discover how formatting and layout play a pivotal role in making your resume visually appealing and professional. A well-structured resume not only grabs attention but also ensures your content is easily scannable.
+
+## Craft an Attention-Grabbing Header Section
+
+The header is the first thing recruiters notice on your resume. It should include your **name, location, job title**, and **contact information**.
+
+- **Baseline**: Provide clear, typo-free contact details to make it easy for recruiters to get in touch.
+
+- **Stand Out**: Include a link to your LinkedIn profile or personal portfolio, add a custom headline, and consider including a professional photo (if appropriate).
+
+### Link to LinkedIn and Personal Portfolio
+
+Since 70% of recruiters check social media profiles and 79% may reject candidates based on them, use this to your advantage. Include a link to your LinkedIn profile in the header to direct their attention. If you have a portfolio website, add it to further showcase your work.
+
+### Custom Headline
+
+A strong custom headline, placed right after your name, is one of the best ways to grab a recruiter’s attention. Go beyond a generic job title—make it memorable and creative.
+
+- **Wrong Example**: PPC Specialist with 5 years of experience.
+
+- **Right Example**: Fighting shady, aggressive marketing.
+
+### Create a Captivating Summary
+
+The summary is a brief section that highlights your professional experience and goals. Sometimes referred to as an “Objective,” it’s your opportunity to align yourself with the position.
+
+- **Baseline**: Keep it short, easy to read, and impactful.
+
+- **Stand Out**: Make it engaging and memorable, with a clean layout.
+
+Think of it as a cold email to someone you don’t know. A concise and relevant summary increases your chances of making a connection. Properly done, this section positions you strongly for the job.
+
+<p align="center">
+  <Image
+    src={constructImageURL("/landing/blog/resume-stand-out1.png")}
+    alt="resume header example"
+    width={1400}
+    height={800}
+    className="h-auto w-1/2 transform rounded-lg object-cover transition-transform duration-500 hover:scale-105"
+  />
+</p>
+
+Positioning the **Summary** section strategically alongside the **Experience** section on a resume can greatly influence how recruiters perceive your application. Here’s why this approach works and how it can benefit you:
+
+## Why Place the Summary Next to Experience?
+
+Recruiters naturally scan the **Experience** section first, as it directly reflects your professional background. However, having your **Summary** nearby provides an opportunity to add depth and context to your application. For example:
+
+- **Tailoring for a Remote Role:** A candidate, Daniel, used his summary to highlight his extensive remote work experience, a key qualification for the fully remote company, Intercom. This not only reinforced his suitability but also framed his experience to align with the company’s core requirements.
+
+- **Showcasing Personality:** Daniel also included insights about his personality, emphasizing his cultural fit—an essential quality for success in remote environments.
+
+By researching the company and understanding their values, you can craft a **Summary** that resonates with what they prioritize, making it memorable and impactful.
+
+## When to Use a Summary Strategically
+
+The **Summary** section is particularly effective in the following situations:
+
+- **Career Transitions:** If you’re switching industries, your **Summary** can address why you’re making the change and how your skills are transferable.
+
+- **Limited Experience or Employment Gaps:** Use the **Summary** to proactively address gaps or highlight skills and experiences not immediately evident in the **Experience** section.
+
+- **Clarifying Unusual Career Paths:** Anticipate recruiters’ questions and provide a concise explanation to keep them focused on your strengths and suitability for the role.
+
+By thoughtfully crafting your **Summary** and placing it where it complements your **Experience**, you can frame your career story in a way that addresses potential concerns and highlights your qualifications effectively.
+
+## Provide Quantifiable Achievements
+
+Recruiters value results over responsibilities. Make your impact clear by demonstrating measurable outcomes.
+
+- **Baseline:** Show how your work contributed to the company’s success.
+
+- **Stand Out:** Incorporate quantifiable achievements throughout your resume to create a compelling, results-driven narrative.
+
+## Highlight Awards and Recognitions
+
+Adding an **Achievements** section makes your resume stand out from the competition.
+
+- **Baseline:** Few candidates include this section.
+
+- **Stand Out:** Showcase awards, recognitions, or even a “Most Proud” section to differentiate yourself. These custom sections highlight your value to potential employers.
+
+## Tailor Your Resume
+
+Customizing your resume to the job description is one of the most effective ways to secure interviews.
+
+- **Baseline:** Include relevant skills and keywords from the job description.
+
+- **Stand Out:** Group skills and provide examples to demonstrate your expertise. Instead of listing skills like a shopping list, use impactful formatting to make them engaging.
+
+Tailoring your resume demonstrates your alignment with the role and significantly boosts your chances of success.
+
+## Apply Formatting Tricks to Create a Standout Resume
+
+### Prioritize White Space
+
+An eye-tracking study by Ladders Inc. reveals that resumes lacking white space are often skipped by recruiters. A clean, easy-to-read resume increases the likelihood that all sections will be reviewed.
+
+If you have extensive information to include, use a smart layout and strategically placed sections to balance content and white space effectively.
+
+### Compare and Adjust Layouts
+
+Even with the same amount of information, a well-structured resume looks more engaging and professional. Ensure your layout is easy to scan and visually appealing by experimenting with different section alignments and font sizes.
+
+**Pro Tip:** Once you’ve completed your resume, squint your eyes and look at it. If it appears as a cluttered, dense block of text, consider reorganizing or trimming down content to create more white space and improve readability.
+
+## Declutter Your Resume with a Minimalist Approach
+
+### Use Concise Language
+
+Focus on brevity when describing your experiences. Avoid overly complicated or verbose descriptions.
+
+**Bad Example:** _Developed an elaborate testing environment throughout a wide array of 22 company and partner software assets._
+
+**Good Example:** _Launched a test-to-production environment for 22 software products._
+
+### Choose Tested Fonts and Pairings
+
+Incorporate multiple fonts thoughtfully to differentiate headers, titles, and body text. Stick to a maximum of three fonts per resume and opt for combinations recommended by design experts to maintain a clean, professional appearance.
+
+### Leverage Subtle Colors
+
+Consider using the company’s brand colors in your resume for a strategic edge. Subtle accents can make your resume stand out while fostering familiarity with in-house recruiters. Avoid overuse or logos, and focus on maintaining professionalism.
+
+### Proofread for Perfection
+
+Proofreading is essential. Typos can detract from an otherwise stellar resume. Review your resume at least three times before submission, and consider using tools or resume builders that automatically check for errors to ensure accuracy.
+
+## Key Takeaways
+
+- **1. Small Details Matter:** Every section of your resume should stand out. Thoughtful details create a compound effect that captures attention.
+
+- **2. Research the Company:** Tailor your resume by extensively researching the company and incorporating your findings into relevant sections.
+
+- **3. Add Custom Sections:** Include unique sections like projects, testimonials, or achievements to differentiate yourself and engage recruiters.
+
+- **4. Prioritize Visuals and Readability:** Optimize white space, font choices, and formatting to ensure your resume is visually appealing and easy to read.

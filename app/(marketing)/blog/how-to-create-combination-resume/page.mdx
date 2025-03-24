@@ -1,0 +1,125 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2025-02-27",
+  title: "How to Create a Combination Resume",
+  description:
+    "Learn how to create a powerful combination resume that showcases both your skills and work history. Discover who should use this format, its advantages and disadvantages, and get expert tips for crafting a hybrid resume that stands out.",
+  image: `${constructImageURL("/landing/blog/how-to-create-combination-resume.png")}`,
+  alt: "Guide to creating combination resume format",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "How to Write a Combination Resume: A Complete Guide",
+  description: blog.description,
+  path: "/blog/how-to-create-combination-resume",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Interested in crafting a combination resume that showcases your skills and experience effectively? Let’s dive into the essentials.
+
+First, understand this: **the combination resume format is not ideal for candidates with minimal work experience**. It blends elements of both the chronological and functional resume formats, so having substantive content to draw from is crucial.
+
+When it comes to choosing a resume format, your options are generally:
+
+- **Chronological resumes**, focusing on your work history in reverse order.
+
+- **Functional resumes**, emphasizing your skills over job titles.
+
+The **combination resume**, also known as the **hybrid resume**, combines the best of both worlds.
+
+## What is a Combination Resume?
+
+A **combination resume**, also called a **hybrid resume**, merges the best features of the **functional** and **chronological** resume formats to present both your skills and work history effectively.
+
+Here’s the breakdown:
+
+- **A functional resume** emphasizes your **skills and expertise**, making it ideal for career changers or those with non-linear work histories.
+
+- **A chronological resume** highlights your **work history in order**, focusing on your career progression and increasing responsibilities.
+
+The **combination resume** brings these two together, showcasing your key skills upfront while also providing a detailed chronological work history. This format allows you to highlight your abilities and back them up with real-world experience, creating a well-rounded and impactful presentation.
+
+It’s an ideal format for:
+
+- **Hiring managers** who prefer structure but value flexibility.
+
+- **Candidates** who want to balance showcasing their skills with demonstrating career progression.
+
+## The Key Factors of a Combination Resume
+
+A combination resume integrates two specific formats into a single approach:
+
+- **1. Functional Resume Format**
+
+- **2. Reverse-Chronological Resume Format**
+
+The combination resume strikes a balance by blending the strengths of both formats, ensuring neither the skills nor the work history takes precedence over the other. It highlights both your relevant skills and career progression equally.
+
+Below is a comparison grid to illustrate how these resume formats differ based on their criteria:
+
+<Image
+  src={constructImageURL("/landing/blog/create-combination-resume.png")}
+  alt="different resume formats"
+  width={1400}
+  height={800}
+  className="h-auto w-full transform rounded-lg object-cover transition-transform duration-500 hover:scale-105"
+/>
+
+## Is a Combination Resume Right for You?
+
+A combination resume is ideal for job seekers who want to emphasize both their skills and work experience, offering a balanced approach that highlights qualifications in a tailored way. It works particularly well for:
+
+- **1. Career Changers:** If you’re transitioning into a new industry, the combination format allows you to showcase transferable skills alongside your work history, demonstrating your qualifications for the new role.
+
+- **2. Recent Graduates or Early-Career Professionals:** For those with 1-3 years of experience, including internships or volunteer work, this format lets you highlight relevant skills and accomplishments while providing a solid overview of your early career.
+
+- **3. Consistent Employment History:** If you have a strong work record without significant gaps, a combination resume allows you to showcase your professional timeline and pair it with an impressive skillset, presenting a complete picture to employers.
+
+## Advantages of a Combination Resume
+
+- **Emphasizes Versatility:** Blends skills and work history, giving equal weight to what you know and where you’ve applied it.
+
+- **Highly Customizable:** Tailor your skills and experiences to match the job description, making your application more targeted and relevant.
+
+- **Appeals to Employers:** This format shows hiring managers that you have the experience and expertise to succeed, making it easier for them to see your value at a glance.
+
+### Advantages of a Combination Resume
+
+A combination resume effectively highlights both your skills and work history, making it ideal for showcasing transferable abilities and a strong career narrative. It appeals to recruiters by balancing the strengths of functional and chronological resumes, offering clarity without raising suspicion often associated with skill-based resumes. This format is particularly valuable for career changers, as it emphasizes relevant skills while providing context through past roles. Additionally, it suits versatile candidates who have contributed to multiple roles or long-term projects, presenting a holistic view of their capabilities. For those re-entering the workforce, a combination resume shifts focus to skills, reframing gaps as opportunities for personal growth and demonstrating readiness to excel. Its flexibility allows job seekers to stand out, enabling a tailored presentation that aligns with specific job requirements.
+
+### Disadvantages of a Combination Resume
+
+Despite its strengths, a combination resume can present challenges. Its detailed nature often makes it longer, reducing readability for recruiters who favor concise formats. Employment gaps may still be noticeable, as this format doesn’t fully obscure chronological timelines. Additionally, the inclusion of both skills and experiences can lead to redundancy if not carefully crafted, potentially diluting the resume’s impact. Crafting a compelling hybrid resume requires significant effort to avoid repetitiveness and ensure engaging, clear content. These drawbacks mean that while the format is versatile, it might not suit everyone, particularly those with limited work history or extensive career gaps.
+
+## Additional Tips to Perfect Your Hybrid Resume
+
+Congratulations on building your combination resume! Now, let’s refine it with these final tips to make it stand out:
+
+- **Integrate Sections Thoughtfully:** Seamlessly incorporate skills into other sections to demonstrate your value to the organization. However, avoid over-repetition to keep your resume clean and engaging.
+
+- **Use Keywords and Buzzwords:** Leverage impactful language to grab attention. Optimize your resume with industry-specific terms and avoid generic phrasing to make a strong impression.
+
+- **Highlight Soft and Transferable Skills:** Especially if transitioning to a new role or industry, emphasize abilities that show you’re adaptable and ready to excel in the job.
+
+- **Focus on Content Over Format:** While hybrid resumes combine elements of multiple formats, the real focus should be on the quality and relevance of the content. Prioritize showcasing the skills and achievements that matter most for the role.
+
+## Conclusion
+
+Your work experience is one of the most crucial sections recruiters will review. A well-crafted combination resume highlights your career progression and skills, making it easy for employers to see your value at a glance. Whether you’re an experienced professional or transitioning roles, this format helps you effectively communicate your qualifications.

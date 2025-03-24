@@ -1,0 +1,196 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2024-03-03",
+  title:
+    "Cracking the Coding Interview: The Ultimate Guide for Software Engineers",
+  description:
+    "Learn how to effectively use AI interview tools during screen-sharing interviews, whether sharing a specific tab or the entire screen.",
+  image: `${constructImageURL("/landing/blog/the-ultimate-guide-for-software-engineers.jpg")}`,
+  alt: "Using LockedIn AI During a Coding Interview",
+  featured: false,
+};
+
+export const metadata = {
+  title: blog.title,
+  description: blog.description,
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+};
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+The coding interview is the most important testing hurdle for prospective software engineers. To win this challenge, it is important to plan strategically by making one of the technical and problem-solving skills. In this article, we will show you how to ace a coding interview based on the best practices, with a twist: using LockedIn AI to crack the coding interview efficiently.
+
+## Understanding the Importance of Coding Interviews
+
+Coding interviews are meant to test how fast you think through solving problems, how efficiently your code is written, and what skills you have for thinking algorithmically under pressure. Whether you are interviewing for a start-up or a giant tech company — the ability to prove you know how to code and problem-solve is very important. For companies like Google, Meta, Amazon, and Microsoft, coding interviews rank extremely high on the importance scale for the hiring process of software engineers.
+
+Coding interview questions normally revolve around data structures, algorithms, language-specific (e.g. java coding interview questions, python coding interview questions), and object-oriented programming. They are designed to test your coding ability both through questions about theoretical knowledge and the practical application of coding.
+
+## Coding Interview Preparation: Where to Begin
+
+Given how any job interview can be, it is important to do your homework before any job interview, and the first step in preparing for a coding interview is to familiarize yourself with the types of questions usually being asked in an interview. Some common categories include:
+
+- **Arrays and Strings:** They are basic data structures you’ll see all the time in coding interviews. Questions may include reversing the string, searching for sub-arrays, or solving matrix-related problems.
+
+- **Linked Lists and Trees:** You can learn that these data structures show up in interviews a lot and therefore, it’s important that you understand them and what they’re doing.
+
+- **Recursion and Backtracking:** Many programming coding interview questions require a recursive solution or backtracking (like generating permutations or solving a puzzle).
+
+- **Sorting and Searching Algorithms:** Many of the array, string, and list interview questions depend on these algorithms.
+
+## How to Use LockedIn AI During a Coding Interview?
+
+### Step 1: Install the LockedIn AI Chrome Extension
+
+<Image
+  src={constructImageURL("/landing/blog/system_design_1.png")}
+  alt="hero"
+  height={319}
+  width={500}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+The first thing the user must do before using LockedIn AI in for coding interview is install the Chrome extension.
+
+1. **Visit the Chrome Web Store:** Go to your Google Chrome, navigate to the LockedIn AI Chrome Extension page and tap on the extension icon at the top-right of the screen.
+
+2. **Click "Add to Chrome":** On the extension page, click on ‘ADD TO CHROME’ button.
+
+3. **Confirm Installation:** A pop-up will then appear in the form of a message, which will call for confirmation. Finally, click on the option labeled ‘Add Extension’ to complete the installation of the Chrome extension.
+
+4. **Pin the Extension:** You find it easily whenever you want by simply clicking right top a puzzle icon and choosing a pin icon next to LockedIn AI.
+
+Afterwards, the extension is placed, it goes to the browser and one can easily incorporate it during the coding interview.
+
+## Step 2: Sign in to Your LockedIn AI Account
+
+<Image
+  src={constructImageURL("/landing/blog/system_design_2.png")}
+  alt="hero"
+  height={319}
+  width={400}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+By signing in, you unlock all the premium features and functionality of LockedIn AI, allowing you to use it across a variety of online meeting platforms.
+
+1. **Open the Extension:** To open the LockedIn AI extension, just click on the icon in the right corner of the Chrome browser.
+
+2. **Sign In:** Now, log in with your credentials here. However, if for one reason or the other you do not have an account, you can create it by going to the official LockedIn AI webpage.
+
+With new sign-in, you get access to all the functionality and features of LockedIn AI and integrate it with different platforms of online meetings.
+
+## Step 3: Setup the Coding Environment
+
+<Image
+  src={constructImageURL("/landing/blog/sde_3.png")}
+  alt="hero"
+  height={319}
+  width={400}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+You need to do some settings before the interview. Here’s how you can do it:
+
+1. **Select the Scenario:** As you are from a Software Engineering background you have to select Software Engineering in the scenario section.
+
+2. **Select the Coding Language:** You can select the coding language of your choice or you can set this option to “Any”.
+
+## Step 4: Choose Your Coding Problem and Activate AI Assistance
+
+<Image
+  src={constructImageURL("/landing/blog/sde_4.png")}
+  alt="hero"
+  height={319}
+  width={400}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+Now after setting everything up, you need to choose your coding problem and send it to LockedIn AI. You can do this by:
+
+1. **Take a Screenshot:** Press Ctrl+Shift+U to send the screenshot to the tool.
+
+2. **Real-time explanation:** After uploading the screenshot successfully, LockedIn AI will give you a detailed explanation of the code.
+
+This is how you can ace your coding interview with the help of AI assistance.
+
+## Common Coding Interview Questions and Techniques
+
+During a coding interview, you may be given several programming tasks that will try your algorithms knowledge and data structures knowledge. Below are some sample questions across different categories to help you get started:
+
+### Arrays and Strings:
+
+- Find two numbers that sum to a target given an array of integers.
+
+- Reverse a string in place.
+
+- Implement an algorithm to tell if a given string comprises unique characters.
+
+### Linked Lists:
+
+- The problem is to find a cycle in a linked list.
+
+- Given a linked list with a random number generator, you need to merge the given two sorted linked lists.
+
+### Dynamic Programming:
+
+- Find the longest increasing subsequence problem.
+
+- Given two strings, find the minimum number of edits (insertion,p deletions, substitutions) required by the strings to differ (Levenshtein Distance).
+
+### Graphs and Trees:
+
+- Implement the depth-first search (DFS) and the breadth-first search (BFS) algorithms.
+
+- You need to find the lowest common ancestor for a binary tree.
+
+### Sorting and Searching Algorithms:
+
+- Run quicksort or mergesort.
+
+- Given a rotated sorted array search for the element.
+
+Each category of questions should be practiced in writing code in several languages (Java, Python, C++, etc.) because interviewers might expect you to be comfortable with more than one.
+
+## Cracking Behavioral Questions in Coding Interviews
+
+While coding interviews are also meant to solve technical problems, they include behavioral questions to figure out your communication skills, teamwork, or problem-solving approach. Questions like:
+
+- Talk about a difficult coding problem on which you worked and the solution you came up with.
+
+- What do you do when you have to debug a complex issue?
+
+- What comes to mind when you think of a time you had to work with someone you found difficult to collaborate with?
+
+Just as important as preparing for the technical portion, practicing responses to these types of questions is just as important. In addition to processing the next step correctly, LockedIn AI can also be used to simulate mock interviews where you practice coding in real time and get feedback on your communication and problem-solving methods.
+
+## Common Mistakes to Avoid in a Coding Interview
+
+Ahead of your coding interviews, there are trapdoors you need to avoid so that your performance does not collide with problems. Some common mistakes include:
+
+- Over-Optimizing Too Early: Don’t jump straight off the optimal solution without explaining your problem and thought process first. They want to know what you did to solve the problem and not so much what you ended up with.
+
+- Lack of Communication: The interviewee shouldn’t code silently. There is no room for mumbo jumbo; communicate your thoughts clearly and explain each step as you go along.
+
+## Conclusion
+
+Cracking the coding interview involves technical knowledge plus problem-solving skills, as well as good communication abilities. Familiarity with common coding patterns, familiarity with a wide variety of problems, and using sophisticated tools like LockedIn AI will significantly increase your preparation and raise your chances of acing the interview.
+
+If you are studying Java coding interview questions, Python coding interview questions, or just common coding interview questions, you need to always practice and adapt. As long as you have the right preparation strategy, you’ll be prepared to rock your next software engineering interview.

@@ -1,0 +1,133 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2024-07-14",
+  title: "How to Use LockedIn AI for Online Assessments",
+  description:
+    "A detailed guide on using the LockedIn AI extension and app to enhance your online meetings.",
+  image: `${constructImageURL("/landing/blog/how-to-use-extension-for-online-assessment.png")}`,
+  alt: "Effortless online assessments with LockedIn",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/how-to-use-extension-for-online-assessment",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Online assessments have become integral in both learning and professional settings as they effectively measure knowledge, skills, and performance. The **LockedIn AI** extension enhances this process by providing immediate feedback, improving response accuracy, and helping users perform their best, especially when time is limited. In this article, we’ll walk you through the step-by-step process of installing and using the LockedIn AI extension for online assessments.
+
+## Step 1: Installing the LockedIn AI Chrome Extension
+
+To get started with **LockedIn AI** for your assessments, follow these steps to install the Chrome extension:
+
+### Installing the LockedIn AI Chrome Extension
+
+1. **Go to the Chrome Web Store**: Open Google Chrome and search for **LockedIn AI** in the Chrome Web Store.
+2. **Add to Chrome**: Click the “Add to Chrome” button to begin the installation process.
+3. **Confirm Installation**: A pop-up will appear. To complete the installation, click the **‘Add Extension’** button in the upper-right corner.
+4. **Pin the Extension**: Go to the top right of your browser, click the puzzle icon, and select **LockedIn AI** to pin it for easy access during assessments.
+
+<Image
+  src={constructImageURL("/landing/blog/chrome_store_1.jpg")}
+  alt="Installing the LockedIn AI Chrome Extension"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>Installing LockedIn AI Chrome Extension</em>
+</p>
+
+## Step 2: Signing into Your LockedIn AI Account
+
+After installing the extension, the next step is to sign in and access all the features:
+
+<Image
+  src={constructImageURL("/landing/blog/sign_in.jpg")}
+  alt="Signing into Your LockedIn AI Account"
+  height={419}
+  width={400}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>Signing into Your LockedIn AI Account</em>
+</p>
+
+### Signing into Your LockedIn AI Account
+
+1. **Open the Extension**: Tap the **LockedIn AI** icon in your browser’s toolbar.
+2. **Log In**: Enter your username and password. If you don’t have an account, you can create one on the official **LockedIn AI** website.
+3. **Configure Preferences**: Set your preferences, such as the assessment platform you’re using or the level of feedback you want from the AI.
+
+## Step 3: Using LockedIn AI with Online Assessment Platforms
+
+**LockedIn AI** is compatible with popular online assessment platforms like **Google Classroom**, **Canvas**, and corporate testing systems:
+
+1. **Launch Your Assessment**: Open your preferred platform and start the assessment as usual.
+2. **Enable LockedIn AI**: Once the assessment begins, click on the **LockedIn AI** icon and enable screen sharing to receive real-time feedback.
+3. **Receive Real-Time Feedback**: While answering questions, LockedIn AI will provide instant feedback on strategy, timing, and accuracy.
+4. **Instant Answer Suggestions**: For challenging questions, **LockedIn AI** offers suggestions or guidance toward the correct answer.
+
+## Step 4: Personalizing Your LockedIn AI Experience
+
+<Image
+  src={constructImageURL("/landing/blog/content.jpg")}
+  alt="Personalizing Your LockedIn AI Experience"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>Customize and Personalize Your Experience</em>
+</p>
+
+To tailor **LockedIn AI** to your needs:
+
+### Customize and Personalize Your Experience
+
+- **Adjust Feedback Levels**: Choose how much feedback you want—whether you prefer detailed instructions or a more independent approach.
+- **Set Custom Goals**: For example, if your focus is on improving speed, LockedIn AI can help with time management; if accuracy is your priority, it will offer precision-improving suggestions.
+
+## Step 5: Using LockedIn AI’s Desktop App for Assessments
+
+For those who prefer using a desktop app, **LockedIn AI** offers a seamless solution:
+
+1. **Access the Website**: Visit the **LockedIn AI** website and download the desktop app.
+2. **Sign In**: Use your username and password to log in.
+3. **Join Assessments Directly**: The desktop app connects with assessment platforms like **Google Classroom** to provide continuous feedback throughout the assessment.
+
+## Step 6: Troubleshooting and Getting Support
+
+If you run into any issues while using **LockedIn AI**, several support options are available:
+
+- **Help Center**: Visit the **LockedIn AI** website and check the FAQ section for answers to common questions.
+- **Technical Support**: Submit a support ticket or contact the support team via email for assistance with technical issues.
+- **Community Forums**: Engage with other users in the community forums to share tips and experiences with using LockedIn AI during assessments.
+
+## Conclusion
+
+With **LockedIn AI**, you can significantly enhance your performance in online assessments by receiving real-time feedback and personalized assistance. This guide has equipped you with the knowledge to effectively use LockedIn AI in your assessment workflow, helping you achieve better outcomes.

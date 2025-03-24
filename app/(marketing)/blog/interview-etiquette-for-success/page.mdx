@@ -1,0 +1,204 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2025-03-06",
+  title: "Virtual Interview Etiquette: Tips to Ace Your Online Job Interview",
+  description:
+    "Master virtual interview etiquette with expert tips on professionalism, body language, tech setup, and communication to impress hiring managers and land the job.",
+  image: `${constructImageURL("/landing/blog/interview-etiquette-for-success.png")}`,
+  alt: "Virtual interview etiquette tips guide.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title:
+    "How to Succeed in Virtual Interviews: Best Practices for Professionalism & Confidence",
+  description: blog.description,
+  path: "/blog/interview-etiquette-for-success",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Introduction: Why Virtual Interview Etiquette Matters More Than Ever
+
+Companies now use Zoom, Microsoft Teams, and Google Meet to evaluate applicants in virtual interviews. It has almost become the new standard. Even if they can appear less daunting than in-person ones, virtual interviews have their own set of difficulties. From keeping eye contact across a screen to technological issues, the little details can have a significant impact on your performance.
+
+Small errors can greatly affect how you are viewed, despite the fact that many applicants believe that a virtual interview is similar to speaking with a buddy via a video call. You must become proficient in virtual interview etiquette to project a polished, organized, and professional image if you're serious about getting the job.
+
+This guide covers:
+
+✔️ **How to set up your space for a distraction-free interview**
+
+✔️ **Best practices for professional virtual communication**
+
+✔️ **Common virtual interview mistakes (and how to avoid them)**
+
+By the conclusion, you will be prepared to confidently enter any virtual interview and leave a memorable impression.
+
+## 1. Preparing for Your Virtual Interview: The Essentials
+
+### 1.1. Set Up a Professional Interview Space
+
+Your environment plays a **huge role** in how you come across on screen. A cluttered background or noisy setting can make you seem **unprepared**—even if you have great answers.
+
+✅ **Choose a quiet, distraction-free room**
+
+- Find a **well-lit** space with minimal background clutter.
+
+- If your background is messy, use a **neutral virtual background** (but avoid distracting filters).
+
+✅ **Check your lighting**
+
+**Natural light** is best—sit facing a window for even lighting.
+
+If that’s not an option, use a **lamp behind your screen** for soft lighting (avoid harsh overhead lights).
+
+✅ **Minimize background noise**
+
+Turn off your phone notifications and **ask housemates to stay quiet**.
+
+Use **headphones with a microphone** to reduce echo and background noise.
+
+💡 Pro Tip: If you have **kids, pets, or noisy neighbors**, inform your interviewer at the start in case of interruptions. This shows professionalism and prevents stress.
+
+### 1.2. Test Your Tech Before the Interview
+
+Technical issues can **derail a great interview** before it even starts. Avoid last-minute stress by **testing everything in advance**.
+
+🔍 **Run a tech check at least 30 minutes before the interview**:
+
+✔️ **Internet connection** – Use a stable Wi-Fi or wired connection.
+
+✔️ **Camera quality** – Adjust angles so you’re **framed at eye level**.
+
+✔️ **Microphone check** – Speak clearly and adjust volume levels.
+
+✔️ **Software updates** – Make sure **Zoom, Teams, or Google Meet** is up to date.
+
+💡 _Pro Tip_: Have a **backup plan** in case of connection issues—keep your phone nearby for a hotspot or have the interviewer’s contact info ready to reconnect.
+
+### 1.3. Dress Professionally (Even for Remote Interviews)
+
+Even though you're at home, **your appearance still matters**. Dressing well **puts you in the right mindset** and shows the interviewer that you take the opportunity seriously.
+
+✅ **What to Wear:**
+
+- Depending on the corporate culture, wear formal or business casual clothing.
+
+- Neutral tones are best; stay away from distracting patterns and too bright hues.
+
+- Check the company's website or go above and beyond the dress code for the job if in question.
+
+💡 _Pro Tip_: Wear professional bottoms **too**—just in case you need to stand up unexpectedly!
+
+## 2. Virtual Interview Etiquette: How to Communicate Effectively
+
+Even in a remote setting, **your body language, tone, and engagement level matter**. Here’s how to present yourself professionally:
+
+### 2.1. Maintain Eye Contact and Good Posture
+
+Unlike in-person interviews, making **eye contact on a screen** requires looking **directly at the camera**, not at your own face.
+
+✅ **How to improve virtual eye contact:**
+
+- Position your webcam **at eye level**.
+
+- Look into the **camera when speaking**, not at yourself.
+
+- When listening, glance at the interviewer’s face, but return to the camera while answering.
+
+💡 _Pro Tip_: If eye contact feels awkward, **place a sticky note next to your camera** as a reminder to focus there.
+
+✅ **Maintain confident posture:**
+
+- Sit up straight with **both feet on the ground**.
+
+- Avoid excessive movement—**fidgeting can be distracting**.
+
+### 2.2. Speak Clearly and Pace Yourself
+
+Since **audio delays can happen**, speaking **too fast** or **interrupting** can create confusion.
+
+✅ **How to speak effectively:**
+
+- **Pause briefly** before responding (this prevents talking over the interviewer).
+
+- Keep your answers **concise and structured**—avoid rambling.
+
+- If unsure about a question, ask for **clarification instead of guessing**.
+
+💡 _Pro Tip_: If there's a **lag**, wait a second before speaking to ensure the other person has finished talking.
+
+### 2.3. Stay Engaged (Even When You're Not Talking)
+
+Since virtual interviews **lack physical presence**, you need to show **you’re actively listening**.
+
+✅ **How to show engagement:**
+
+- **Nod slightly** when the interviewer is speaking.
+
+- Use **facial expressions** to show attentiveness.
+
+- **Avoid looking at your phone or multitasking**—it’s noticeable.
+
+## 3. Common Virtual Interview Mistakes
+
+Even the best candidates can make **avoidable mistakes** during virtual interviews. Here’s what **not to do**:
+
+### Mistake #1: Not Testing Your Tech Beforehand
+
+🚫 _Waiting until the last minute to check your internet, camera, and microphone_
+
+✅ **Fix**: Test everything **30 minutes before the interview** and have a backup plan.
+
+### Mistake #2: Talking Too Much or Too Little
+
+🚫 _Rambling or giving one-word answers_
+
+✅ **Fix**: Use **the STAR method** (Situation, Task, Action, Result) to structure responses.
+
+### Mistake #3: Letting Distractions Take Over
+
+🚫 _Pets, background noise, or a messy space ruining professionalism_
+
+✅ **Fix**: Set up a **quiet, clean interview space** and mute notifications.
+
+### Mistake #4: Not Following Up After the Interview
+
+🚫 _Thinking the interview ends when the call does_
+
+✅ **Fix:** Send a **thank-you email within 24 hours**, summarizing key takeaways and reinforcing your enthusiasm for the role.
+
+## 4. Conclusion
+
+Virtual interviews may feel different from in-person ones, but **the fundamentals of professionalism, preparation, and communication still apply**.
+
+### Key Takeaways:
+
+✔️ Set up a **distraction-free, well-lit interview space**.
+
+✔️ Test your **internet, camera, and microphone in advance**.
+
+✔️ Maintain **eye contact, good posture, and clear speech**.
+
+✔️ Engage with the interviewer—**nod, smile, and listen actively**.
+
+✔️ Follow up with a **thank-you email to leave a lasting impression**.
+
+With the right etiquette and preparation, you can stand out in any virtual interview and increase your chances of landing the job.
+
+🔗 [Need more interview tips? Try LockedIn AI’s virtual mock interviews!](https://app.lockedinai.com)

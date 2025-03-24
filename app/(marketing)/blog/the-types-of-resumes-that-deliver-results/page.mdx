@@ -1,0 +1,193 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2025-01-04",
+  title: "The Types of Resumes That Deliver Results",
+  description:
+    "Explore different resume formats and learn which type works best for your career situation. Includes tips for chronological, functional, and combination resumes.",
+  image: `${constructImageURL("/landing/blog/the-types-of-resumes-that-deliver-results.png")}`,
+  alt: "Guide to effective resume format choices.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "The Types of Resumes That Deliver Results: A Comprehensive Guide",
+  description: blog.description,
+  path: "/blog/the-types-of-resumes-that-deliver-results",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+In today’s job market, resumes come in various formats, but most professionals agree on three main types: **reverse chronological**, **functional**, and **combination** resumes. While these formats meet the majority of needs, there’s one strategy we strongly advocate for—**the targeted resume**. Unlike other formats, a targeted resume doesn’t change its structure but instead focuses on tailoring content to each job posting.
+
+## Why Focus on Targeted Resumes?
+
+Even the most polished resume can fall flat if it doesn’t match what the employer is looking for. By tailoring your resume to fit the job requirements, you ensure every section aligns with the role. Whether you’re using a reverse chronological, functional, or combination format, a targeted approach can elevate your resume and give you a competitive edge.
+
+Let’s break down the three core resume types and explore how a targeted resume can complement each one.
+
+## Reverse Chronological Resume
+
+The reverse chronological format is the most widely used and accepted resume type, and for good reason. In this format, your work experience is listed in reverse order, starting with your most recent role.
+
+### Benefits of a Reverse Chronological Resume
+
+Here’s why this format is so effective:
+
+- **Easy to read:** Recruiters can quickly scan your work history, with recent and relevant experience presented upfront.
+
+- **ATS-friendly:** This format works well with Applicant Tracking Systems (ATS), which automatically scan resumes for keywords.
+
+- **Clear career progression:** It highlights your professional growth over time, offering a clear narrative.
+
+- **Widely accepted:** Suitable for most industries, from corporate to creative roles.
+
+### Who Should Use It?
+
+The reverse chronological resume works best for job seekers who want to emphasize their work experience. Here’s a breakdown of who benefits most from this format:
+
+- **Professionals with a steady work history:** Ideal for those without major employment gaps.
+
+- **Industry specialists:** If your previous roles align with your target job, this format showcases your relevant experience.
+
+- **Candidates with career growth:** It highlights promotions and increasing responsibilities.
+
+- **Recent graduates:** Perfect for showcasing internships and relevant part-time roles.
+
+- **Applicants in traditional fields:** Common in industries like finance, law, and academia.
+
+### How to Structure a Reverse Chronological Resume
+
+- **1.Contact Information:** Include your name, phone number, email, LinkedIn profile, and location. Add a professional headline if applicable.
+
+- **2.Summary or Objective:** A brief profile summarizing your key skills and career goals.
+
+- **3.Work Experience:** List jobs starting with the most recent, highlighting achievements with action verbs and quantifiable results.
+
+- **4.Skills:** Include hard and soft skills relevant to the job.
+
+- **5.Education:** List degrees, certifications, and relevant coursework.
+
+## Functional Resume
+
+A functional resume shifts the focus from work history to skills and competencies. It’s ideal for job seekers who want to emphasize their abilities rather than their employment timeline.
+
+### Benefits of a Functional Resume
+
+Here’s why this format works for certain candidates:
+
+- **Skill-centric:** Highlights your qualifications, putting your strengths front and center.
+
+- **Downplays gaps:** Reduces attention on employment breaks or career shifts.
+
+- **Career change-friendly:** Showcases transferable skills relevant to a new industry.
+
+- **Customizable:** Offers flexibility to organize sections based on your strengths.
+
+- **Ideal for smaller companies:** Employers in smaller organizations may focus less on traditional resume structures.
+
+### Who Should Use It?
+
+A functional resume is best for those with limited work history or unconventional career paths. It’s especially useful for:
+
+- **Career changers:** Highlights transferable skills over past roles.
+
+- **Applicants with gaps:** Downplays periods of unemployment.
+
+- **Freelancers or contractors:** Focuses on projects and competencies.
+
+- **Recent graduates:** Emphasizes skills gained through coursework or internships.
+
+- **Job-hoppers:** Creates a cohesive narrative for a varied work history.
+
+### How to Structure a Functional Resume
+
+- **1.Contact Information:** Include the basics, plus a link to your portfolio or LinkedIn.
+
+- **2.Objective Statement:** Two to three sentences summarizing your skills and value proposition.
+
+- **3.Skills Section:** Group your skills by category and provide examples.
+
+- **4.Work Experience:** Briefly list job titles and employers without detailed descriptions.
+
+- **5.Education:** Highlight relevant degrees or certifications, especially if you’re a recent graduate.
+
+## Combination (Hybrid) Resume
+
+The combination resume blends the best of both worlds: it highlights key skills while providing a detailed work history. This balanced approach appeals to both technical and non-technical roles.
+
+### Benefits of a Combination Resume
+
+Why this format stands out:
+
+- **Balances skills and experience:** Showcases both your abilities and career progression.
+
+- **Appeals to recruiters:** Provides a comprehensive view of your qualifications.
+
+- **Ideal for specialized roles:** Perfect for industries requiring both technical expertise and practical experience.
+
+- **Versatile for job boards:** Highlights your strengths to a broad audience.
+
+### Who Should Use It?
+
+The combination format is ideal for candidates with specialized skills or diverse work histories. Consider this format if:
+
+- **You have specialized skills:** Works well for technical or project-based roles.
+
+- **You have diverse experience:** Ties together varied roles in different industries.
+
+- **You’re a mid-level professional:** Balances skills and work history for career advancement.
+
+- **You’re a freelancer or contractor:** Highlights competencies and projects without overwhelming recruiters with a long list of roles.
+
+### How to Structure a Combination Resume
+
+- **1.Contact Information:** Keep it professional and include relevant links.
+
+- **2.Summary or Objective:** Briefly highlight your strengths and goals.
+
+- **3.Skills Section:** Include hard and soft skills grouped by relevance.
+
+- **4.Work Experience:** Provide a concise, chronological list of roles and achievements.
+
+- **5.Education:** Add any relevant degrees or certifications.
+
+## Targeted Resume: The Game-Changer
+
+Regardless of the format, the targeted resume is what truly sets you apart. By tailoring each section to a specific job posting, you show employers that you’re the perfect fit.
+
+### Why It Works
+
+- **Custom content:** Aligns your skills and experience with job requirements.
+
+- **Enhanced relevance:** Shows you’ve done your homework and meet their expectations.
+
+### Who Should Use It?
+
+Everyone. Whether you’re using a chronological, functional, or combination format, tailoring your resume increases its effectiveness.
+
+## Key Takeaways
+
+- Choose the format—reverse chronological, functional, or combination—that best highlights your strengths.
+
+- Tailor your resume to the job description for maximum impact.
+
+- Use clear formatting and include relevant keywords to pass ATS screening.
+
+- A targeted approach enhances every format, making your resume stand out to hiring managers.
+
+By understanding the strengths of each resume type and tailoring your content, you’ll create a compelling resume that helps you land the interview.

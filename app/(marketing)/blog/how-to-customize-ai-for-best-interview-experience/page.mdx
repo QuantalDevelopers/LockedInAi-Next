@@ -1,0 +1,168 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+
+export const blog = {
+  author: {
+    name: "Jordan Cole",
+    src: `${constructImageURL("/landing/blog/jordan_cole.png")}`,
+  },
+  date: "2025-02-12",
+  title: "How to Customize LockedIn AI for the Best Interview Experience ",
+  description:
+    "Discover how to customize LockedIn AI’s settings for a smoother, smarter interview experience. Adjust response length, processing time, filler words, and more to match your preferences. ",
+  image: `${constructImageURL("/landing/blog/how-to-customize-ai-for-best-interview-experience.png")}`,
+  alt: "How to Customize LockedIn AI for a Seamless Interview Experience ",
+  featured: false,
+};
+
+export const metadata = {
+  title: blog.title,
+  description: blog.description,
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+};
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+LockedIn AI is designed to adapt to your unique interview style. This ensures you get the best possible assistance during job interviews, coding challenges, and professional meetings. But did you know that LockedIn AI offers powerful customization options that let you fine-tune its responses to fit your exact needs? You can customize its responses to sound exactly like you do!
+
+By tweaking settings such as response length, processing time, filler words, and language preferences, you can make the platform work better for you—whether you need concise, fast answers or detailed, structured responses.
+
+In this article, we'll explore LockedIn AI’s customization features, how to adjust them for maximum performance, and how they can help you perform more naturally and confidently in interviews.
+
+## Why Customization Matters in LockedIn AI
+
+Every job seeker or professional has different needs when it comes to AI interview assistance. Some users might want fast, concise answers, while others might prefer detailed, well-structured responses for in-depth discussions.
+
+LockedIn AI’s customization features allow you to:
+
+- ✅ **Fine-tune response styles to match different interview formats.**
+- ✅ **Adjust the speed and depth of AI-generated responses.**
+- ✅ **Enhance natural speech by enabling or disabling filler words.**
+- ✅ **Switch between multiple languages and accents for a tailored experience.**
+
+Let’s explore how each of these features works and how you can use them to optimize your interview performance.
+
+## 1. Adjusting Response Length: Default, Concise, or Detailed
+
+### What It Does
+
+LockedIn AI allows you to control whether your responses are detailed or succinct. This is extremely useful for focusing on different stages of the interview process. Initial interviews may not need as detailed responses compared to later technical interviews.
+
+### How to Customize
+
+- **Default:** Balanced responses with a natural flow.
+- **Concise:** Shorter, to-the-point answers (best for rapid Q&A).
+- **Detailed:** In-depth, structured responses (ideal for behavioral or technical questions).
+
+### When to Use Each Setting
+
+- **Concise mode** is great for fast-paced, high-pressure interviews where short, clear answers are preferred.
+- **Detailed mode** is useful for system design discussions, leadership questions, or technical explanations that require a structured breakdown.
+
+💡 **Pro Tip:** Use Default mode if you want a natural mix of both.
+
+## 2. Processing Time: Fast, Medium, or Quality Mode
+
+### What It Does
+
+This setting determines how rapid LockedIn AI’s generated responses appear on your screen.
+
+### How to Customize
+
+- **Fast Mode:** Quick answers with minimal processing time.
+- **Medium Mode:** Balanced response speed and quality.
+- **Quality Mode:** Slower responses but more refined and accurate answers.
+
+### When to Use Each Setting
+
+- **Fast Mode** is great for mock interviews, allowing you to simulate a real-time conversation.
+- **Medium Mode** balances speed and precision, ensuring fluid, well-structured answers.
+- **Quality Mode** is best when you need highly refined, well-worded responses for complex or leadership-style interviews.
+
+💡 **Pro Tip:** Test different settings before your real interview to see what feels most comfortable.
+
+## 3. Filler Words: Enable or Disable for a Natural Flow
+
+### What It Does
+
+Filler words like "uh," "um," "so," and "you know" can make speech sound more natural, but some interviewers prefer clean, polished answers. LockedIn AI allows you to toggle filler words on or off to match your preferred speaking style.
+
+### How to Customize
+
+- **Enable:** Adds subtle filler words to make responses feel more conversational.
+- **Disable:** Provides clean, professional answers with no unnecessary words.
+
+### When to Use Each Setting
+
+- **Enable Filler Words** for casual conversations, informal interviews, or sales/customer service roles where a natural tone is preferred.
+- **Disable Filler Words** for formal settings, executive-level interviews, or technical presentations requiring precise communication.
+
+💡 **Pro Tip:** If you're prone to sounding robotic in interviews, enabling filler words can help create a more relaxed, natural flow.
+
+## 4. Language & Accent Customization
+
+### What It Does
+
+LockedIn AI supports multiple languages and accents, allowing international users to conduct interviews in their preferred language or accent variation.
+
+### How to Customize
+
+- **Select your preferred language & regional accent** in settings.
+- **Adjust settings for bilingual interviews** (currently supports English + Spanish mix).
+
+### Why It’s Important
+
+- Helps non-native speakers sound more natural and confident.
+- Ensures regional clarity for global job opportunities.
+
+💡 **Pro Tip:** Test your settings before an interview to ensure clarity and pronunciation accuracy.
+
+## 5. Threshold Setting: Controlling AI Sensitivity
+
+### What It Does
+
+This setting determines how much information the AI processes before responding. A higher threshold means more refined, in-depth answers, while a lower threshold generates quicker, on-the-fly responses.
+
+### How to Customize
+
+- **Increase the threshold** for technical or leadership interviews where details matter.
+- **Lower the threshold** for rapid-fire Q&A sessions.
+
+💡 **Pro Tip:** If your AI responses feel too vague, increase the threshold slightly to enhance depth.
+
+## 6. Message Order: Displaying Answers in a Natural Way
+
+### What It Does
+
+LockedIn AI offers options to adjust message order, helping you control where AI-generated answers appear on the screen.
+
+### How to Customize
+
+- **Standard Mode:** AI responses appear at the bottom like a normal chat.
+- **Reverse Mode:** Responses appear at the top of the chat, closer to your camera, helping with eye contact in video interviews.
+
+💡 **Pro Tip:** Use Reverse Mode if you tend to read responses directly—this helps maintain better eye contact with interviewers.
+
+## Why Customizing LockedIn AI Enhances Your Interview Performance
+
+Customizing LockedIn AI allows you to:
+
+- ✅ **Match AI responses to your natural speaking style.**
+- ✅ **Optimize settings for different interview types (coding, behavioral, leadership).**
+- ✅ **Reduce distractions and improve focus during high-stakes conversations.**
+- ✅ **Ensure AI-generated answers align with ATS-friendly resumes and applications.**
+
+By fine-tuning these features, you can ensure that LockedIn AI works exactly the way you need it to, helping you stay confident and prepared for every interview.
+
+## Unlock Your Best Interview Experience
+
+LockedIn AI is more than just a smart assistant—it’s a fully customizable interview tool designed to adapt to your personal style and needs. Whether you're adjusting response length, processing time, or filler words, the right settings can make all the difference in how naturally and confidently you perform.
+
+🔗 **[Ready to optimize your interview settings? Try LockedIn AI today!](https://www.lockedinai.com)**

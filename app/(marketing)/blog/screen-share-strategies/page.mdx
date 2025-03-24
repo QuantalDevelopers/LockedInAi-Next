@@ -1,0 +1,100 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2024-07-03",
+  title: "Screen Share during Interview",
+  description:
+    "Learn how to effectively use AI interview tools during screen-sharing interviews, whether sharing a specific tab or the entire screen.",
+  image: `${constructImageURL("/landing/blog/screen-share-strategies.png")}`,
+  alt: "Screen Share during Interview",
+  featured: true,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/screen-share-strategies",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Screen sharing are generally tricky and if your interviewer proposes to share your entire screen, then it becomes even more complicated.Here’s a step by step guide on how to easily use AI Interview Copilot during the interviews whether you are sharing a specific tab or the entire screen.
+
+## 1.Sharing a Specific Tab
+
+When asked to share your screen, most of the time you ONLY need to share a specific portion of the screen and you can also choose to share a browser tab. This takes less attention and prevents other activities from being seen by other people.
+
+Follow these steps:
+
+- **Open the Platform(Only for Coding Interview):** Start the coder pad or any particular code issue introduced by the interviewers utilized for coding.
+
+- **Share the Tab:** In the tool of video conferencing choose to share only the tab where you use the coding platform.
+
+- **Use Discreetly:** Interact with it through keyboard shortcuts so that you do not visibly switch back to the tab.
+
+## 2.Sharing the Entire Screen
+
+If you expect to have to present your whole entire desktop, much less in a crucial job interview, you are better off if you rehearse while having two monitors. Here’s how:
+
+- **Set Up Dual Monitors:** Plug an extra screen in your computer. For primary monitor, place it just in front of your working area while the secondary monitor should be placed slightly aside.
+
+- **Primary Monitor:** This is where you video conference app should be located at.
+
+- **Secondary Monitor:** Now open the AI on the second screen or secondary computer monitor you have around you. Guarantee that this screen is not seen by the interviewers.
+
+- **Use Keyboard Shortcuts:** Take screen captures, and save captured images to be processed by the AI tool by pressing keys on the keyboard. Make sure the tool does not fire off notifications and does not place icons on the main monitor.
+
+- Now while using the video conferencing platform, select the “Camera (Nvidia Broadcast)” option to use the eye contact feature during the interview.
+
+<Image
+  src={constructImageURL("/landing/blog/screen_share_1.jpg")}
+  alt="Screen Sharing Example"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>Screen Sharing Example</em>
+</p>
+
+<Image
+  src={constructImageURL("/landing/blog/screen_share_2.jpg")}
+  alt="Hide Notification"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>Hide Notification</em>
+</p>
+
+## 3.Maintaining Eye Contact
+
+Probably, the main conflict that comes with the use of a second monitor is that one cannot easily maintain eye contact. Here are some tips:
+
+- **Camera Placement:** Align the camera, and Lockedin AI AI Interview Copilot vertically
+
+- **Notification Management:** It is also important to switch off notifications or move to the focus mode so that there is no pop up which can distract the interviewers. This setup enables you to look at the tool and not losing eye contact with your counterpart.
+
+## FAQs
+
+How can I incorporate the use of an AI tool in an interview without it being obvious?
+
+It is recommended to type via keyboard and make sure that the AI tool runs in the hidden (or stealth) mode to prevent any pop-ups.

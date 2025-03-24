@@ -1,0 +1,109 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "LockedIn AI Team",
+    src: constructImageURL("/landing/toggled-logo.png"),
+  },
+  date: "2024-08-07",
+  title: "Refund Policy",
+  description:
+    "Learn about our refund policy at LockedIn AI, including valid reasons for refund requests and how policy changes are reflected.",
+  image: constructImageURL("/landing/lockedin-ai-intro.jpeg"),
+  alt: "Refund Policy at LockedIn AI",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Refund Policy for LockedIn AI: Your Satisfaction Matters",
+  description: blog.description,
+  path: "/refund-policy",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## LockedIn AI Refund Policy
+
+**Effective Date:** 5/28/2024, 12:00:00 AM  
+**Last Updated:** 2/17/2025, 12:00:00 AM
+
+At LockedIn AI, we are committed to providing high-quality AI-powered interview preparation tools to help you succeed. We understand that circumstances can change, so our refund policy is designed to be clear and fair.
+
+## 1. Subscription Refund Policy
+
+Our subscriptions provide immediate access to premium AI services, which are digital and non-returnable. Because of this, no refunds are offered once a subscription has started. To ensure LockedIn AI is right for you, we encourage using our free trial before purchasing.
+
+### Monthly and Quarterly Subscriptions
+
+- **Non-refundable once started.**
+- **Cancellation allows continued access until the billing cycle ends, but no refunds or prorated credits.**
+
+### Annual Subscriptions
+
+- **Eligible for a partial refund if canceled within 7 days of purchase.**
+- **No refunds after 7 days, but access remains available until the end of the billing cycle.**
+
+## 2. Managing Your Subscription
+
+Modify or cancel your subscription anytime through LockedIn AI account settings. Cancellations must be made before your renewal date to avoid charges.
+
+🔗 [**Manage Your Subscription**](https://app.lockedinai.com/app/sub)
+
+## 3. Refund Eligibility for Accidental Purchases or Billing Errors
+
+If you believe you were charged incorrectly, contact support within 7 days of the transaction.
+
+Refunds may be considered for:
+
+✔️ **Duplicate Purchases** – Charged more than once for the same subscription.
+
+✔️ **Product Not Delivered** – No access granted after payment.
+
+✔️ **Billing Errors** – Charged after canceling before the renewal date (must provide cancellation confirmation email).
+
+For accidental plan purchases, reach out immediately, and we’ll review your request.
+
+## 4. Credit Usage & Subscription Policy
+
+- **Unlocked Credits Never Expire** – They remain in your account indefinitely.
+- **Post-Subscription Access** – Credits work with general AI models, but professional models require an active subscription.
+
+## 5. Refund Processing & Timeline
+
+If eligible, refunds are processed:
+
+✔️ **Within 5-10 business days to the original payment method.**
+
+✔️ **A confirmation email will be sent once processed.**
+
+## 6. Plan Upgrades & Prorated Charges
+
+Upgrading adjusts your plan, and you’ll be charged only for the prorated amount based on the remaining time in your billing cycle.
+
+🔹 **Upgrades take effect immediately.**
+
+## 7. How to Request a Refund
+
+1️⃣ **Email Us at** support@lockedinai.com with:
+
+- Your registered email
+- Reason for refund request
+- Supporting details (e.g., screenshots, receipts)
+
+2️⃣ **Support Team Review within 7 business days.**
+
+3️⃣ **Approved refunds will be processed within 5-10 business days.**
+
+📞 **Need Help? Contact Us!**
+📧 **Customer Support:** support@lockedinai.com
+🔗 [**Manage Your Subscription**](https://app.lockedinai.com/app/sub)

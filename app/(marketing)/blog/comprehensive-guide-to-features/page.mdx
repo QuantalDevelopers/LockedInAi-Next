@@ -1,0 +1,192 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2025-02-17",
+  title: "A Comprehensive Guide to LockedIn AI’s Features",
+  description:
+    "Discover how LockedIn AI’s powerful features—including mock interviews, real-time AI feedback, and resume optimization—help you ace job interviews with confidence.",
+  image: `${constructImageURL("/landing/blog/comprehensive-guide-to-features.png")}`,
+  alt: "AI interview preparation tool features",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "Mastering LockedIn AI: A Deep Dive into Its Features & Benefits",
+  description: blog.description,
+  path: "/blog/comprehensive-guide-to-features",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+## Introduction: Why LockedIn AI is a Must-Have for Interview Preparation
+
+Preparing for a job interview can feel overwhelming. Whether it’s a behavioral interview, a technical challenge, or a high-stakes executive conversation, candidates often struggle with structuring their answers, managing nerves, and effectively communicating their skills.
+
+That’s where LockedIn AI comes in. This AI-powered interview assistant helps you prepare smarter, ensuring you walk into your next interview confident and well-prepared.
+
+LockedIn AI offers:
+
+✅ **Mock interviews** to practice real-world questions
+
+✅ **AI-powered feedback** to refine and improve your answers
+
+✅ **Customizable settings** to tailor responses to your speaking style
+
+✅ **Resume optimization** to make sure your application stands out
+
+Let’s take a deep dive into LockedIn AI’s features and how they can help you elevate your interview performance.
+
+## 1. AI-Powered Mock Interview Simulator
+
+### What It Does:
+
+LockedIn AI’s Mock Interview Simulator is designed to replicate real interview scenarios. It presents industry-specific questions, listens to your answers, and provides instant AI feedback to help you improve.
+
+### How It Works:
+
+1️⃣ **Choose Your Interview Type** – Select the industry or job role you’re interviewing for.
+
+2️⃣ **Receive AI-Generated Questions** – Get realistic, job-specific questions tailored to your field.
+
+3️⃣ **Practice Your Response** – Speak or type your answers while the AI evaluates your delivery.
+
+4️⃣ **Receive Instant AI Feedback** – Get clear insights on clarity, confidence, and structure to refine your responses.
+
+💡 _Example_: If you’re applying for a **marketing job**, the AI might ask:
+
+_"Tell me about a successful marketing campaign you worked on."_
+
+The system then analyzes your response, highlights key areas for improvement, and helps you fine-tune your answer for maximum impact.
+
+## 2. Real-Time AI Feedback for Smarter Responses
+
+### Why It’s Important:
+
+One of the biggest interview mistakes candidates make is rambling, lacking structure, or failing to highlight key skills. LockedIn AI’s real-time feedback helps you stay concise, confident, and on-point.
+
+### Key Features:
+
+✅ **Speech Clarity Check** – AI identifies filler words, hesitation, or unclear phrasing.
+
+✅ **Confidence Analysis** – Evaluates tone, pace, and engagement level.
+
+✅ **Answer Structuring** – Helps you organize responses for better storytelling.
+
+✅ **Grammar & Word Choice Fixes** – Ensures professional, polished answers.
+
+💡 _Example_: If your answer is filled with **“um” and “like”**, LockedIn AI will recommend:
+
+_"Try pausing slightly before answering to avoid filler words. Keep responses clear and direct."_
+
+This ensures that your answers sound professional and well-thought-out.
+
+## 3. Customization: Tailoring LockedIn AI to Your Speaking Style
+
+### What It Does:
+
+LockedIn AI isn’t a one-size-fits-all tool—it’s designed to adapt to your preferences so you can sound more natural and confident.
+
+### Key Customization Features:
+
+✅ **Adjust Response Length** – Choose between concise, default, or detailed responses.
+
+✅ **Modify Processing Speed** – Set AI to fast, balanced, or high-quality response mode.
+
+✅ **Enable or Disable Filler Words** – Make AI responses sound more natural or more polished.
+
+✅ **Reverse Message Order** – Keep answers near the top of the screen for better eye contact in video interviews.
+
+💡 _Example_: If you struggle with giving long-winded answers, you can set responses to “Concise Mode” to keep things short and impactful.
+
+This feature is especially useful for fast-paced interviews where time is limited.
+
+## 4. AI Resume Optimization: Make Your Application Stand Out
+
+### Why It Matters:
+
+Before you even get to the interview stage, your resume needs to pass the initial screening. LockedIn AI’s resume optimization feature helps you:
+
+✅ **Refine formatting** to make it **ATS-friendly**
+
+✅ **Improve wording** to better showcase your experience and skills
+
+✅ **Identify missing keywords** that recruiters are looking for
+
+✅ **Suggest quantifiable achievements** to strengthen bullet points
+
+### How It Works:
+
+1️⃣ **Upload Your Resume** – The AI scans your document for structure and content analysis.
+
+2️⃣ **Receive AI-Powered Edits** – Suggestions for stronger phrasing, better formatting, and keyword optimization.
+
+3️⃣ **Download & Apply** – Get a polished resume that stands out to recruiters.
+
+💡 _Example_: Instead of writing:
+
+_"Managed social media accounts for a company."_
+
+LockedIn AI might suggest:
+
+✅ **"Developed and executed a social media strategy that increased engagement by 40% and grew audience reach by 20%."**
+
+This small tweak makes a huge difference in catching recruiters’ attention.
+
+## 5. Virtual Interview Preparation: Mastering Eye Contact & Presence
+
+### Why It’s Important:
+
+In virtual interviews, body language and eye contact matter just as much as answers. Many candidates struggle with:
+
+- **Looking at the screen instead of the camera**
+
+- **Speaking too fast or too slow**
+
+- **Having a distracting background or poor lighting**
+
+LockedIn AI offers tips and settings adjustments to help you look and sound your best.
+
+### Tips for Better Virtual Interviews:
+
+✅ **Use Reverse Chat Order** – Keep AI-generated responses near your camera to maintain eye contact.
+
+✅ **Improve Lighting & Background** – LockedIn AI recommends ideal setup adjustments.
+
+✅ **Control Speech Pace** – AI suggests ways to slow down or speed up responses naturally.
+
+✅ **Reduce Filler Words** – Helps eliminate “uh,” “um,” and “like” to improve clarity.
+
+💡 _Pro Tip_: If you struggle with eye contact, consider using a gooseneck phone holder to position your camera at eye level!
+
+## Why LockedIn AI is the Ultimate Interview Prep Tool
+
+Whether you’re preparing for a behavioral interview, technical test, or executive conversation, LockedIn AI’s features give you the practice and confidence you need to succeed.
+
+### Key Takeaways:
+
+✔️ **Mock Interview Simulator** – Practice real interview questions with AI-powered coaching.
+
+✔️ **Real-Time AI Feedback** – Get instant insights on clarity, confidence, and structure.
+
+✔️ **Customizable Settings** – Adjust AI responses to fit your speaking style.
+
+✔️ **Resume Optimization** – Fine-tune your resume for maximum recruiter visibility.
+
+✔️ **Virtual Interview Tips** – Improve eye contact, pacing, and presence on video calls.
+
+🚀 Ready to transform your interview skills?
+
+🔗 **[Try LockedIn AI Today!](https://app.lockedinai.com)**

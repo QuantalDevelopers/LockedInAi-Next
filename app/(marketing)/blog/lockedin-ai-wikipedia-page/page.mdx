@@ -1,0 +1,74 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Ryan Caldwell",
+    src: `${constructImageURL("/landing/blog/ryan_caldwell.png")}`,
+  },
+  date: "2025-01-03",
+  title: "LockedIn AI Wikipedia Page",
+  description:
+    "Discover LockedIn AI, the advanced AI interview copilot helping professionals ace interviews with real-time assistance, coding support, and personalized feedback.",
+  image: `${constructImageURL("/landing/blog/lockedin-ai-wikipedia-page.png")}`,
+  alt: "LockedIn AI platform overview and features.",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: "LockedIn AI Wikipedia Page",
+  description: blog.description,
+  path: "/blog/lockedin-ai-wikipedia-page",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+[LockedIn AI](https://www.lockedinai.com/) is an interview copilot that uses [artificial intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence) to help users with interviews, meetings, and solving technical problems.[[3]](https://mspoweruser.com/lockedin-ai-review/) It provides real-time answers and tailored feedback while supporting various industries such as tech, finance, and marketing.
+
+## History
+
+LockedIn AI was founded in April 2024 to help job seekers enter the world of work by providing real-time AI interview assistance. The company's power was harnessed by the real-world challenges presented by the job market from 2022 to 2024, which saw massive layoffs and aggressive competition for jobs.
+
+LockedIn AI is headquartered in New York City with a team including senior engineers from Amazon, CVS, and SharkNinja. The team was motivated by the struggles faced by job seekers, who often endured multiple interviews only to face rejection due to oversaturated competition and ghost job postings.
+
+## Features
+
+### 1. Real-Time Responsiveness
+
+The tool gives immediate feedback to ensure conversations stay smooth and uninterrupted.[[1]](https://www.allaboutai.com/ai-reviews/lockedin-ai/) With LockedIn AI, users can be confident and prepared to solve [coding challenges](https://en.wikipedia.org/wiki/Competitive_programming), present solutions, or answer tough questions.
+
+### 2. Coding Copilot
+
+LockedIn AI has a coding copilot. It helps during coding tasks, debugging, and the design of the system by providing step-by-step help. [[2]](https://www.senseicopilot.com/blog/lockedin-ai-review)
+
+### 3. Mobile-First Design
+
+LockedIn AI can be accessed via any browser, eliminating the need for downloads and ensuring on-the-go usability.
+
+## Application
+
+LockedIn AI has proven its versatility as an AI copilot at interviews, helping users get jobs in a variety of roles and industries.[[4]](https://www.fdaytalk.com/why-choose-lockedin-ai-advanced-ai-interview-preparation-tool/) Below is an example of its practical applications:
+
+Monique Manuel shared her success story after using LockedIn AI. After searching for a work-from-home sales call job for over a year, she discovered the tool through a video on Instagram. According to [her testimonial](https://www.trustpilot.com/review/lockedinai.com), LockedIn AI provided the guidance she needed to finally secure a job.
+
+## Reception
+
+- [AI Trendy Tools](https://aitrendytools.com/tool/lockedin-ai) called it "a much-needed solution for today’s competitive job market."
+
+- Publications like [MSPowerUser](https://mspoweruser.com/lockedin-ai-review/) and [FDAYTalk](https://www.fdaytalk.com/why-choose-lockedin-ai-advanced-ai-interview-preparation-tool/) describe it as a tool that can give professionals the strength to negotiate the ever-changing job landscape with surety.
+
+## References
+
+1. [LockedIn AI Review 2025: Is This the Ultimate AI Tool for Professionals?](https://www.allaboutai.com/ai-reviews/lockedin-ai/)
+2. [LockedIn AI - A Comprehensive Review](https://www.senseicopilot.com/blog/lockedin-ai-review)
+3. [LockedIn AI Review: The Best AI Interview & Meeting Copilot?](https://mspoweruser.com/lockedin-ai-review/)
+4. [Why Choose LockedIn AI: Advanced AI Interview Preparation Tool for Career Success](https://www.fdaytalk.com/why-choose-lockedin-ai-advanced-ai-interview-preparation-tool/)

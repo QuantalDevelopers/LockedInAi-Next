@@ -1,0 +1,77 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "David Liu",
+    src: `${constructImageURL("/landing/blog/david_liu.png")}`,
+  },
+  date: "2024-09-19",
+  title: "How to Offer Consultation Service Using the App",
+  description:
+    "Tech consultations require clear communication and quick decision-making. Learn how to use the LockedIn AI app to provide structured and effective consultations with real-time feedback and AI assistance.",
+  image: `${constructImageURL("/landing/blog/how-to-offer-consultation-service-using-the-app.png")}`,
+  alt: "Consultation Service Using the App",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description:
+    "Find out how to offer consultation services using the LockedIn AI app. Enhance client interactions and streamline your consulting process!",
+  path: "/blog/how-to-offer-consultation-service-using-the-app",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+Tech consultations can rely on very detailed communications, decision-making, and immediate responses to customers. By using the LockedIn AI app, you can easily provide structured consultations for your clients. Our app gives advice, real-time recommendations, and AI assistance to create effective client interaction. Here’s a step-by-step guide on how to use the app for offering tech-related consultations:
+
+## Step 1: Accessing the LockedIn AI App
+
+Since the LockedIn AI app is web-based, you can directly open the website and access LockedIn AI for your tech consultation:
+
+- **Visit the Website:** Launch your browser and visit the LockedIn AI website. You are not required to download the application, you simply have to log in.
+
+- **Create an Account or Sign in:** If you are new to LockedIn AI, you need to create an account. For existing users, they can use their credentials to log in to the app.
+
+- **Configure Your Settings:** Ensure that the app reflects the type of technology consultation service you are providing. It could be advice on system design, fixing a problem, or designing the architecture of a system. You can customize settings, including feedback intensity, real-time response, and sections of interest like networks, architecture, or clouds.
+
+## Step 2: Starting a Consultation with LockedIn AI
+
+Once the app is set up, follow these steps to begin offering consultations:
+
+- **Choose Your Platform:** Start your consultation on any online video conferencing platform such as Zoom, Google Meet, or Microsoft Teams. As LockedIn AI is web-based, it integrates smoothly with any conferencing platform you may like to use.
+
+- **Enable LockedIn AI:** While in the consultation, the app can be opened to record the conversation, analyze the questions being asked, and provide immediate assistance. The AI listens to the client’s inquiries and offers you well-formed responses to help you provide clear answers.
+
+- **Receive Real-Time Feedback:** In the case of technical issues, it provides recommendations instantly. For instance, if the client wants to know about the scalability of their software architecture, LockedIn AI may suggest other frameworks or patterns that can be used to improve performance.
+
+## Step 3: Enhancing Collaboration with Clients
+
+Technical consultations involve collaboration, particularly when explaining concepts or ideas such as illustrating the proposed products. LockedIn AI is built with features to ensure collaboration is as easy as possible:
+
+- **Screen Sharing & Demonstrations:** Share the screen when using the video conferencing platform to practically explain technical matters to the clients.
+
+- **AI-Guided Explanations:** When sharing your screen, the app gives feedback on how clear you were with the concept you were explaining. When explaining technical details like a database architecture or cloud infrastructure setup for a client, LockedIn AI helps you explain it in better understandable ways or even provides alternative approaches.
+
+- **Automatic Notetaking:** The app records key points and notes during the session, enabling you to capture vital information without distraction. You can refer to these notes to provide a summary to the client once the session is over.
+
+## Step 4: Post-Consultation Review and Follow-Up
+
+LockedIn AI doesn’t stop after the consultation. Instead, the app provides a session summary, feedback, and further discussions:
+
+- **Generate Consultation Summary:** After the session, LockedIn AI generates a session summary that includes all the discussed materials and further actions. This enables you to revisit the parts that were discussed.
+
+- **Performance Review:** The app provides feedback on areas of strength and potential improvements for future consultations. This could include providing additional technical details or improving the accuracy of your communication.
+
+## Conclusion
+
+With the help of the LockedIn AI app, you can deliver more accurate and comprehensive tech consultations. The use of AI guarantees you show higher levels of expertise in your tech consultation services, respond to difficult technical questions, engage your clients better, and offer them more value-added discussions.

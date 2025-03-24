@@ -1,0 +1,148 @@
+import { BlogLayout } from "@/components/blog-layout";
+import { constructImageURL } from "@/lib/image-hosting";
+import { createMetadata } from "@/lib/metadata";
+
+export const blog = {
+  author: {
+    name: "Julie Bennett",
+    src: `${constructImageURL("/landing/blog/julie_bennett.png")}`,
+  },
+  date: "2024-10-09",
+  title: "How to Use Our App for System Design",
+  description:
+    "How to use the LockedIn AI Chrome extension to assist with system design interviews, offering real-time feedback and guidance during the interview process.",
+  image: `${constructImageURL("/landing/blog/how-to-use-our-app-for-system-design.png")}`,
+  alt: "Use our app for system design",
+  featured: false,
+};
+
+export const metadata = createMetadata({
+  title: blog.title,
+  description: blog.description,
+  path: "/blog/how-to-use-our-app-for-system-design",
+  openGraph: {
+    images: [
+      {
+        url: blog.image,
+        alt: blog.alt,
+      },
+    ],
+  },
+});
+export default (props) => <BlogLayout blog={blog} {...props} />;
+
+System design is an essential part of designing systems that can handle a large load reliably, whether you are designing new software systems or getting ready for a technical interview. If you are facing difficulty in preparing for the system design interview then don’t worry! We have prepared an AI tool for you named LockedIn AI. As of the moment, [LockedIn AI](https://www.lockedinai.com/) does not have a mobile application, but with its desktop website and Chrome extension, it gives a lot of beneficial functions for system architects and engineers. In this guide, you will find how to use the LockedIn AI extension when giving the system design interview.
+
+## Step 1: Install the LockedIn AI Chrome Extension
+
+<Image
+  src={constructImageURL("/landing/blog/system_design_1.png")}
+  alt="Install the LockedIn AI Chrome Extension"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>
+    For LockedIn AI to be useful in system designs, you have to download the
+    Chrome extension on your desktop first.
+  </em>
+</p>
+
+    - **1.Go to the Chrome Web Store:** Go to your Google Chrome browser and type “LockedIn AI” in the [Chrome web store](https://chromewebstore.google.com/detail/lockedin-ai/kfhkeghcignojkdcnemgcggojlmneema?pli=1).
+
+    - **2.Click "Add to Chrome":** On the extension page, users need to click on the “Add to Chrome” button to commence the installation process.
+
+    - **3.Confirm the Installation:** You will get a pop-up message for confirmation. Finally, click the ‘Add Extension’ button to finish it.
+
+    - **4.Pin the Extension:** To get easy access to LockedIn AI just click the puzzle icon in the right top corner of your browser and then choose the pin next to LockedIn AI.
+
+Now the extension is ready to help you in all your system design interviews.
+
+## Step 2: Sign Into Your LockedIn AI Account
+
+<Image
+  src={constructImageURL("/landing/blog/system_design_2.png")}
+  alt="Sign Into Your LockedIn AI Account"
+  height={319}
+  width={400}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p style={{ textAlign: "center" }}>
+  <em>
+    For the complete interaction with the LockedIn AI interface and all its
+    functions, one has to log in, using the desktop version of the site.
+  </em>
+</p>
+
+    - **1.Open the Extension:** Tap on the LockedIn AI icon in the Chrome browser menu bar.
+
+    - **2.Sign In:** Login by entering your credentials. If you do not have a LockedIn AI account, you can sign up for one at the [LockedIn AI website](https://www.lockedinai.com/).
+
+    - **3.Configure Settings:** Once logged in, the user can further enhance the tool based on their design specifications. For example, you can modify feedback sensitivity, select platforms, or define goals for your system design process.
+
+## Step 3: Using LockedIn AI with System Design Interview
+
+<Image
+  src={constructImageURL("/landing/blog/system_design_3.png")}
+  alt="Using LockedIn AI with System Design Interview"
+  height={319}
+  width={500}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>
+    Once signed in, the app integrates seamlessly with any online meeting
+    platform.
+  </em>
+</p>
+
+    - **1.Launch Your Interview Platform:** Log into the interview platform you are using.
+
+    - **2.Share the screen:** Click on the Share button to start using the tool during your interview.
+
+    - **3.Real-Time Feedback:** The app listens to everything that you are saying and offers real-time feedback and recommendations on how you can better structure your information and possibly reword some of the answers for better message depth.
+
+    - **4.Instant Answer Suggestions:** For tricky design problems, the app can guide you through potential solutions without giving the full answer, allowing you to demonstrate your problem-solving skills.
+
+## Step 4: Customizing Feedback and Performance
+
+<Image
+  src={constructImageURL("/landing/blog/system_design_4.png")}
+  alt="Customizing Feedback and Performance"
+  height={619}
+  width={1100}
+  className="mx-auto h-full rounded-md object-contain object-left-top md:object-left-top"
+  draggable={false}
+/>
+
+<p align="center">
+  <em>
+    The app adapts to your personal preferences, providing a customized
+    experience.
+  </em>
+</p>
+
+    - **1.Adjust Feedback Levels:** Whether you want high-level or detailed feedback, you can set the app’s responses.
+
+    - **2.Set Goals for Your Interview:** If you’re focusing on specific system design aspects, like scalability or load balancing, the app will tailor feedback to help you improve in those areas.
+
+    - **3.Practice Mode:** Outside of live interviews, use Practice Mode to work through mock system design scenarios, and receive detailed feedback to improve your skills.
+
+## Step 5: Review and Analyze Your Interview
+
+After the interview, the app provides a detailed review of your performance:
+
+**Review Performance:** Analyze your strengths and areas for improvement, ensuring you're ready for future system design challenges.
+
+**Post-Interview Insights:** The app provides feedback on the clarity of your design choices, helping you learn and grow from each interview experience.
+
+## Conclusion
+
+Our app helps you navigate system design interviews with confidence by providing real-time feedback and personalized guidance. Whether it’s focusing on key architectural decisions or improving your communication style, you’ll be better equipped to deliver thoughtful and effective responses. Get started today to sharpen your system design skills!
