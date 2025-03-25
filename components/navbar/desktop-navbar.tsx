@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 import { useAffiliateTracker } from "../affiliate-link";
 import { Button } from "../button";
 import { HoveredLink, Menu, MenuItem } from "./hover-menu";
-import Auth from "../pages/Auth";
+
 
 export const DesktopNavbar = () => {
   const { scrollY } = useScroll();

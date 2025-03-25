@@ -21,34 +21,20 @@ type Company = {
 };
 
 
-
-// export default function CompanyIndexWrapper() {
-//   const [queryClient] = useState(() => new QueryClient());
-
-//   return (
-//     <QueryClientProvider client={queryClient}>
-//       <CompanyIndex />
-//     </QueryClientProvider>
-//   );
-// }
-
 export default function CompanyDetailWrapper({ companyId }: { companyId: string }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
     <>
       <Head>
-        {/* Basic Meta Tags */}
         <title>Lockedin Ai - Company Detail</title>
         <meta
           name="description"
           content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
         />
         <meta name="robots" content="index, follow" />
-        {/* Ensure the domain is correct */}
         <link rel="canonical" href={`https://www.lockedinai.com/companyDetails/${companyId}`} />
 
-        {/* Open Graph Tags */}
         <meta property="og:title" content="Lockedin Ai - Company Detail" />
         <meta
           property="og:description"
@@ -57,7 +43,6 @@ export default function CompanyDetailWrapper({ companyId }: { companyId: string 
         <meta property="og:url" content={`https://www.lockedinai.com/companyDetails/${companyId}`} />
         <meta property="og:type" content="website" />
 
-        {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Lockedin Ai - Company Detail" />
         <meta
@@ -65,7 +50,6 @@ export default function CompanyDetailWrapper({ companyId }: { companyId: string 
           content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
         />
 
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -108,7 +92,6 @@ function CompanyIndex() {
     router.push(`/companyDetails/${companyId}`);
   };
 
-  // ✅ Filter Companies **Before Pagination**
   const filteredCompanies = companies.filter((company) => {
     return (
       company.name.toLowerCase().includes(companySearch.toLowerCase()) &&
@@ -118,13 +101,11 @@ function CompanyIndex() {
     );
   });
 
-  // ✅ Apply Pagination **Only If No Search Query**
   const paginatedCompanies =
     companySearch || locationSearch || industrySearch
       ? filteredCompanies
       : filteredCompanies.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
-  // Pagination logic
   const totalPages = Math.ceil(filteredCompanies.length / itemsPerPage);
   const handleNextPage = () => currentPage < totalPages && setCurrentPage((prev) => prev + 1);
   const handlePrevPage = () => currentPage > 1 && setCurrentPage((prev) => prev - 1);
@@ -144,7 +125,6 @@ function CompanyIndex() {
     <div className="md:py-30 flex h-full items-center justify-center px-2 py-20">
       <div className="max-w-[1200px] mx-auto mt-20 py-8 px-4">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Sidebar Filters - Mobile: Full width, Desktop: Fixed width */}
           <div className="w-full md:w-80 md:flex-shrink-0">
             <h1 className="text-3xl font-bold text-gray-300 mb-6">Explore companies</h1>
             <div className="space-y-6">
@@ -165,7 +145,7 @@ function CompanyIndex() {
                       value={companySearch}
                       onChange={(e) => {
                         setCompanySearch(e.target.value);
-                        setCurrentPage(1); // Reset pagination when searching
+                        setCurrentPage(1); 
                       }}
                       className="mt-1 text-black"
                     />
@@ -178,7 +158,7 @@ function CompanyIndex() {
                       value={locationSearch}
                       onChange={(e) => {
                         setLocationSearch(e.target.value);
-                        setCurrentPage(1); // Reset pagination
+                        setCurrentPage(1); 
                       }}
                       className="mt-1 text-black"
                     />
@@ -191,7 +171,7 @@ function CompanyIndex() {
                       value={industrySearch}
                       onChange={(e) => {
                         setIndustrySearch(e.target.value);
-                        setCurrentPage(1); // Reset pagination
+                        setCurrentPage(1); 
                       }}
                       className="mt-1 text-black"
                     />
@@ -201,7 +181,7 @@ function CompanyIndex() {
                       setCompanySearch("");
                       setLocationSearch("");
                       setIndustrySearch("");
-                      setCurrentPage(1); // Reset pagination when filters are cleared
+                      setCurrentPage(1); 
                     }}
                     className="text-green-600 hover:text-green-700 font-medium"
                   >
@@ -212,7 +192,6 @@ function CompanyIndex() {
             </div>
           </div>
   
-          {/* Company Listings - Mobile: Full width, Desktop: Flex grow */}
           <div className="flex-grow">
             <div className="space-y-6">
               {isLoading ? (
@@ -237,12 +216,10 @@ function CompanyIndex() {
                         <div className="flex-grow text-center md:text-left">
                           <h3 className="text-2xl font-semibold text-[#67E8F9] mb-2">{company.name}</h3>
   
-                          {/* Country */}
                           <div className="flex items-center gap-4 text-white mb-2 justify-center md:justify-start">
                             <span>{company.country || 'Location not specified'}</span>
                           </div>
   
-                          {/* Industries */}
                           {company.industries && (
                             <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
                               <span className="px-2 py-1 bg-sky-900 text-sky-200 text-sm rounded-full">
@@ -258,7 +235,6 @@ function CompanyIndex() {
                   </div>
                 ))
               )}
-              {/* Pagination Controls */}
               {!companySearch && !locationSearch && !industrySearch && (
                 <div className="flex flex-col md:flex-row justify-between items-center mt-6 px-4 space-y-4 md:space-y-0">
                   <button 

@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { Logo } from "@/components/logo";
 
+
+
 export const Footer = () => {
   const links = [
     {
@@ -65,8 +67,8 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   const last = year - 1;
   return (
-    <div className="relative">
-      <div className="bg-primary relative border-t border-neutral-900 px-8 pb-32 pt-20">
+    <div >
+      <div className="bg-primary  border-t border-neutral-900 px-8 pb-32 pt-20 ">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between text-sm  text-neutral-400 sm:flex-row ">
           <div>
             <div className="mb-4  mr-4 md:flex">

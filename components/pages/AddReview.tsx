@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { ThumbsUp, ThumbsDown, Minus, Trash2, ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation"; // Updated import
+import { useRouter } from "next/navigation"; 
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/providers/AuthProvider";
 import { useToast } from "@/components/ui/use-toast";
@@ -15,19 +15,11 @@ import Image from "next/image";
 
 const queryClient = new QueryClient();
 
-// export default function AddReviewWrapper({ companyId }: { companyId: string }) {
-//   return (
-//     <QueryClientProvider client={queryClient}>
-//       <AddReview companyId={companyId} />
-//     </QueryClientProvider>
-//   );
-// }
 
 export default function AddReviewWrapper({ companyId }: { companyId: string }) {
   return (
     <>
       <Head>
-        {/* Basic Meta Tags */}
         <title>Lockedin Ai - Add Interview Review</title>
         <meta
           name="description"
@@ -36,7 +28,6 @@ export default function AddReviewWrapper({ companyId }: { companyId: string }) {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://www.lockedinai.com/AddReview/${companyId}`} />
 
-        {/* Open Graph Tags */}
         <meta property="og:title" content="Lockedin Ai - Add Interview Review" />
         <meta
           property="og:description"
@@ -45,7 +36,6 @@ export default function AddReviewWrapper({ companyId }: { companyId: string }) {
         <meta property="og:url" content={`https://www.lockedinai.com/AddReview/${companyId}`} />
         <meta property="og:type" content="website" />
 
-        {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Lockedin Ai - Add Interview Review" />
         <meta
@@ -53,7 +43,6 @@ export default function AddReviewWrapper({ companyId }: { companyId: string }) {
           content="Share your interview experience with Lockedin Ai. Contribute to our community by submitting your honest review of your job interview process."
         />
 
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -76,7 +65,7 @@ export default function AddReviewWrapper({ companyId }: { companyId: string }) {
 }
 
 const AddReview = ({ companyId }: { companyId: string }) => {
-  const router = useRouter(); // Next.js router
+  const router = useRouter();
   const [experience, setExperience] = useState<string>("");
   const [applicationSource, setApplicationSource] = useState<string>("");
   const [interviewProcess, setInterviewProcess] = useState<string>("");
@@ -95,8 +84,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
   const { session } = useAuth();
   const { toast } = useToast();
 
-  // In Next.js App Router, we get the parameters directly from the URL
-  // However, we're already receiving companyId as a prop, so we'll use that
+
   const currentCompanyId = companyId;
 
   const { data: company, isLoading } = useQuery({
@@ -312,7 +300,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
   };
 
   return (
-    // <div className="min-h-screen bg-gray-50 text-black mt-40">
+    
     <div className="md:py-30 flex h-full items-center justify-center py-20 ">
       <div className="max-w-4xl mx-auto px-4 py-8 mt-20">
         <button
@@ -325,8 +313,6 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            {/* <form onSubmit={handleSubmit} className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md hover:border-sky-300"
-              style={{ backgroundColor: "rgb(30, 30, 30)" }}> */}
                 <form onSubmit={handleSubmit} className="group relative rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40">
               <h1 className="text-3xl font-bold mb-6">Tell us about a recent job interview</h1>
 
@@ -369,7 +355,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                       type="button"
                       className={`p-4 rounded-full transition-colors 
     ${experience === "neutral" ? "bg-gray-500 text-white" : "hover:bg-gray-200"} 
-    active:bg-gray-700`}  // Changes color when tapped
+    active:bg-gray-700`}  
                       onClick={() => setExperience("neutral")}
                       title="Average"
                     >
@@ -379,7 +365,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                       type="button"
                       className={`p-4 rounded-full transition-colors 
     ${experience === "negative" ? "bg-red-600 text-white" : "hover:bg-gray-200"} 
-    active:bg-red-800`}  // Changes color when tapped
+    active:bg-red-800`}  
                       onClick={() => setExperience("negative")}
                       title="Negative"
                     >
@@ -578,8 +564,6 @@ const AddReview = ({ companyId }: { companyId: string }) => {
           </div>
 
           <div className="md:col-span-1">
-            {/* <div className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md "
-              style={{ backgroundColor: "rgb(30, 30, 30)" }}> */}
               <div className="group relative rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40">
               <h2 className="text-2xl font-bold mb-4">Keep it Real</h2>
               <p className="text-gray-100 mb-6">
