@@ -380,12 +380,12 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black z-50 bg-opacity-50">
+    <div className="fixed inset-0 bg-black z-49 bg-opacity-50">
 
       <div
-        className={`fixed inset-0 bg-[rgb(30,30,30)] flex flex-col justify-center items-center z-50 w-full h-[70%] mt-[14%] rounded-tl-[20px] rounded-tr-[20px] transition-opacity duration-300`}
+        className={`fixed inset-0 bg-[rgb(30,30,30)] flex flex-col justify-center items-center z-50 ${authType == 'signin' ? 'h-[60%] mt-[19%]' : 'h-[70%] mt-[14%]'} rounded-tl-[20px] rounded-tr-[20px] transition-opacity duration-300`}
       >
-        <div className="w-full flex items-center justify-center p-8">
+        <div className="w-full flex items-center justify-center p-2">
           <div className="rounded-lg p-6 w-full max-w-sm">
             {/* Header */}
             <div className="mb-4">
@@ -403,11 +403,12 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
             >
               {/* Google Icon */}
               <svg
-                className="mr-2"
+                className="mr-2 "
                 width="20"
                 height="20"
                 viewBox="0 0 533.5 544.3"
                 xmlns="http://www.w3.org/2000/svg"
+
               >
                 <path
                   fill="#4285F4"
@@ -426,11 +427,11 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
                   d="M272 107.1c37.7 0 71.6 13 98.4 38l73.8-71.6C398.2 28.2 343.9 0 272 0 166.8 0 78.6 64.1 34.5 149.7l89.4 68.4C144.8 155.6 203.1 107.1 272 107.1z"
                 />
               </svg>
-              Continue with Google
+              <span className="text-white">Continue with Google</span>
             </button>
 
             {/* Divider */}
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-2">
               <hr className="flex-grow border-gray-300" />
               <span className="mx-2 text-sm text-gray-400">or</span>
               <hr className="flex-grow border-gray-300" />

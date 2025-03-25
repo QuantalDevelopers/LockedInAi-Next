@@ -468,13 +468,14 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
   return (
     <>
-      <div className="md:py-40 flex h-full items-center justify-center px-2 py-20 ">
-        <div className="max-w-4xl mx-auto py-8 px-4">
-          <div className="p-6 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+      <div className="md:py-30 flex h-full items-center justify-center px-2 py-20 ">
+        <div className="w-full mt-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ">
+          {/* Company Header - Mobile Responsive */}
+          <div className="p-4 sm:p-6 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
             style={{ backgroundColor: "rgb(30, 30, 30)" }}>
-            <div className="flex items-start justify-between mb-6 ">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center ">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between mb-6 space-y-4 sm:space-y-0">
+              <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2 sm:mb-0">
                   {company?.logo ? (
                     <Image
                       src={company.logo}
@@ -488,7 +489,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                   )}
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-100 mb-1">
+                  <h1 className="text-xl sm:text-2xl font-bold text-[#67E8F9] mb-1">
                     {company?.name}
                   </h1>
                 </div>
@@ -496,24 +497,28 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
               <Button
                 asChild
                 variant="default"
-                className="px-6 h-12 bg-sky-500 hover:bg-sky-600 text-base"
+                className="w-full sm:w-auto px-4 sm:px-6 h-10 sm:h-12 text-sm sm:text-base transition-colors duration-300 text-white"
+                style={{ backgroundColor: "#39C3EF" }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"} 
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"} 
               >
                 <Link href={`/AddReview/${companyId}`}>
                   Add a review
                 </Link>
               </Button>
             </div>
-
+  
             <div className="space-y-6">
               <div>
-                <h2 className="text-xl font-semibold text-gray-100 mb-3">Overview</h2>
-                <p className="text-gray-100">{company?.description}</p>
+                <h2 className="text-lg sm:text-xl font-semibold text-gray-100 mb-3">Overview</h2>
+                <p className="text-[#A3A3A3] text-sm sm:text-base">{company?.description}</p>
               </div>
             </div>
           </div>
-
-          <div className="flex gap-4 mb-6 mt-3 text-black">
-            <div className="flex-1">
+  
+          {/* Search Section - Mobile Responsive */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6 mt-3 text-black">
+            <div className="flex-1 w-full">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-100 w-5 h-5" />
                 <Input
@@ -530,27 +535,36 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
             </div>
             <Button
               variant="default"
-              className="px-6 h-12 bg-sky-500 hover:bg-sky-600 text-white"
+              className="w-full sm:w-auto px-4 sm:px-6 h-12 bg-sky-500 hover:bg-sky-600 text-white"
               onClick={handleSearch}
+              style={{ backgroundColor: "#39C3EF" }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"} 
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"} 
             >
               Find interviews
             </Button>
           </div>
-
+  
+          {/* Interview Listings - Mobile Responsive */}
           <div className="space-y-6">
             {filteredInterviews.map((interview) => (
-              <div key={interview.id} className="p-6 rounded-lg border border-sky-100 transition-all duration-200 hover:shadow-md hover:border-sky-300"
-                style={{ backgroundColor: "rgb(30, 30, 30)" }}>
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-100 mb-2">
+              <div 
+                key={interview.id} 
+                className="p-4 sm:p-6 rounded-lg border border-sky-100 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+                style={{ backgroundColor: "rgb(30, 30, 30)" }}
+              >
+                <div className="flex flex-col sm:flex-row justify-between items-start mb-4">
+                  <div className="w-full mb-4 sm:mb-0">
+                    <h2 className="text-xl font-semibold text-[#67E8F9] mb-2">
                       {interview.position}
                     </h2>
-                    <div className="flex items-center gap-4 text-gray-100 mb-3">
+                    
+                    {/* Location */}
+                    <div className="flex flex-wrap items-center gap-4 text-gray-100 mb-3">
                       {(interview.job_location || interview.job_country) && (
                         <div className="flex items-center gap-2">
                           <MapPin className="w-4 h-4" />
-                          <span>
+                          <span className="text-sm sm:text-base">
                             {interview.job_location}
                             {interview.job_location && interview.job_country && ", "}
                             {interview.job_country}
@@ -558,77 +572,98 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                         </div>
                       )}
                     </div>
-                    <div className="flex items-center gap-4 mb-3">
+  
+                    {/* Interview Details */}
+                    <div className="flex flex-wrap items-center gap-4 mb-3">
                       <div className="flex items-center gap-2 text-gray-100">
-                        <span>{interview.offer === 'Accepted' ? 'Accepted offer' : interview.offer === 'Rejected' ? 'Rejected' : 'No offer'}</span>
+                        <span className="text-sm sm:text-base">
+                          {interview.offer === 'Accepted' ? 'Accepted offer' : interview.offer === 'Rejected' ? 'Rejected' : 'No offer'}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-100">
                         {getExperienceIcon(interview.experience)}
-                        <span>{interview.experience} experience</span>
+                        <span className="text-sm sm:text-base">{interview.experience} experience</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-100">
                         {getDifficultyIcon(interview.difficulty)}
-                        <span>{interview.difficulty} interview</span>
+                        <span className="text-sm sm:text-base">{interview.difficulty} interview</span>
                       </div>
                     </div>
+  
+                    {/* Date */}
+                    <span className="text-gray-100 text-xs sm:text-sm block sm:inline">
+                      {new Date(interview.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}
+                    </span>
                   </div>
-                  <span className="text-gray-100 text-sm">
-                    {new Date(interview.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric'
-                    })}
-                  </span>
                 </div>
-
-                <div className="space-y-4 mb-6">
+  
+                {/* Detailed Sections */}
+                <div className="space-y-4 mt-4">
+                  {/* Application */}
                   <div>
-                    <h3 className="font-medium text-gray-100 mb-2">Application</h3>
-                    <p className="text-gray-100">{interview.application_source}</p>
+                    <h3 className="font-medium text-white mb-2 text-base sm:text-lg">Application</h3>
+                    <p className="text-[#A3A3A3] text-sm sm:text-base">{interview.application_source}</p>
                   </div>
-
+  
+                  {/* Interview Process */}
                   <div>
-                    <h3 className="font-medium text-gray-100 mb-2">Interview</h3>
-                    <p className="text-gray-100">{interview.interview_process}</p>
+                    <h3 className="font-medium text-white mb-2 text-base sm:text-lg">Interview</h3>
+                    <p className="text-[#A3A3A3] text-sm sm:text-base">{interview.interview_process}</p>
                   </div>
-
+  
+                  {/* AI Usage Section */}
                   <div>
-                    <h3 className="font-medium text-gray-100 mb-2">AI Usage</h3>
+                    <h3 className="font-medium text-white mb-2 text-base sm:text-lg">AI Usage</h3>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-gray-100 font-medium">Does this interview allow AI?</p>
+                        <p className="text-white font-medium text-sm sm:text-base">Does this interview allow AI?</p>
                         <ul className="list-disc pl-6 mt-1">
-                          <li className="text-gray-100">{(interview as any).interview_ai_allow || "Not specified"}</li>
+                          <li className="text-[#A3A3A3] text-sm sm:text-base">
+                            {(interview as any).interview_ai_allow || "Not specified"}
+                          </li>
                         </ul>
                       </div>
                       <div>
-                        <p className="text-gray-100 font-medium">Does this company like candidates to use AI in their job?</p>
+                        <p className="text-white font-medium text-sm sm:text-base">
+                          Does this company like candidates to use AI in their job?
+                        </p>
                         <ul className="list-disc pl-6 mt-1">
-                          <li className="text-gray-100">{(interview as any).job_ai_allow || "Not specified"}</li>
+                          <li className="text-[#A3A3A3] text-sm sm:text-base">
+                            {(interview as any).job_ai_allow || "Not specified"}
+                          </li>
                         </ul>
                       </div>
                       <div>
-                        <p className="text-gray-100 font-medium">Which AI tool did you use?</p>
+                        <p className="text-white font-medium text-sm sm:text-base">
+                          Which AI tool did you use?
+                        </p>
                         <ul className="list-disc pl-6 mt-1">
-                          <li className="text-gray-100">{(interview as any).ai_interview_assisted_tool_used || "None"}</li>
+                          <li className="text-[#A3A3A3] text-sm sm:text-base">
+                            {(interview as any).ai_interview_assisted_tool_used || "None"}
+                          </li>
                         </ul>
                       </div>
                     </div>
                   </div>
-
+  
+                  {/* Interview Questions */}
                   {interview.interview_questions && interview.interview_questions.length > 0 && (
                     <div>
-                      <h3 className="font-medium text-gray-100 mb-2">
+                      <h3 className="font-medium text-white mb-2 text-base sm:text-lg">
                         Interview questions [{interview.interview_questions.length}]
                       </h3>
                       <div className="space-y-4">
                         {interview.interview_questions.map((q, index) => (
                           <div key={q.id}>
-                            <p className="text-gray-100">
+                            <p className="text-[#A3A3A3] text-sm sm:text-base">
                               {index + 1}. {q.question}
                             </p>
                             {q.answer && (
-                              <ul className="mt-2 ml-8 list-disc text-gray-100">
+                              <ul className="mt-2 ml-8 list-disc text-[#A3A3A3] text-sm sm:text-base">
                                 <li>{q.answer}</li>
                               </ul>
                             )}
@@ -643,8 +678,12 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
           </div>
         </div>
       </div>
-
-      <AuthModal isOpen={modalOpen} onClose={handleModalClose} redirectUrl={`/companyDetails/${companyId}`} />
+  
+      <AuthModal 
+        isOpen={modalOpen} 
+        onClose={handleModalClose} 
+        redirectUrl={`/companyDetails/${companyId}`} 
+      />
     </>
   );
 };

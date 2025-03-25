@@ -313,8 +313,8 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
   return (
     // <div className="min-h-screen bg-gray-50 text-black mt-40">
-    <div className="md:py-40 flex h-full items-center justify-center py-20 ">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="md:py-30 flex h-full items-center justify-center py-20 ">
+      <div className="max-w-4xl mx-auto px-4 py-8 mt-20">
         <button
           onClick={() => router.push(`/companyDetails/${currentCompanyId}`)}
           className="mb-6 inline-flex items-center gap-2 text-sky-600 hover:text-sky-700 transition-colors"
@@ -326,7 +326,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <form onSubmit={handleSubmit} className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md hover:border-sky-300"
-  style={{ backgroundColor: "rgb(30, 30, 30)" }}>
+              style={{ backgroundColor: "rgb(30, 30, 30)" }}>
               <h1 className="text-3xl font-bold mb-6">Tell us about a recent job interview</h1>
 
               <div className="space-y-6">
@@ -357,8 +357,8 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                   <div className="flex gap-4 mt-2">
                     <button
                       type="button"
-                      className={`p-4 rounded-full transition-colors ${experience === "positive" ? "bg-gray-900 text-white" : "hover:bg-gray-900"
-                        }`}
+                      className={`p-4 rounded-full transition-colors 
+    ${experience === "positive" ? "bg-blue-600 text-white" : "hover:bg-blue-800"}`}
                       onClick={() => setExperience("positive")}
                       title="Positive"
                     >
@@ -366,8 +366,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     </button>
                     <button
                       type="button"
-                      className={`p-4 rounded-full transition-colors ${experience === "neutral" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
-                        }`}
+                      className={`p-4 rounded-full transition-colors 
+    ${experience === "neutral" ? "bg-gray-500 text-white" : "hover:bg-gray-200"} 
+    active:bg-gray-700`}  // Changes color when tapped
                       onClick={() => setExperience("neutral")}
                       title="Average"
                     >
@@ -375,8 +376,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                     </button>
                     <button
                       type="button"
-                      className={`p-4 rounded-full transition-colors ${experience === "negative" ? "bg-gray-900 text-white" : "hover:bg-gray-100"
-                        }`}
+                      className={`p-4 rounded-full transition-colors 
+    ${experience === "negative" ? "bg-red-600 text-white" : "hover:bg-gray-200"} 
+    active:bg-red-800`}  // Changes color when tapped
                       onClick={() => setExperience("negative")}
                       title="Negative"
                     >
@@ -561,7 +563,13 @@ const AddReview = ({ companyId }: { companyId: string }) => {
                   </Button>
                 </div>
 
-                <Button type="submit" className="w-auto bg-sky-500 hover:bg-sky-600">
+                <Button
+                  type="submit"
+                  className="w-auto text-white transition-colors duration-300"
+                  style={{ backgroundColor: "#39C3EF" }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"}
+                >
                   Submit Review
                 </Button>
               </div>
@@ -570,7 +578,7 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
           <div className="md:col-span-1">
             <div className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md "
-  style={{ backgroundColor: "rgb(30, 30, 30)" }}>
+              style={{ backgroundColor: "rgb(30, 30, 30)" }}>
               <h2 className="text-2xl font-bold mb-4">Keep it Real</h2>
               <p className="text-gray-100 mb-6">
                 Thank you for contributing to the community. Your opinion will help others make decisions about jobs and companies.

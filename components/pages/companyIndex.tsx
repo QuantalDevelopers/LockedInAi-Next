@@ -141,11 +141,11 @@ function CompanyIndex() {
   }
 
   return (
-    <div className="md:py-40 flex h-full items-center justify-center px-2 py-20">
-      <div className="max-w-[1200px] mx-auto py-8 px-4">
-        <div className="flex gap-8">
-          {/* Sidebar Filters */}
-          <div className="w-80 flex-shrink-0">
+    <div className="md:py-30 flex h-full items-center justify-center px-2 py-20">
+      <div className="max-w-[1200px] mx-auto mt-20 py-8 px-4">
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Sidebar Filters - Mobile: Full width, Desktop: Fixed width */}
+          <div className="w-full md:w-80 md:flex-shrink-0">
             <h1 className="text-3xl font-bold text-gray-300 mb-6">Explore companies</h1>
             <div className="space-y-6">
               <div>
@@ -211,8 +211,8 @@ function CompanyIndex() {
               </div>
             </div>
           </div>
-
-          {/* Company Listings */}
+  
+          {/* Company Listings - Mobile: Full width, Desktop: Flex grow */}
           <div className="flex-grow">
             <div className="space-y-6">
               {isLoading ? (
@@ -223,25 +223,35 @@ function CompanyIndex() {
                 paginatedCompanies.map((company: Company) => (
                   <div key={company.id} onClick={() => handleCompanyClick(company.id)} className="cursor-pointer">
                     <div
-                      className="p-8 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
-                      style={{
-                        backgroundColor: "rgb(30, 30, 30)",
-                        transition: "background-color 0.3s ease-in-out",
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgb(50, 50, 50)")}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgb(30, 30, 30)")}
+                      className="group relative rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40"
                     >
-                      <div className="flex gap-6 text-white">
-                        <div className="w-20 h-20 bg-sky-50 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
+                      <div className="flex flex-col md:flex-row gap-6 text-white">
+                        <div className="w-20 h-20 bg-sky-50 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden self-center md:self-start">
                           {company.logo ? (
                             <Image src={company.logo} alt={`${company.name} logo`} className="w-16 h-16 object-contain" />
                           ) : (
                             <BuildingIcon className="w-10 h-10 text-sky-400" />
                           )}
                         </div>
-                        <div className="flex-grow">
-                          <h3 className="text-2xl font-semibold text-gray-100 mb-2">{company.name}</h3>
-                          <p className="text-gray-100 mb-4 text-lg line-clamp-3">{company.description}</p>
+  
+                        <div className="flex-grow text-center md:text-left">
+                          <h3 className="text-2xl font-semibold text-[#67E8F9] mb-2">{company.name}</h3>
+  
+                          {/* Country */}
+                          <div className="flex items-center gap-4 text-white mb-2 justify-center md:justify-start">
+                            <span>{company.country || 'Location not specified'}</span>
+                          </div>
+  
+                          {/* Industries */}
+                          {company.industries && (
+                            <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+                              <span className="px-2 py-1 bg-sky-900 text-sky-200 text-sm rounded-full">
+                                {company.industries}
+                              </span>
+                            </div>
+                          )}
+  
+                          <p className="text-[#A3A3A3] mb-4 text-lg line-clamp-3 text-center md:text-left">{company.description}</p>
                         </div>
                       </div>
                     </div>
@@ -250,11 +260,19 @@ function CompanyIndex() {
               )}
               {/* Pagination Controls */}
               {!companySearch && !locationSearch && !industrySearch && (
-                <div className="flex justify-between items-center mt-6 px-4">
-                  <button onClick={handlePrevPage} disabled={currentPage === 1} className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-500 disabled:opacity-50">
+                <div className="flex flex-col md:flex-row justify-between items-center mt-6 px-4 space-y-4 md:space-y-0">
+                  <button 
+                    onClick={handlePrevPage} 
+                    disabled={currentPage === 1} 
+                    className="w-full md:w-auto px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-500 disabled:opacity-50"
+                  >
                     ← Previous
                   </button>
-                  <button onClick={handleNextPage} disabled={currentPage === totalPages} className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-500 disabled:opacity-50">
+                  <button 
+                    onClick={handleNextPage} 
+                    disabled={currentPage === totalPages} 
+                    className="w-full md:w-auto px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-500 disabled:opacity-50"
+                  >
                     Next →
                   </button>
                 </div>

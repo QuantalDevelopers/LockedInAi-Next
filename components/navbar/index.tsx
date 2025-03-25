@@ -17,7 +17,7 @@ const navItems = [
     link: "/coding-copilot",
   },
   {
-    name: "Company Details",
+    name: "Company Interview",
     link : "/CompanyIndex",
   },
   {

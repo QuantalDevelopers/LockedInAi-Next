@@ -86,7 +86,29 @@ export const DesktopNavbar = () => {
             >
               Interview & Meeting AI Copilot
             </Link>
-            <Link
+            <MenuItem setActive={setActive} active={active} item="Copilots">
+              <div className="flex flex-col space-y-4 text-sm">
+                <Link
+                  href="/online-assessment"
+                  className={cn(
+                    "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                    { "font-bold text-cyan-400": isActive("/online-assessment") },
+                  )}
+                >
+                  OA Copilot
+                </Link>
+                <Link
+                  href="/coding-copilot"
+                  className={cn(
+                    "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
+                    { "font-bold text-cyan-400": isActive("/coding-copilot") },
+                  )}
+                >
+                  Coding Copilot
+                </Link>
+              </div>
+            </MenuItem>
+            {/* <Link
               href="/coding-copilot"
               className={cn(
                 "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
@@ -94,15 +116,6 @@ export const DesktopNavbar = () => {
               )}
             >
               Coding Copilot
-            </Link>
-            {/* <Link
-              href="/Not-Found"
-              className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
-                { "font-bold text-cyan-400": isActive("/Not-Found") },
-              )}
-            >
-              Not Found Page
             </Link> */}
             <Link
               href="/CompanyIndex"
@@ -111,18 +124,8 @@ export const DesktopNavbar = () => {
                 { "font-bold text-cyan-400": isActive("/CompanyIndex") },
               )}
             >
-              Company Details
+              Company Interview
             </Link>
-            {/* Login */}
-            {/* <Link
-              href="/Auth"
-              className={cn(
-                "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
-                { "font-bold text-cyan-400": isActive("/Auth") }
-              )}
-            >
-              Login
-            </Link> */}
             <Link
               href="/resume-guru"
               className={cn(
@@ -132,7 +135,7 @@ export const DesktopNavbar = () => {
             >
               Resume Builder
             </Link>
-            <Link
+            {/* <Link
               href="/online-assessment"
               className={cn(
                 "cursor-pointer transition-transform duration-300 hover:-translate-y-0.5 hover:opacity-[0.9] active:scale-[0.98]",
@@ -140,7 +143,7 @@ export const DesktopNavbar = () => {
               )}
             >
               OA Copilot
-            </Link>
+            </Link> */}
             <Link
               href={`https://app.lockedinai.com/app/sub${affiliate}`}
               className={cn(
