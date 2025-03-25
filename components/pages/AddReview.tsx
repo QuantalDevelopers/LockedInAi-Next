@@ -325,8 +325,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            <form onSubmit={handleSubmit} className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md hover:border-sky-300"
-              style={{ backgroundColor: "rgb(30, 30, 30)" }}>
+            {/* <form onSubmit={handleSubmit} className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md hover:border-sky-300"
+              style={{ backgroundColor: "rgb(30, 30, 30)" }}> */}
+                <form onSubmit={handleSubmit} className="group relative rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40">
               <h1 className="text-3xl font-bold mb-6">Tell us about a recent job interview</h1>
 
               <div className="space-y-6">
@@ -577,8 +578,9 @@ const AddReview = ({ companyId }: { companyId: string }) => {
           </div>
 
           <div className="md:col-span-1">
-            <div className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md "
-              style={{ backgroundColor: "rgb(30, 30, 30)" }}>
+            {/* <div className="p-6 rounded-lg border  transition-all duration-200 hover:shadow-md "
+              style={{ backgroundColor: "rgb(30, 30, 30)" }}> */}
+              <div className="group relative rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40">
               <h2 className="text-2xl font-bold mb-4">Keep it Real</h2>
               <p className="text-gray-100 mb-6">
                 Thank you for contributing to the community. Your opinion will help others make decisions about jobs and companies.

@@ -471,8 +471,9 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
       <div className="md:py-30 flex h-full items-center justify-center px-2 py-20 ">
         <div className="w-full mt-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ">
           {/* Company Header - Mobile Responsive */}
-          <div className="p-4 sm:p-6 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
-            style={{ backgroundColor: "rgb(30, 30, 30)" }}>
+          {/* <div className="p-4 sm:p-6 rounded-lg border border-sky-200 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+            style={{ backgroundColor: "rgb(30, 30, 30)" }}> */}
+          <div className="group relative rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40">
             <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between mb-6 space-y-4 sm:space-y-0">
               <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                 <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2 sm:mb-0">
@@ -499,15 +500,15 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                 variant="default"
                 className="w-full sm:w-auto px-4 sm:px-6 h-10 sm:h-12 text-sm sm:text-base transition-colors duration-300 text-white"
                 style={{ backgroundColor: "#39C3EF" }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"} 
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"} 
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"}
               >
                 <Link href={`/AddReview/${companyId}`}>
                   Add a review
                 </Link>
               </Button>
             </div>
-  
+
             <div className="space-y-6">
               <div>
                 <h2 className="text-lg sm:text-xl font-semibold text-gray-100 mb-3">Overview</h2>
@@ -515,16 +516,16 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
               </div>
             </div>
           </div>
-  
+
           {/* Search Section - Mobile Responsive */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-6 mt-3 text-black">
+          {/* <div className="flex flex-col sm:flex-row gap-4 mb-6 mt-3 text-black">
             <div className="flex-1 w-full">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-100 w-5 h-5" />
                 <Input
                   type="text"
                   placeholder="Search job titles"
-                  className="w-full pl-10 h-12 text-base bg-[rgb(30,30,30)] border-gray-200 text-white"
+                  className="w-full pl-10 h-12 text-base bg-[rgb(30,30,30)] border-gray-200 text-white "
                   value={searchTerm}
                   onChange={(e) => {
                     setSearchTerm(e.target.value);
@@ -543,22 +544,52 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
             >
               Find interviews
             </Button>
+          </div> */}
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-6 mt-3 text-black rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40">
+            <div className="flex-1 w-full">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-100 w-5 h-5" />
+                <Input
+                  type="text"
+                  placeholder="Search job titles"
+                  className="w-full pl-10 h-12 text-base bg-transparent border-gray-200 text-white"
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setIsSearching(false);
+                  }}
+                />
+              </div>
+            </div>
+            <Button
+              variant="default"
+              className="w-full sm:w-auto px-4 sm:px-6 h-12 bg-sky-500 hover:bg-sky-600 text-white"
+              onClick={handleSearch}
+              style={{ backgroundColor: "#39C3EF" }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"}
+            >
+              Find interviews
+            </Button>
           </div>
-  
+
+
           {/* Interview Listings - Mobile Responsive */}
           <div className="space-y-6">
             {filteredInterviews.map((interview) => (
-              <div 
-                key={interview.id} 
-                className="p-4 sm:p-6 rounded-lg border border-sky-100 transition-all duration-200 hover:shadow-md hover:border-sky-300"
-                style={{ backgroundColor: "rgb(30, 30, 30)" }}
+              <div
+                key={interview.id}
+                // className="p-4 sm:p-6 rounded-lg border border-sky-100 transition-all duration-200 hover:shadow-md hover:border-sky-300"
+                // style={{ backgroundColor: "rgb(30, 30, 30)" }}
+                className="group relative rounded-xl bg-cyan-950/30 p-5 transition-all duration-300 hover:bg-cyan-900/40"
               >
                 <div className="flex flex-col sm:flex-row justify-between items-start mb-4">
                   <div className="w-full mb-4 sm:mb-0">
                     <h2 className="text-xl font-semibold text-[#67E8F9] mb-2">
                       {interview.position}
                     </h2>
-                    
+
                     {/* Location */}
                     <div className="flex flex-wrap items-center gap-4 text-gray-100 mb-3">
                       {(interview.job_location || interview.job_country) && (
@@ -572,7 +603,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                         </div>
                       )}
                     </div>
-  
+
                     {/* Interview Details */}
                     <div className="flex flex-wrap items-center gap-4 mb-3">
                       <div className="flex items-center gap-2 text-gray-100">
@@ -589,7 +620,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                         <span className="text-sm sm:text-base">{interview.difficulty} interview</span>
                       </div>
                     </div>
-  
+
                     {/* Date */}
                     <span className="text-gray-100 text-xs sm:text-sm block sm:inline">
                       {new Date(interview.date).toLocaleDateString('en-US', {
@@ -600,7 +631,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                     </span>
                   </div>
                 </div>
-  
+
                 {/* Detailed Sections */}
                 <div className="space-y-4 mt-4">
                   {/* Application */}
@@ -608,13 +639,13 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                     <h3 className="font-medium text-white mb-2 text-base sm:text-lg">Application</h3>
                     <p className="text-[#A3A3A3] text-sm sm:text-base">{interview.application_source}</p>
                   </div>
-  
+
                   {/* Interview Process */}
                   <div>
                     <h3 className="font-medium text-white mb-2 text-base sm:text-lg">Interview</h3>
                     <p className="text-[#A3A3A3] text-sm sm:text-base">{interview.interview_process}</p>
                   </div>
-  
+
                   {/* AI Usage Section */}
                   <div>
                     <h3 className="font-medium text-white mb-2 text-base sm:text-lg">AI Usage</h3>
@@ -649,7 +680,7 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                       </div>
                     </div>
                   </div>
-  
+
                   {/* Interview Questions */}
                   {interview.interview_questions && interview.interview_questions.length > 0 && (
                     <div>
@@ -678,11 +709,11 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
           </div>
         </div>
       </div>
-  
-      <AuthModal 
-        isOpen={modalOpen} 
-        onClose={handleModalClose} 
-        redirectUrl={`/companyDetails/${companyId}`} 
+
+      <AuthModal
+        isOpen={modalOpen}
+        onClose={handleModalClose}
+        redirectUrl={`/companyDetails/${companyId}`}
       />
     </>
   );

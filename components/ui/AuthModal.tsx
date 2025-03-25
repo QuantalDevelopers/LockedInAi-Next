@@ -380,16 +380,24 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black z-49 bg-opacity-50">
-
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-49">
       <div
-        className={`fixed inset-0 bg-[rgb(30,30,30)] flex flex-col justify-center items-center z-50 ${authType == 'signin' ? 'h-[60%] mt-[19%]' : 'h-[70%] mt-[14%]'} rounded-tl-[20px] rounded-tr-[20px] transition-opacity duration-300`}
+        className={`
+          fixed inset-0 bg-[rgb(30,30,30)] 
+          flex flex-col justify-center items-center 
+          z-49 
+          ${authType === 'signin' 
+            ? 'sm:h-[60%] sm:mt-[19%] h-full' 
+            : 'sm:h-[70%] sm:mt-[14%] h-full'}
+          sm:rounded-tl-[20px] sm:rounded-tr-[20px] 
+          transition-opacity duration-300
+        `}
       >
-        <div className="w-full flex items-center justify-center p-2">
+        <div className="w-full flex items-center justify-center p-4 sm:p-2">
           <div className="rounded-lg p-6 w-full max-w-sm">
             {/* Header */}
             <div className="mb-4">
-              <h1 className="text-xl font-bold">
+              <h1 className="text-xl font-bold text-white">
                 {authType === "signin" ? "Sign in" : "Sign up"}
               </h1>
               <p className="text-gray-100">to continue to LockedIn AI</p>
@@ -403,12 +411,11 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
             >
               {/* Google Icon */}
               <svg
-                className="mr-2 "
+                className="mr-2"
                 width="20"
                 height="20"
                 viewBox="0 0 533.5 544.3"
                 xmlns="http://www.w3.org/2000/svg"
-
               >
                 <path
                   fill="#4285F4"
@@ -444,7 +451,7 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
             >
               {/* Email */}
               <div>
-                <Label htmlFor="email" className="mb-1">
+                <Label htmlFor="email" className="mb-1 text-white">
                   Email
                 </Label>
                 <Input
@@ -461,7 +468,7 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
               {/* Username (Only for Sign Up) */}
               {authType === "signup" && (
                 <div>
-                  <Label htmlFor="username" className="mb-1">
+                  <Label htmlFor="username" className="mb-1 text-white">
                     Username
                   </Label>
                   <Input
@@ -478,7 +485,7 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
 
               {/* Password */}
               <div>
-                <Label htmlFor="password" className="mb-1">
+                <Label htmlFor="password" className="mb-1 text-white">
                   Password
                 </Label>
                 <Input
@@ -509,7 +516,7 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
             {/* Toggle Sign In / Sign Up */}
             {authType === "signin" ? (
               <p className="text-sm text-gray-600 mt-4">
-                If you’re trying to level up,{" "}
+                If you're trying to level up,{" "}
                 <button
                   type="button"
                   onClick={() => setAuthType("signup")}
