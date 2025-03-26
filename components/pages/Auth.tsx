@@ -80,7 +80,6 @@ export default function Auth() {
         provider: "google",
       });
       if (error) throw error;
-      // On success, Supabase handles the redirect/session
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -94,7 +93,6 @@ export default function Auth() {
 
   return (
     <div className="flex h-screen ">
-      {/* LEFT COLUMN (50% width) */}
       <div className="w-1/2 flex items-center justify-center p-8 bg-[rgba(30, 30, 30, 1)]">
         <div className="bg-[rgb(30,30,30)] shadow-md rounded-lg p-6 w-full max-w-sm">
           {/* Header */}
@@ -242,13 +240,10 @@ export default function Auth() {
         </div>
       </div>
 
-      {/* RIGHT COLUMN (50% width) */}
       <div className="w-1/2 bg-gray-300 flex items-center justify-center p-8">
         <div className="max-w-md text-center">
-          {/* Example placeholder or your actual Jake image */}
+         
           <img
-            // Use your real image path or a generated link:
-            // e.g. src="/images/jake.png" or a placeholder
             src="/images/James.png"
             alt="James"
             className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
@@ -260,7 +255,6 @@ export default function Auth() {
             &ldquo;I was skeptical about using AI for career coaching, but LockedIn AI blew me away. It helped me navigate through all the sales strategy and negotiation questions during my IBM interviews, and I landed a $330k sales exec job. Thanks to this tool, now I can actually enjoy my life and buy everything I want.&rdquo;
           </p>
 
-          {/* Logos Row */}
           <div className="mt-[50px] grid grid-cols-2 gap-16 items-center">
             <div className="flex justify-center">
               <img

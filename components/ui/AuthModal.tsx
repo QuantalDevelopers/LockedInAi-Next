@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useRouter } from "next/navigation";
+import { X } from "lucide-react";
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -141,8 +142,18 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
             : 'sm:h-[70%] sm:mt-[14%] h-full'}
           sm:rounded-tl-[20px] sm:rounded-tr-[20px] 
           transition-opacity duration-300
+          relative
         `}
       >
+        {/* Close Button */}
+        <button 
+          onClick={onClose} 
+          className="absolute top-4 right-4 text-white hover:text-gray-300 z-50"
+          aria-label="Close modal"
+        >
+          <X size={24} />
+        </button>
+
         <div className="w-full flex items-center justify-center p-4 sm:p-2">
           <div className="rounded-lg p-6 w-full max-w-sm">
             {/* Header */}
@@ -266,7 +277,7 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
             {/* Toggle Sign In / Sign Up */}
             {authType === "signin" ? (
               <p className="text-sm text-gray-600 mt-4">
-                If you're trying to level up,{" "}
+                If you&apos;re trying to level up,{" "}
                 <button
                   type="button"
                   onClick={() => setAuthType("signup")}
@@ -293,4 +304,3 @@ export default function AuthModal({ isOpen, onClose, redirectUrl }: AuthModalPro
     </div>
   );
 }
-

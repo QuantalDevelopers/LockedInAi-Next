@@ -1,21 +1,76 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Share2, MessageCircle, ThumbsUp, ThumbsDown, Minus, MapPin, Search } from "lucide-react";
-import { Navigate } from "react-router-dom";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useViaParam } from "@/components/affiliate-link";
 import AuthModal from "@/components/ui/AuthModal";
 import Head from "next/head";
 import Image from "next/image";
-
+import { constructImageURL } from "@/lib/image-hosting";
 
 const queryClient = new QueryClient();
+
+
+// A dummy interview preview component with your provided dummy data this being used in the placeholder.
+function DummyInterviewPreview() {
+  return (
+    <div className="p-4 bg-cyan-950/30 rounded-xl">
+      <div>
+        <h2 className="text-xl font-semibold text-[#67E8F9]">Software Engineer</h2>
+        <p className="text-[#A3A3A3] text-sm">Santa Clara, CA, United States</p>
+      </div>
+      <div className="mt-2 space-y-1">
+        <p className="text-[#A3A3A3] text-sm">Accepted offer</p>
+        <p className="text-[#A3A3A3] text-sm">Positive experience</p>
+        <p className="text-[#A3A3A3] text-sm">Difficult interview</p>
+        <p className="text-[#A3A3A3] text-sm">Apr 27, 2024</p>
+      </div>
+      <div className="mt-2">
+        <h3 className="font-medium text-white">Application</h3>
+        <p className="text-[#A3A3A3] text-sm">Online Application</p>
+      </div>
+      <div className="mt-2">
+        <h3 className="font-medium text-white">Interview</h3>
+        <p className="text-[#A3A3A3] text-sm">
+          The process included an initial resume screening, an online coding challenge, a technical phone interview, and two on-site interviews covering system design and teamwork scenarios.
+        </p>
+      </div>
+      <div className="mt-2">
+        <h3 className="font-medium text-white">AI Usage</h3>
+        <div className="space-y-2">
+          <div>
+            <p className="text-white font-medium text-sm">Does this interview allow AI?</p>
+            <p className="text-[#A3A3A3] text-sm">Unknown</p>
+          </div>
+          <div>
+            <p className="text-white font-medium text-sm">Does this company like candidates to use AI in their job?</p>
+            <p className="text-[#A3A3A3] text-sm">Yes</p>
+          </div>
+          <div>
+            <p className="text-white font-medium text-sm">Which AI tool did you use?</p>
+            <p className="text-[#A3A3A3] text-sm">LockedIn AI</p>
+          </div>
+        </div>
+      </div>
+      <div className="mt-2">
+        <h3 className="font-medium text-white">Interview questions [1]</h3>
+        <div className="mt-1">
+          <p className="text-[#A3A3A3] text-sm">
+            1. Explain the difference between CUDA cores and Tensor cores.
+          </p>
+          <p className="text-[#A3A3A3] text-sm mt-1">
+            CUDA cores are the basic processing units in NVIDIA GPUs responsible for handling general-purpose parallel computations. Tensor cores, on the other hand, are specialized units designed to accelerate machine learning tasks by performing tensor operations, significantly boosting performance for AI workloads.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function CompanyDetails({ companyId }: { companyId: string }) {
   return (
@@ -66,7 +121,6 @@ export default function CompanyDetails({ companyId }: { companyId: string }) {
   );
 }
 
-
 const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
   console.log("Company ID received in CompanyDetails:", companyId);
 
@@ -80,26 +134,17 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
       const { data } = await supabase.auth.getUser();
       const User = data?.user;
       setUser(User);
-
-      if (!User) {
-        const timer = setTimeout(() => {
-          setModalOpen(true);
-        }, 5000);
-        return () => clearTimeout(timer);
-      }
     };
     fetchUser();
   }, []);
 
-
-
   const { data: company, isLoading } = useQuery({
-    queryKey: ['company', companyId],
+    queryKey: ["company", companyId],
     queryFn: async () => {
       const { data, error } = await supabase
-        .from('companies')
-        .select('name, description, logo')
-        .eq('id', companyId)
+        .from("companies")
+        .select("name, description, logo")
+        .eq("id", companyId)
         .single();
 
       if (error) throw error;
@@ -107,23 +152,23 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
     },
   });
 
-
-
   const { data: interviews = [] } = useQuery({
-    queryKey: ['interviews', companyId],
+    queryKey: ["interviews", companyId],
     queryFn: async () => {
       let query = supabase
-        .from('interviews')
-        .select(`
+        .from("interviews")
+        .select(
+          `
           *,
           interview_questions (
             id,
             question,
             answer
           )
-        `)
-        .eq('company_id', companyId)
-        .order('created_at', { ascending: false });
+        `
+        )
+        .eq("company_id", companyId)
+        .order("created_at", { ascending: false });
 
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
@@ -137,13 +182,11 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
     },
   });
 
-
-
   const getExperienceIcon = (experience: string) => {
     switch (experience.toLowerCase()) {
-      case 'positive':
+      case "positive":
         return <ThumbsUp className="w-4 h-4" />;
-      case 'negative':
+      case "negative":
         return <ThumbsDown className="w-4 h-4" />;
       default:
         return <Minus className="w-4 h-4" />;
@@ -152,20 +195,21 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
   const getDifficultyIcon = (difficulty: string) => {
     switch (difficulty.toLowerCase()) {
-      case 'easy':
+      case "easy":
         return <ThumbsUp className="w-4 h-4" />;
-      case 'difficult':
+      case "difficult":
         return <ThumbsDown className="w-4 h-4" />;
       default:
         return <Minus className="w-4 h-4" />;
     }
   };
 
-  const filteredInterviews = isSearching && searchTerm
-    ? interviews.filter(interview =>
-      interview.position.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    : interviews;
+  const filteredInterviews =
+    isSearching && searchTerm
+      ? interviews.filter((interview) =>
+        interview.position.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      : interviews;
 
   const handleSearch = () => {
     setIsSearching(true);
@@ -173,6 +217,10 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
 
   const handleModalClose = () => {
     setModalOpen(false);
+  };
+
+  const handleSignInClick = () => {
+    setModalOpen(true);
   };
 
   return (
@@ -185,7 +233,9 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                 <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mb-2 sm:mb-0">
                   {company?.logo ? (
                     <Image
-                      src={company.logo}
+                      // src={company.logo}
+                      //have used constructImageUrl for to dynamically load the image & have also kept the previous company.logo implementation 
+                      src={company.logo || constructImageURL(company.name)}
                       alt={`${company.name} logo`}
                       className="w-12 h-12 object-contain"
                     />
@@ -206,12 +256,10 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                 variant="default"
                 className="w-full sm:w-auto px-4 sm:px-6 h-10 sm:h-12 text-sm sm:text-base transition-colors duration-300 text-white"
                 style={{ backgroundColor: "#39C3EF" }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#2AA3CB")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#39C3EF")}
               >
-                <Link href={`/AddReview/${companyId}`}>
-                  Add a review
-                </Link>
+                <Link href={`/AddReview/${companyId}`}>Add a review</Link>
               </Button>
             </div>
 
@@ -244,14 +292,14 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
               className="w-full sm:w-auto px-4 sm:px-6 h-12 bg-sky-500 hover:bg-sky-600 text-white"
               onClick={handleSearch}
               style={{ backgroundColor: "#39C3EF" }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#2AA3CB"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#39C3EF"}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#2AA3CB")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#39C3EF")}
             >
               Find interviews
             </Button>
           </div>
 
-
+          {/* Render interview cards */}
           <div className="space-y-6">
             {filteredInterviews.map((interview) => (
               <div
@@ -280,7 +328,11 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                     <div className="flex flex-wrap items-center gap-4 mb-3">
                       <div className="flex items-center gap-2 text-gray-100">
                         <span className="text-sm sm:text-base">
-                          {interview.offer === 'Accepted' ? 'Accepted offer' : interview.offer === 'Rejected' ? 'Rejected' : 'No offer'}
+                          {interview.offer === "Accepted"
+                            ? "Accepted offer"
+                            : interview.offer === "Rejected"
+                              ? "Rejected"
+                              : "No offer"}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-100">
@@ -294,10 +346,10 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                     </div>
 
                     <span className="text-gray-100 text-xs sm:text-sm block sm:inline">
-                      {new Date(interview.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
+                      {new Date(interview.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
                       })}
                     </span>
                   </div>
@@ -318,7 +370,9 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                     <h3 className="font-medium text-white mb-2 text-base sm:text-lg">AI Usage</h3>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-white font-medium text-sm sm:text-base">Does this interview allow AI?</p>
+                        <p className="text-white font-medium text-sm sm:text-base">
+                          Does this interview allow AI?
+                        </p>
                         <ul className="list-disc pl-6 mt-1">
                           <li className="text-[#A3A3A3] text-sm sm:text-base">
                             {(interview as any).interview_ai_allow || "Not specified"}
@@ -372,6 +426,22 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
                 </div>
               </div>
             ))}
+
+            {/* If user is not signed in, show dummy preview data with blur */}
+            {!user && (
+              <div className="mt-4 relative cursor-pointer" onClick={handleSignInClick}>
+                <div className="filter blur-sm">
+                  <DummyInterviewPreview />
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full h-full bg-cyan-950/20 p-4 sm:p-6 md:p-8 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-cyan-900/30">
+                    <span className="text-white text-base sm:text-xl md:text-2xl font-medium text-center leading-tight">
+                      Sign in to access all Interview Questions
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -384,5 +454,3 @@ const CompanyDetailsContent = ({ companyId }: { companyId: string }) => {
     </>
   );
 };
-
-

@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Head from "next/head";
 import Image from "next/image";
+import { constructImageURL } from "@/lib/image-hosting";
 
 
 type Company = {
@@ -21,30 +22,30 @@ type Company = {
 };
 
 
-export default function CompanyDetailWrapper({ companyId }: { companyId: string }) {
+export default function CompanyDetailWrapper() {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
     <>
       <Head>
-        <title>Lockedin Ai - Company Detail</title>
+        <title>Lockedin Ai - Company Interview</title>
         <meta
           name="description"
           content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://www.lockedinai.com/companyDetails/${companyId}`} />
+        <link rel="canonical" href={`https://www.lockedinai.com/companyIndex` }/>
 
-        <meta property="og:title" content="Lockedin Ai - Company Detail" />
+        <meta property="og:title" content="Lockedin Ai - Company Interview" />
         <meta
           property="og:description"
           content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
         />
-        <meta property="og:url" content={`https://www.lockedinai.com/companyDetails/${companyId}`} />
+        <meta property="og:url" content={`https://www.lockedinai.com/companyIndex`} />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Lockedin Ai - Company Detail" />
+        <meta name="twitter:title" content="Lockedin Ai - Company Interview" />
         <meta
           name="twitter:description"
           content="Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more."
@@ -57,7 +58,7 @@ export default function CompanyDetailWrapper({ companyId }: { companyId: string 
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Lockedin Ai",
-              "url": `https://www.lockedinai.com/companyDetails/${companyId}`,
+              "url": `https://www.lockedinai.com/companyIndex`,
               "description":
                 "Discover comprehensive details about this company on Lockedin Ai. Explore the company’s background, industry, location, and more.",
             }),
@@ -65,7 +66,7 @@ export default function CompanyDetailWrapper({ companyId }: { companyId: string 
         />
       </Head>
       <QueryClientProvider client={queryClient}>
-        <CompanyIndex />
+        <CompanyIndex  />
       </QueryClientProvider>
     </>
   );
@@ -84,6 +85,7 @@ function CompanyIndex() {
     queryFn: async () => {
       const { data, error } = await supabase.from("companies").select("*");
       if (error) throw error;
+      console.log("all the companies" , data)
       return JSON.parse(JSON.stringify(data)) as Company[];
     },
   });
@@ -207,7 +209,8 @@ function CompanyIndex() {
                       <div className="flex flex-col md:flex-row gap-6 text-white">
                         <div className="w-20 h-20 bg-sky-50 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden self-center md:self-start">
                           {company.logo ? (
-                            <Image src={company.logo} alt={`${company.name} logo`} className="w-16 h-16 object-contain" />
+                            // I have used constructImageUrl with keeping the company.logo previous logo so please check the implemention of this.
+                            <Image src={company.logo || constructImageURL(company.name)} alt={`${company.name} logo`} className="w-16 h-16 object-contain" />
                           ) : (
                             <BuildingIcon className="w-10 h-10 text-sky-400" />
                           )}
